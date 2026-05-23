@@ -1,0 +1,181 @@
+skill,skill_category,role_category,posting_count,pct_of_postings,yoy_change_pct,median_salary_premium
+SQL,Technical,Data Analyst,25,6.2,-6.9,0
+SQL,Technical,Business Intelligence,15,3.8,18.4,0
+SQL,Technical,Data Scientist,22,5.5,13.0,8000
+SQL,Technical,Data Engineer,75,18.8,-1.5,2000
+SQL,Technical,Marketing Analytics,29,7.2,5.2,0
+SQL,Technical,Finance Analytics,21,5.2,27.9,5000
+Python,Technical,Data Analyst,57,14.2,7.4,8000
+Python,Technical,Business Intelligence,36,9.0,-4.5,5000
+Python,Technical,Data Scientist,31,7.8,31.3,5000
+Python,Technical,Data Engineer,80,20.0,34.9,12000
+Python,Technical,Marketing Analytics,26,6.5,-9.7,0
+Python,Technical,Finance Analytics,17,4.2,20.2,0
+Excel,Technical,Data Analyst,58,14.5,28.1,5000
+Excel,Technical,Business Intelligence,31,7.8,-1.6,8000
+Excel,Technical,Data Scientist,77,19.2,-0.7,2000
+Excel,Technical,Data Engineer,62,15.5,4.5,0
+Excel,Technical,Marketing Analytics,16,4.0,5.3,5000
+Excel,Technical,Finance Analytics,94,23.5,-0.6,12000
+Tableau,Visualization,Data Analyst,15,3.8,0.4,5000
+Tableau,Visualization,Business Intelligence,28,7.0,14.2,0
+Tableau,Visualization,Data Scientist,54,13.5,31.0,5000
+Tableau,Visualization,Data Engineer,81,20.2,24.2,0
+Tableau,Visualization,Marketing Analytics,77,19.2,5.0,2000
+Tableau,Visualization,Finance Analytics,60,15.0,-9.4,12000
+Power BI,Visualization,Data Analyst,51,12.8,-12.6,0
+Power BI,Visualization,Business Intelligence,23,5.8,13.3,5000
+Power BI,Visualization,Data Scientist,26,6.5,20.0,12000
+Power BI,Visualization,Data Engineer,78,19.5,-10.0,5000
+Power BI,Visualization,Marketing Analytics,35,8.8,-11.9,12000
+Power BI,Visualization,Finance Analytics,58,14.5,-2.3,12000
+R,Technical,Data Analyst,38,9.5,32.8,0
+R,Technical,Business Intelligence,23,5.8,26.7,2000
+R,Technical,Data Scientist,78,19.5,21.8,2000
+R,Technical,Data Engineer,71,17.8,0.9,12000
+R,Technical,Marketing Analytics,68,17.0,-9.6,0
+R,Technical,Finance Analytics,65,16.2,-2.1,0
+Statistics,Analytical,Data Analyst,15,3.8,-4.1,12000
+Statistics,Analytical,Business Intelligence,37,9.2,14.7,2000
+Statistics,Analytical,Data Scientist,50,12.5,22.0,2000
+Statistics,Analytical,Data Engineer,55,13.8,25.7,0
+Statistics,Analytical,Marketing Analytics,83,20.8,5.9,8000
+Statistics,Analytical,Finance Analytics,29,7.2,6.7,0
+Machine Learning,Analytical,Data Analyst,32,8.0,33.8,12000
+Machine Learning,Analytical,Business Intelligence,85,21.2,21.8,0
+Machine Learning,Analytical,Data Scientist,37,9.2,11.1,12000
+Machine Learning,Analytical,Data Engineer,29,7.2,-4.1,8000
+Machine Learning,Analytical,Marketing Analytics,15,3.8,5.2,0
+Machine Learning,Analytical,Finance Analytics,81,20.2,6.0,2000
+A/B Testing,Analytical,Data Analyst,33,8.2,-5.3,5000
+A/B Testing,Analytical,Business Intelligence,23,5.8,-14.3,8000
+A/B Testing,Analytical,Data Scientist,88,22.0,-7.6,0
+A/B Testing,Analytical,Data Engineer,40,10.0,27.5,0
+A/B Testing,Analytical,Marketing Analytics,17,4.2,-1.4,0
+A/B Testing,Analytical,Finance Analytics,59,14.8,-3.5,5000
+Communication,Soft,Data Analyst,92,23.0,20.6,12000
+Communication,Soft,Business Intelligence,44,11.0,-8.3,8000
+Communication,Soft,Data Scientist,36,9.0,33.2,12000
+Communication,Soft,Data Engineer,35,8.8,14.4,12000
+Communication,Soft,Marketing Analytics,21,5.2,-10.0,8000
+Communication,Soft,Finance Analytics,54,13.5,13.6,8000
+Data Modeling,Technical,Data Analyst,56,14.0,-10.7,12000
+Data Modeling,Technical,Business Intelligence,18,4.5,30.2,0
+Data Modeling,Technical,Data Scientist,45,11.2,-14.5,2000
+Data Modeling,Technical,Data Engineer,28,7.0,8.3,5000
+Data Modeling,Technical,Marketing Analytics,46,11.5,-6.7,0
+Data Modeling,Technical,Finance Analytics,29,7.2,20.1,2000
+Looker,Visualization,Data Analyst,47,11.8,31.4,8000
+Looker,Visualization,Business Intelligence,80,20.0,-9.7,0
+Looker,Visualization,Data Scientist,80,20.0,0.5,12000
+Looker,Visualization,Data Engineer,32,8.0,34.8,0
+Looker,Visualization,Marketing Analytics,37,9.2,-14.0,12000
+Looker,Visualization,Finance Analytics,47,11.8,13.5,8000
+dbt,Technical,Data Analyst,71,17.8,6.9,2000
+dbt,Technical,Business Intelligence,76,19.0,-8.4,2000
+dbt,Technical,Data Scientist,29,7.2,-2.9,2000
+dbt,Technical,Data Engineer,59,14.8,-11.4,8000
+dbt,Technical,Marketing Analytics,47,11.8,-11.1,5000
+dbt,Technical,Finance Analytics,23,5.8,19.2,0
+Snowflake,Technical,Data Analyst,26,6.5,-6.5,8000
+Snowflake,Technical,Business Intelligence,57,14.2,15.9,12000
+Snowflake,Technical,Data Scientist,64,16.0,10.1,0
+Snowflake,Technical,Data Engineer,21,5.2,25.8,2000
+Snowflake,Technical,Marketing Analytics,19,4.8,11.7,0
+Snowflake,Technical,Finance Analytics,90,22.5,-2.0,2000
+BigQuery,Technical,Data Analyst,35,8.8,7.7,8000
+BigQuery,Technical,Business Intelligence,79,19.8,17.2,0
+BigQuery,Technical,Data Scientist,80,20.0,14.7,5000
+BigQuery,Technical,Data Engineer,79,19.8,20.3,0
+BigQuery,Technical,Marketing Analytics,88,22.0,3.7,2000
+BigQuery,Technical,Finance Analytics,15,3.8,13.4,8000
+AWS,Cloud,Data Analyst,75,18.8,2.2,0
+AWS,Cloud,Business Intelligence,16,4.0,33.6,0
+AWS,Cloud,Data Scientist,27,6.8,-8.6,8000
+AWS,Cloud,Data Engineer,24,6.0,25.1,5000
+AWS,Cloud,Marketing Analytics,51,12.8,26.7,12000
+AWS,Cloud,Finance Analytics,48,12.0,12.5,0
+Azure,Cloud,Data Analyst,83,20.8,-6.9,0
+Azure,Cloud,Business Intelligence,24,6.0,32.8,0
+Azure,Cloud,Data Scientist,84,21.0,-12.4,2000
+Azure,Cloud,Data Engineer,85,21.2,-0.7,8000
+Azure,Cloud,Marketing Analytics,31,7.8,-0.4,12000
+Azure,Cloud,Finance Analytics,70,17.5,-11.4,0
+Spark,Technical,Data Analyst,70,17.5,16.8,8000
+Spark,Technical,Business Intelligence,81,20.2,24.2,8000
+Spark,Technical,Data Scientist,27,6.8,22.7,0
+Spark,Technical,Data Engineer,42,10.5,-11.0,8000
+Spark,Technical,Marketing Analytics,93,23.2,23.8,2000
+Spark,Technical,Finance Analytics,28,7.0,15.4,0
+Stakeholder Management,Soft,Data Analyst,42,10.5,-14.5,2000
+Stakeholder Management,Soft,Business Intelligence,41,10.2,-1.9,0
+Stakeholder Management,Soft,Data Scientist,39,9.8,28.7,5000
+Stakeholder Management,Soft,Data Engineer,31,7.8,12.3,2000
+Stakeholder Management,Soft,Marketing Analytics,89,22.2,19.6,5000
+Stakeholder Management,Soft,Finance Analytics,67,16.8,-11.3,8000
+Problem Solving,Soft,Data Analyst,63,15.8,26.5,0
+Problem Solving,Soft,Business Intelligence,20,5.0,1.3,0
+Problem Solving,Soft,Data Scientist,65,16.2,27.4,5000
+Problem Solving,Soft,Data Engineer,88,22.0,34.0,12000
+Problem Solving,Soft,Marketing Analytics,45,11.2,-12.3,0
+Problem Solving,Soft,Finance Analytics,32,8.0,-13.5,0
+Presentation,Soft,Data Analyst,42,10.5,24.9,0
+Presentation,Soft,Business Intelligence,62,15.5,-6.5,12000
+Presentation,Soft,Data Scientist,46,11.5,33.5,12000
+Presentation,Soft,Data Engineer,18,4.5,16.5,2000
+Presentation,Soft,Marketing Analytics,68,17.0,17.0,2000
+Presentation,Soft,Finance Analytics,22,5.5,16.0,0
+SQL Advanced,Technical,Data Analyst,62,15.5,-4.4,2000
+SQL Advanced,Technical,Business Intelligence,34,8.5,20.9,12000
+SQL Advanced,Technical,Data Scientist,15,3.8,25.6,0
+SQL Advanced,Technical,Data Engineer,88,22.0,-10.6,0
+SQL Advanced,Technical,Marketing Analytics,56,14.0,15.7,2000
+SQL Advanced,Technical,Finance Analytics,37,9.2,18.1,5000
+GCP,Cloud,Data Analyst,19,4.8,-12.0,12000
+GCP,Cloud,Business Intelligence,40,10.0,1.2,5000
+GCP,Cloud,Data Scientist,39,9.8,20.5,5000
+GCP,Cloud,Data Engineer,19,4.8,19.8,0
+GCP,Cloud,Marketing Analytics,58,14.5,8.0,12000
+GCP,Cloud,Finance Analytics,60,15.0,5.3,0
+Data Cleaning,Analytical,Data Analyst,86,21.5,10.4,0
+Data Cleaning,Analytical,Business Intelligence,25,6.2,-1.0,12000
+Data Cleaning,Analytical,Data Scientist,23,5.8,18.5,0
+Data Cleaning,Analytical,Data Engineer,69,17.2,-8.3,0
+Data Cleaning,Analytical,Marketing Analytics,51,12.8,32.1,12000
+Data Cleaning,Analytical,Finance Analytics,58,14.5,20.8,12000
+Dashboard Design,Visualization,Data Analyst,86,21.5,11.8,12000
+Dashboard Design,Visualization,Business Intelligence,36,9.0,12.0,0
+Dashboard Design,Visualization,Data Scientist,85,21.2,13.3,8000
+Dashboard Design,Visualization,Data Engineer,55,13.8,29.0,8000
+Dashboard Design,Visualization,Marketing Analytics,60,15.0,-11.5,5000
+Dashboard Design,Visualization,Finance Analytics,53,13.2,-14.8,8000
+ETL/ELT,Technical,Data Analyst,71,17.8,1.4,5000
+ETL/ELT,Technical,Business Intelligence,64,16.0,-1.1,5000
+ETL/ELT,Technical,Data Scientist,89,22.2,21.3,8000
+ETL/ELT,Technical,Data Engineer,41,10.2,9.7,0
+ETL/ELT,Technical,Marketing Analytics,29,7.2,26.9,0
+ETL/ELT,Technical,Finance Analytics,40,10.0,32.4,8000
+Business Acumen,Soft,Data Analyst,68,17.0,15.7,5000
+Business Acumen,Soft,Business Intelligence,78,19.5,9.0,12000
+Business Acumen,Soft,Data Scientist,61,15.2,-12.3,5000
+Business Acumen,Soft,Data Engineer,70,17.5,29.2,5000
+Business Acumen,Soft,Marketing Analytics,29,7.2,0.2,5000
+Business Acumen,Soft,Finance Analytics,57,14.2,-3.6,0
+Git / Version Control,Technical,Data Analyst,27,6.8,34.2,5000
+Git / Version Control,Technical,Business Intelligence,16,4.0,28.4,8000
+Git / Version Control,Technical,Data Scientist,59,14.8,14.3,5000
+Git / Version Control,Technical,Data Engineer,19,4.8,-0.9,5000
+Git / Version Control,Technical,Marketing Analytics,69,17.2,-9.1,8000
+Git / Version Control,Technical,Finance Analytics,67,16.8,-6.9,12000
+Data Governance,Analytical,Data Analyst,46,11.5,20.0,12000
+Data Governance,Analytical,Business Intelligence,88,22.0,19.8,0
+Data Governance,Analytical,Data Scientist,91,22.8,22.3,5000
+Data Governance,Analytical,Data Engineer,22,5.5,18.4,0
+Data Governance,Analytical,Marketing Analytics,22,5.5,9.9,0
+Data Governance,Analytical,Finance Analytics,34,8.5,28.9,8000
+API Integration,Technical,Data Analyst,45,11.2,16.0,0
+API Integration,Technical,Business Intelligence,76,19.0,6.3,0
+API Integration,Technical,Data Scientist,45,11.2,-3.7,0
+API Integration,Technical,Data Engineer,45,11.2,-6.4,2000
+API Integration,Technical,Marketing Analytics,19,4.8,12.8,12000
+API Integration,Technical,Finance Analytics,47,11.8,27.0,0

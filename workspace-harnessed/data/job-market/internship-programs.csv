@@ -1,0 +1,101 @@
+intern_id,company,role,duration_weeks,compensation,location,start_term,uw_partnership,application_deadline,openings
+INT-001,Amazon,Strategy Analyst Intern,16,$1400/week,Remote,Fall 2025,True,2025-02-01,8
+INT-002,Microsoft,Finance Analytics Intern,12,$1200/week,Hybrid,Summer 2025,True,2025-01-23,4
+INT-003,Boeing,Data Science Intern,10,$800/week,Hybrid,Spring 2026,True,2025-02-24,5
+INT-004,Expedia,Product Analytics Intern,16,$800/week,Hybrid,Fall 2025,False,2025-01-21,2
+INT-005,Zillow,Marketing Analytics Intern,10,$2200/week,"Bellevue, WA",Fall 2025,False,2025-01-26,3
+INT-006,Tableau,Data Science Intern,14,Unpaid / Credit,"Seattle, WA",Winter 2026,False,2025-01-22,8
+INT-007,Accenture,Operations Analytics Intern,12,$900/week,Hybrid,Spring 2026,True,2025-03-06,5
+INT-008,Deloitte,Operations Analytics Intern,16,$900/week,Remote,Fall 2025,True,2025-02-12,3
+INT-009,McKinsey,Data Science Intern,10,$900/week,"Seattle, WA",Spring 2026,True,2025-04-16,5
+INT-010,KPMG,Finance Analytics Intern,10,$1400/week,Remote,Winter 2026,False,2025-02-03,5
+INT-011,Nordstrom,Data Science Intern,10,$1100/week,"Bellevue, WA",Spring 2026,False,2025-01-04,2
+INT-012,T-Mobile,Strategy Analyst Intern,14,$1400/week,"Seattle, WA",Summer 2025,False,2025-03-16,8
+INT-013,Remitly,Finance Analytics Intern,16,$2000/week,"Seattle, WA",Fall 2025,False,2025-04-02,7
+INT-014,Highspot,Business Intelligence Intern,10,Unpaid / Credit,"Seattle, WA",Winter 2026,False,2025-04-06,4
+INT-015,Auth0,Business Intelligence Intern,12,$1000/week,Hybrid,Winter 2026,False,2025-02-04,2
+INT-016,IQVIA,Strategy Analyst Intern,12,$900/week,Remote,Summer 2025,False,2025-01-24,5
+INT-017,PwC,Data Science Intern,14,$800/week,Remote,Summer 2025,True,2025-03-13,7
+INT-018,EY,Product Analytics Intern,14,$900/week,"Bellevue, WA",Fall 2025,False,2025-01-19,6
+INT-019,Amazon,Data Analytics Intern,14,$1100/week,"Seattle, WA",Summer 2025,True,2025-03-26,5
+INT-020,Microsoft,Business Intelligence Intern,16,$1100/week,Hybrid,Spring 2026,True,2025-02-17,7
+INT-021,Boeing,Product Analytics Intern,16,$1400/week,"Seattle, WA",Spring 2026,True,2025-01-02,7
+INT-022,Expedia,Strategy Analyst Intern,14,Unpaid / Credit,"Bellevue, WA",Spring 2026,False,2025-04-26,5
+INT-023,Zillow,Strategy Analyst Intern,10,$1200/week,"Seattle, WA",Spring 2026,False,2025-01-11,4
+INT-024,Tableau,Data Science Intern,10,$1200/week,"Bellevue, WA",Winter 2026,False,2025-01-23,4
+INT-025,Accenture,Operations Analytics Intern,16,$2200/week,Hybrid,Spring 2026,True,2025-03-14,6
+INT-026,Deloitte,Operations Analytics Intern,10,$1200/week,"Bellevue, WA",Summer 2025,True,2025-04-10,2
+INT-027,McKinsey,Business Intelligence Intern,16,Unpaid / Credit,Hybrid,Summer 2025,True,2025-04-02,8
+INT-028,KPMG,Strategy Analyst Intern,12,$2200/week,Hybrid,Summer 2025,False,2025-03-17,3
+INT-029,Nordstrom,Data Science Intern,10,$900/week,Remote,Winter 2026,False,2025-02-18,6
+INT-030,T-Mobile,Product Analytics Intern,10,$1000/week,Hybrid,Spring 2026,False,2025-01-23,5
+INT-031,Remitly,Business Intelligence Intern,14,$1200/week,"Bellevue, WA",Summer 2025,False,2025-03-11,6
+INT-032,Highspot,Marketing Analytics Intern,10,Unpaid / Credit,Hybrid,Fall 2025,False,2025-01-22,5
+INT-033,Auth0,Data Science Intern,14,$1600/week,"Bellevue, WA",Summer 2025,False,2025-03-02,7
+INT-034,IQVIA,Product Analytics Intern,10,$800/week,"Seattle, WA",Summer 2025,False,2025-01-12,8
+INT-035,PwC,Business Intelligence Intern,12,$900/week,Remote,Winter 2026,True,2025-04-06,4
+INT-036,EY,Data Analytics Intern,10,$1600/week,"Seattle, WA",Spring 2026,False,2025-04-09,5
+INT-037,Amazon,Data Science Intern,10,$800/week,Remote,Fall 2025,True,2025-03-02,3
+INT-038,Microsoft,Data Analytics Intern,12,$1400/week,"Bellevue, WA",Fall 2025,True,2025-02-05,5
+INT-039,Boeing,Business Intelligence Intern,10,$1600/week,"Seattle, WA",Fall 2025,True,2025-02-12,2
+INT-040,Expedia,Strategy Analyst Intern,10,$2200/week,"Bellevue, WA",Spring 2026,False,2025-03-19,4
+INT-041,Zillow,Strategy Analyst Intern,16,$1200/week,Hybrid,Spring 2026,False,2025-03-12,7
+INT-042,Tableau,Product Analytics Intern,14,$1200/week,"Bellevue, WA",Spring 2026,False,2025-02-17,6
+INT-043,Accenture,Operations Analytics Intern,10,$1000/week,Hybrid,Spring 2026,True,2025-02-24,8
+INT-044,Deloitte,Product Analytics Intern,10,$1600/week,Remote,Winter 2026,True,2025-01-17,1
+INT-045,McKinsey,Marketing Analytics Intern,12,$1400/week,"Bellevue, WA",Winter 2026,True,2025-02-11,3
+INT-046,KPMG,Business Intelligence Intern,16,$800/week,Hybrid,Winter 2026,False,2025-02-02,4
+INT-047,Nordstrom,Marketing Analytics Intern,16,Unpaid / Credit,"Bellevue, WA",Winter 2026,False,2025-02-06,8
+INT-048,T-Mobile,Data Science Intern,14,$2000/week,Remote,Fall 2025,False,2025-02-24,1
+INT-049,Remitly,Marketing Analytics Intern,12,$800/week,"Seattle, WA",Fall 2025,False,2025-03-25,3
+INT-050,Highspot,Marketing Analytics Intern,14,$900/week,"Seattle, WA",Winter 2026,False,2025-02-20,4
+INT-051,Auth0,Operations Analytics Intern,12,$1400/week,"Bellevue, WA",Winter 2026,False,2025-02-20,1
+INT-052,IQVIA,Operations Analytics Intern,12,$800/week,"Seattle, WA",Spring 2026,False,2025-03-13,6
+INT-053,PwC,Product Analytics Intern,16,$1600/week,"Bellevue, WA",Fall 2025,True,2025-02-03,7
+INT-054,EY,Product Analytics Intern,12,$1600/week,"Bellevue, WA",Fall 2025,False,2025-02-24,1
+INT-055,Amazon,Finance Analytics Intern,16,$2200/week,"Bellevue, WA",Winter 2026,True,2025-03-01,6
+INT-056,Microsoft,Marketing Analytics Intern,10,$1400/week,Hybrid,Spring 2026,True,2025-03-12,7
+INT-057,Boeing,Business Intelligence Intern,10,$1100/week,Remote,Winter 2026,True,2025-02-21,6
+INT-058,Expedia,Product Analytics Intern,14,$1400/week,"Bellevue, WA",Summer 2025,False,2025-01-09,5
+INT-059,Zillow,Marketing Analytics Intern,14,Unpaid / Credit,"Bellevue, WA",Summer 2025,False,2025-04-16,6
+INT-060,Tableau,Marketing Analytics Intern,16,$1100/week,"Bellevue, WA",Fall 2025,False,2025-01-10,6
+INT-061,Accenture,Data Science Intern,14,$1000/week,Remote,Spring 2026,True,2025-04-26,8
+INT-062,Deloitte,Product Analytics Intern,14,$1200/week,Remote,Summer 2025,True,2025-02-04,2
+INT-063,McKinsey,Data Analytics Intern,10,$1100/week,"Seattle, WA",Summer 2025,True,2025-02-11,3
+INT-064,KPMG,Marketing Analytics Intern,14,$2000/week,Hybrid,Summer 2025,False,2025-02-11,2
+INT-065,Nordstrom,Product Analytics Intern,10,$1000/week,"Seattle, WA",Spring 2026,False,2025-03-04,2
+INT-066,T-Mobile,Finance Analytics Intern,10,$2200/week,"Seattle, WA",Summer 2025,False,2025-04-09,2
+INT-067,Remitly,Product Analytics Intern,12,$1600/week,"Bellevue, WA",Fall 2025,False,2025-02-10,4
+INT-068,Highspot,Product Analytics Intern,16,$2200/week,"Seattle, WA",Winter 2026,False,2025-02-04,7
+INT-069,Auth0,Operations Analytics Intern,14,$800/week,Remote,Spring 2026,False,2025-01-13,2
+INT-070,IQVIA,Marketing Analytics Intern,12,$1600/week,Remote,Fall 2025,False,2025-04-27,2
+INT-071,PwC,Operations Analytics Intern,12,$800/week,"Seattle, WA",Winter 2026,True,2025-02-01,2
+INT-072,EY,Data Science Intern,16,$900/week,Hybrid,Summer 2025,False,2025-04-16,3
+INT-073,Amazon,Data Analytics Intern,12,$1000/week,Remote,Summer 2025,True,2025-01-17,4
+INT-074,Microsoft,Product Analytics Intern,14,$900/week,"Bellevue, WA",Summer 2025,True,2025-02-28,6
+INT-075,Boeing,Product Analytics Intern,16,$1100/week,Hybrid,Fall 2025,True,2025-02-08,1
+INT-076,Expedia,Data Science Intern,10,$2200/week,Remote,Fall 2025,False,2025-02-04,4
+INT-077,Zillow,Product Analytics Intern,10,$2000/week,Remote,Winter 2026,False,2025-03-03,1
+INT-078,Tableau,Marketing Analytics Intern,10,$2000/week,Remote,Fall 2025,False,2025-03-28,6
+INT-079,Accenture,Operations Analytics Intern,10,$1100/week,"Bellevue, WA",Summer 2025,True,2025-01-01,6
+INT-080,Deloitte,Finance Analytics Intern,16,$2000/week,"Bellevue, WA",Spring 2026,True,2025-02-27,2
+INT-081,McKinsey,Data Analytics Intern,14,Unpaid / Credit,Hybrid,Spring 2026,True,2025-03-22,2
+INT-082,KPMG,Product Analytics Intern,10,$1400/week,"Seattle, WA",Summer 2025,False,2025-03-27,2
+INT-083,Nordstrom,Data Analytics Intern,16,$1400/week,Hybrid,Summer 2025,False,2025-01-27,5
+INT-084,T-Mobile,Product Analytics Intern,14,$1600/week,Remote,Fall 2025,False,2025-03-02,3
+INT-085,Remitly,Operations Analytics Intern,14,$2000/week,Remote,Spring 2026,False,2025-01-20,3
+INT-086,Highspot,Finance Analytics Intern,16,$2000/week,Remote,Summer 2025,False,2025-03-23,8
+INT-087,Auth0,Product Analytics Intern,12,$1100/week,"Seattle, WA",Summer 2025,False,2025-02-26,4
+INT-088,IQVIA,Strategy Analyst Intern,10,$900/week,Hybrid,Fall 2025,False,2025-01-15,2
+INT-089,PwC,Product Analytics Intern,16,$1400/week,"Bellevue, WA",Fall 2025,True,2025-03-05,4
+INT-090,EY,Strategy Analyst Intern,16,$800/week,"Bellevue, WA",Summer 2025,False,2025-03-10,1
+INT-091,Amazon,Marketing Analytics Intern,16,$1200/week,Remote,Winter 2026,True,2025-02-17,1
+INT-092,Microsoft,Business Intelligence Intern,14,$900/week,Hybrid,Spring 2026,True,2025-02-24,6
+INT-093,Boeing,Business Intelligence Intern,12,$2200/week,Hybrid,Fall 2025,True,2025-02-18,1
+INT-094,Expedia,Data Analytics Intern,14,$2000/week,Hybrid,Spring 2026,False,2025-01-08,1
+INT-095,Zillow,Data Analytics Intern,10,$900/week,"Seattle, WA",Spring 2026,False,2025-02-28,2
+INT-096,Tableau,Data Science Intern,14,$1200/week,"Seattle, WA",Winter 2026,False,2025-03-22,3
+INT-097,Accenture,Operations Analytics Intern,14,Unpaid / Credit,"Bellevue, WA",Summer 2025,True,2025-02-24,5
+INT-098,Deloitte,Operations Analytics Intern,12,$1600/week,Hybrid,Summer 2025,True,2025-03-22,4
+INT-099,McKinsey,Business Intelligence Intern,16,$2000/week,"Seattle, WA",Spring 2026,True,2025-02-12,3
+INT-100,KPMG,Marketing Analytics Intern,16,$1100/week,Remote,Summer 2025,False,2025-04-11,5

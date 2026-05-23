@@ -1,0 +1,1124 @@
+{
+  "items": [
+    {
+      "item_id": "ITM-001",
+      "category": "Espresso",
+      "name": "Espresso Reserve Style",
+      "price": 3.97,
+      "cost_of_goods": 1.38,
+      "available_shops": [
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 19
+    },
+    {
+      "item_id": "ITM-002",
+      "category": "Espresso",
+      "name": "Espresso House Roast",
+      "price": 4.18,
+      "cost_of_goods": 1.44,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "Portage Bay Espresso",
+        "HUB Coffee",
+        "Odegaard Cafe",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 157
+    },
+    {
+      "item_id": "ITM-003",
+      "category": "Espresso",
+      "name": "Espresso Seasonal Special",
+      "price": 5.08,
+      "cost_of_goods": 1.54,
+      "available_shops": [
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 126
+    },
+    {
+      "item_id": "ITM-004",
+      "category": "Espresso",
+      "name": "Espresso Signature Select",
+      "price": 5.57,
+      "cost_of_goods": 1.85,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 108
+    },
+    {
+      "item_id": "ITM-005",
+      "category": "Espresso",
+      "name": "Espresso Classic Blend",
+      "price": 4.46,
+      "cost_of_goods": 1.08,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 70
+    },
+    {
+      "item_id": "ITM-006",
+      "category": "Espresso",
+      "name": "Espresso Reserve Style",
+      "price": 4.37,
+      "cost_of_goods": 1.62,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters",
+        "Portage Bay Espresso",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 16
+    },
+    {
+      "item_id": "ITM-007",
+      "category": "Espresso",
+      "name": "Espresso House Roast",
+      "price": 5.23,
+      "cost_of_goods": 1.56,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 51
+    },
+    {
+      "item_id": "ITM-008",
+      "category": "Espresso",
+      "name": "Espresso Seasonal Special",
+      "price": 4.48,
+      "cost_of_goods": 1.94,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 54
+    },
+    {
+      "item_id": "ITM-009",
+      "category": "Espresso",
+      "name": "Espresso Signature Select",
+      "price": 4.69,
+      "cost_of_goods": 2.07,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 76
+    },
+    {
+      "item_id": "ITM-010",
+      "category": "Espresso",
+      "name": "Espresso Classic Blend",
+      "price": 5.29,
+      "cost_of_goods": 1.56,
+      "available_shops": [
+        "HUB Coffee",
+        "Odegaard Cafe",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 59
+    },
+    {
+      "item_id": "ITM-011",
+      "category": "Espresso",
+      "name": "Espresso Reserve Style",
+      "price": 5.48,
+      "cost_of_goods": 1.97,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 197
+    },
+    {
+      "item_id": "ITM-012",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee Reserve Roast",
+      "price": 2.03,
+      "cost_of_goods": 0.7,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 156
+    },
+    {
+      "item_id": "ITM-013",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee House Special",
+      "price": 2.31,
+      "cost_of_goods": 0.76,
+      "available_shops": [
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 154
+    },
+    {
+      "item_id": "ITM-014",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee Seasonal Select",
+      "price": 2.59,
+      "cost_of_goods": 0.81,
+      "available_shops": [
+        "UW Medical Brew",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 61
+    },
+    {
+      "item_id": "ITM-015",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee Signature Blend",
+      "price": 2.24,
+      "cost_of_goods": 0.67,
+      "available_shops": [
+        "HUB Coffee",
+        "Portage Bay Espresso",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 99
+    },
+    {
+      "item_id": "ITM-016",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee Classic Style",
+      "price": 2.19,
+      "cost_of_goods": 0.68,
+      "available_shops": [
+        "UW Medical Brew",
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "Portage Bay Espresso",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 172
+    },
+    {
+      "item_id": "ITM-017",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee Reserve Roast",
+      "price": 2.25,
+      "cost_of_goods": 1.01,
+      "available_shops": [
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 65
+    },
+    {
+      "item_id": "ITM-018",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee House Special",
+      "price": 2.86,
+      "cost_of_goods": 0.72,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Suzzallo Roasters",
+        "Odegaard Cafe",
+        "UW Medical Brew",
+        "HUB Coffee"
+      ],
+      "seasonal": true,
+      "calories": 102
+    },
+    {
+      "item_id": "ITM-019",
+      "category": "Drip Coffee",
+      "name": "Drip Coffee Seasonal Select",
+      "price": 2.41,
+      "cost_of_goods": 0.83,
+      "available_shops": [
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 49
+    },
+    {
+      "item_id": "ITM-020",
+      "category": "Tea",
+      "name": "Tea Reserve Blend",
+      "price": 3.05,
+      "cost_of_goods": 1.01,
+      "available_shops": [
+        "UW Medical Brew",
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 180
+    },
+    {
+      "item_id": "ITM-021",
+      "category": "Tea",
+      "name": "Tea House Style",
+      "price": 3.2,
+      "cost_of_goods": 1.18,
+      "available_shops": [
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 40
+    },
+    {
+      "item_id": "ITM-022",
+      "category": "Tea",
+      "name": "Tea Seasonal Roast",
+      "price": 3.62,
+      "cost_of_goods": 1.07,
+      "available_shops": [
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 200
+    },
+    {
+      "item_id": "ITM-023",
+      "category": "Tea",
+      "name": "Tea Signature Special",
+      "price": 3.72,
+      "cost_of_goods": 1.27,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Odegaard Cafe",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 88
+    },
+    {
+      "item_id": "ITM-024",
+      "category": "Tea",
+      "name": "Tea Classic Select",
+      "price": 3.26,
+      "cost_of_goods": 0.8,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Suzzallo Roasters",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 158
+    },
+    {
+      "item_id": "ITM-025",
+      "category": "Tea",
+      "name": "Tea Reserve Blend",
+      "price": 2.86,
+      "cost_of_goods": 1.16,
+      "available_shops": [
+        "UW Medical Brew",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 76
+    },
+    {
+      "item_id": "ITM-026",
+      "category": "Tea",
+      "name": "Tea House Style",
+      "price": 3.08,
+      "cost_of_goods": 1.02,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 163
+    },
+    {
+      "item_id": "ITM-027",
+      "category": "Tea",
+      "name": "Tea Seasonal Roast",
+      "price": 3.7,
+      "cost_of_goods": 1.16,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 78
+    },
+    {
+      "item_id": "ITM-028",
+      "category": "Tea",
+      "name": "Tea Signature Special",
+      "price": 2.77,
+      "cost_of_goods": 1.07,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 143
+    },
+    {
+      "item_id": "ITM-029",
+      "category": "Tea",
+      "name": "Tea Classic Select",
+      "price": 3.26,
+      "cost_of_goods": 1.09,
+      "available_shops": [
+        "Odegaard Cafe",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 6
+    },
+    {
+      "item_id": "ITM-030",
+      "category": "Tea",
+      "name": "Tea Reserve Blend",
+      "price": 3.32,
+      "cost_of_goods": 1.21,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "Portage Bay Espresso",
+        "HUB Coffee",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 119
+    },
+    {
+      "item_id": "ITM-031",
+      "category": "Cold Brew",
+      "name": "Cold Brew Reserve Style",
+      "price": 6.28,
+      "cost_of_goods": 1.91,
+      "available_shops": [
+        "HUB Coffee",
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 273
+    },
+    {
+      "item_id": "ITM-032",
+      "category": "Cold Brew",
+      "name": "Cold Brew House Roast",
+      "price": 5.78,
+      "cost_of_goods": 1.81,
+      "available_shops": [
+        "UW Medical Brew",
+        "HUB Coffee",
+        "Odegaard Cafe",
+        "Suzzallo Roasters",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 38
+    },
+    {
+      "item_id": "ITM-033",
+      "category": "Cold Brew",
+      "name": "Cold Brew Seasonal Special",
+      "price": 5.78,
+      "cost_of_goods": 2.23,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "UW Medical Brew",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 144
+    },
+    {
+      "item_id": "ITM-034",
+      "category": "Cold Brew",
+      "name": "Cold Brew Signature Select",
+      "price": 5.6,
+      "cost_of_goods": 1.88,
+      "available_shops": [
+        "Odegaard Cafe",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 73
+    },
+    {
+      "item_id": "ITM-035",
+      "category": "Cold Brew",
+      "name": "Cold Brew Classic Blend",
+      "price": 4.6,
+      "cost_of_goods": 2.05,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew",
+        "HUB Coffee",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 162
+    },
+    {
+      "item_id": "ITM-036",
+      "category": "Cold Brew",
+      "name": "Cold Brew Reserve Style",
+      "price": 5.64,
+      "cost_of_goods": 1.94,
+      "available_shops": [
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 221
+    },
+    {
+      "item_id": "ITM-037",
+      "category": "Cold Brew",
+      "name": "Cold Brew House Roast",
+      "price": 5.31,
+      "cost_of_goods": 1.3,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "HUB Coffee",
+        "Odegaard Cafe",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": true,
+      "calories": 2
+    },
+    {
+      "item_id": "ITM-038",
+      "category": "Cold Brew",
+      "name": "Cold Brew Seasonal Special",
+      "price": 4.74,
+      "cost_of_goods": 2.06,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 124
+    },
+    {
+      "item_id": "ITM-039",
+      "category": "Cold Brew",
+      "name": "Cold Brew Signature Select",
+      "price": 4.65,
+      "cost_of_goods": 1.33,
+      "available_shops": [
+        "UW Medical Brew",
+        "Odegaard Cafe",
+        "Portage Bay Espresso",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 281
+    },
+    {
+      "item_id": "ITM-040",
+      "category": "Cold Brew",
+      "name": "Cold Brew Classic Blend",
+      "price": 6.2,
+      "cost_of_goods": 1.28,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 64
+    },
+    {
+      "item_id": "ITM-041",
+      "category": "Cold Brew",
+      "name": "Cold Brew Reserve Style",
+      "price": 4.3,
+      "cost_of_goods": 1.5,
+      "available_shops": [
+        "UW Medical Brew",
+        "HUB Coffee",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 245
+    },
+    {
+      "item_id": "ITM-042",
+      "category": "Cold Brew",
+      "name": "Cold Brew House Roast",
+      "price": 5.77,
+      "cost_of_goods": 1.89,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 2
+    },
+    {
+      "item_id": "ITM-043",
+      "category": "Cold Brew",
+      "name": "Cold Brew Seasonal Special",
+      "price": 5.02,
+      "cost_of_goods": 1.87,
+      "available_shops": [
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 332
+    },
+    {
+      "item_id": "ITM-044",
+      "category": "Pastry",
+      "name": "Pastry Reserve Select",
+      "price": 4.04,
+      "cost_of_goods": 1.32,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 243
+    },
+    {
+      "item_id": "ITM-045",
+      "category": "Pastry",
+      "name": "Pastry House Blend",
+      "price": 3.62,
+      "cost_of_goods": 1.23,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 400
+    },
+    {
+      "item_id": "ITM-046",
+      "category": "Pastry",
+      "name": "Pastry Seasonal Style",
+      "price": 2.92,
+      "cost_of_goods": 1.26,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 365
+    },
+    {
+      "item_id": "ITM-047",
+      "category": "Pastry",
+      "name": "Pastry Signature Roast",
+      "price": 3.1,
+      "cost_of_goods": 0.87,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "HUB Coffee",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 302
+    },
+    {
+      "item_id": "ITM-048",
+      "category": "Pastry",
+      "name": "Pastry Classic Special",
+      "price": 3.31,
+      "cost_of_goods": 1.36,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": true,
+      "calories": 310
+    },
+    {
+      "item_id": "ITM-049",
+      "category": "Pastry",
+      "name": "Pastry Reserve Select",
+      "price": 3.15,
+      "cost_of_goods": 1.07,
+      "available_shops": [
+        "HUB Coffee",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 270
+    },
+    {
+      "item_id": "ITM-050",
+      "category": "Pastry",
+      "name": "Pastry House Blend",
+      "price": 3.33,
+      "cost_of_goods": 1.34,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 209
+    },
+    {
+      "item_id": "ITM-051",
+      "category": "Pastry",
+      "name": "Pastry Seasonal Style",
+      "price": 3.58,
+      "cost_of_goods": 1.44,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 204
+    },
+    {
+      "item_id": "ITM-052",
+      "category": "Pastry",
+      "name": "Pastry Signature Roast",
+      "price": 3.42,
+      "cost_of_goods": 1.1,
+      "available_shops": [
+        "HUB Coffee",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 86
+    },
+    {
+      "item_id": "ITM-053",
+      "category": "Pastry",
+      "name": "Pastry Classic Special",
+      "price": 2.91,
+      "cost_of_goods": 1.09,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 69
+    },
+    {
+      "item_id": "ITM-054",
+      "category": "Sandwich",
+      "name": "Sandwich Reserve Select",
+      "price": 7.67,
+      "cost_of_goods": 3.15,
+      "available_shops": [
+        "HUB Coffee",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 48
+    },
+    {
+      "item_id": "ITM-055",
+      "category": "Sandwich",
+      "name": "Sandwich House Blend",
+      "price": 8.76,
+      "cost_of_goods": 3.06,
+      "available_shops": [
+        "HUB Coffee",
+        "Portage Bay Espresso",
+        "Odegaard Cafe",
+        "UW Medical Brew",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 257
+    },
+    {
+      "item_id": "ITM-056",
+      "category": "Sandwich",
+      "name": "Sandwich Seasonal Style",
+      "price": 10.44,
+      "cost_of_goods": 2.84,
+      "available_shops": [
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "Portage Bay Espresso",
+        "Suzzallo Roasters",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 99
+    },
+    {
+      "item_id": "ITM-057",
+      "category": "Sandwich",
+      "name": "Sandwich Signature Roast",
+      "price": 10.46,
+      "cost_of_goods": 2.52,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 202
+    },
+    {
+      "item_id": "ITM-058",
+      "category": "Sandwich",
+      "name": "Sandwich Classic Special",
+      "price": 8.32,
+      "cost_of_goods": 3.06,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "HUB Coffee",
+        "Odegaard Cafe",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 235
+    },
+    {
+      "item_id": "ITM-059",
+      "category": "Sandwich",
+      "name": "Sandwich Reserve Select",
+      "price": 8.34,
+      "cost_of_goods": 2.8,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Odegaard Cafe",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 27
+    },
+    {
+      "item_id": "ITM-060",
+      "category": "Sandwich",
+      "name": "Sandwich House Blend",
+      "price": 10.23,
+      "cost_of_goods": 3.14,
+      "available_shops": [
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 88
+    },
+    {
+      "item_id": "ITM-061",
+      "category": "Sandwich",
+      "name": "Sandwich Seasonal Style",
+      "price": 8.05,
+      "cost_of_goods": 2.44,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 204
+    },
+    {
+      "item_id": "ITM-062",
+      "category": "Sandwich",
+      "name": "Sandwich Signature Roast",
+      "price": 9.64,
+      "cost_of_goods": 3.13,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 373
+    },
+    {
+      "item_id": "ITM-063",
+      "category": "Sandwich",
+      "name": "Sandwich Classic Special",
+      "price": 9.26,
+      "cost_of_goods": 2.77,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters",
+        "Portage Bay Espresso",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 141
+    },
+    {
+      "item_id": "ITM-064",
+      "category": "Sandwich",
+      "name": "Sandwich Reserve Select",
+      "price": 7.72,
+      "cost_of_goods": 3.41,
+      "available_shops": [
+        "UW Medical Brew",
+        "Suzzallo Roasters",
+        "HUB Coffee",
+        "Odegaard Cafe"
+      ],
+      "seasonal": false,
+      "calories": 160
+    },
+    {
+      "item_id": "ITM-065",
+      "category": "Smoothie",
+      "name": "Smoothie Reserve Blend",
+      "price": 6.12,
+      "cost_of_goods": 1.9,
+      "available_shops": [
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 158
+    },
+    {
+      "item_id": "ITM-066",
+      "category": "Smoothie",
+      "name": "Smoothie House Style",
+      "price": 6.34,
+      "cost_of_goods": 2.64,
+      "available_shops": [
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": true,
+      "calories": 437
+    },
+    {
+      "item_id": "ITM-067",
+      "category": "Smoothie",
+      "name": "Smoothie Seasonal Roast",
+      "price": 7.41,
+      "cost_of_goods": 2.75,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "HUB Coffee",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 420
+    },
+    {
+      "item_id": "ITM-068",
+      "category": "Smoothie",
+      "name": "Smoothie Signature Special",
+      "price": 7.45,
+      "cost_of_goods": 1.55,
+      "available_shops": [
+        "Odegaard Cafe",
+        "Suzzallo Roasters",
+        "UW Medical Brew"
+      ],
+      "seasonal": true,
+      "calories": 437
+    },
+    {
+      "item_id": "ITM-069",
+      "category": "Smoothie",
+      "name": "Smoothie Classic Select",
+      "price": 5.63,
+      "cost_of_goods": 2.12,
+      "available_shops": [
+        "UW Medical Brew",
+        "Odegaard Cafe",
+        "Portage Bay Espresso",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 421
+    },
+    {
+      "item_id": "ITM-070",
+      "category": "Smoothie",
+      "name": "Smoothie Reserve Blend",
+      "price": 6.22,
+      "cost_of_goods": 2.09,
+      "available_shops": [
+        "UW Medical Brew",
+        "HUB Coffee",
+        "Portage Bay Espresso",
+        "Odegaard Cafe",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": true,
+      "calories": 136
+    },
+    {
+      "item_id": "ITM-071",
+      "category": "Smoothie",
+      "name": "Smoothie House Style",
+      "price": 5.27,
+      "cost_of_goods": 1.89,
+      "available_shops": [
+        "Odegaard Cafe",
+        "HUB Coffee",
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Portage Bay Espresso"
+      ],
+      "seasonal": false,
+      "calories": 3
+    },
+    {
+      "item_id": "ITM-072",
+      "category": "Smoothie",
+      "name": "Smoothie Seasonal Roast",
+      "price": 6.23,
+      "cost_of_goods": 2.71,
+      "available_shops": [
+        "Odegaard Cafe",
+        "UW Medical Brew",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 203
+    },
+    {
+      "item_id": "ITM-073",
+      "category": "Smoothie",
+      "name": "Smoothie Signature Special",
+      "price": 6.22,
+      "cost_of_goods": 2.23,
+      "available_shops": [
+        "UW Medical Brew",
+        "Odegaard Cafe"
+      ],
+      "seasonal": true,
+      "calories": 69
+    },
+    {
+      "item_id": "ITM-074",
+      "category": "Smoothie",
+      "name": "Smoothie Classic Select",
+      "price": 6.91,
+      "cost_of_goods": 2.42,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew",
+        "Suzzallo Roasters"
+      ],
+      "seasonal": false,
+      "calories": 179
+    },
+    {
+      "item_id": "ITM-075",
+      "category": "Smoothie",
+      "name": "Smoothie Reserve Blend",
+      "price": 7.54,
+      "cost_of_goods": 2.81,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "UW Medical Brew"
+      ],
+      "seasonal": false,
+      "calories": 185
+    },
+    {
+      "item_id": "ITM-076",
+      "category": "Smoothie",
+      "name": "Smoothie House Style",
+      "price": 5.57,
+      "cost_of_goods": 2.51,
+      "available_shops": [
+        "Odegaard Cafe",
+        "UW Medical Brew",
+        "Portage Bay Espresso",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 97
+    },
+    {
+      "item_id": "ITM-077",
+      "category": "Smoothie",
+      "name": "Smoothie Seasonal Roast",
+      "price": 6.59,
+      "cost_of_goods": 2.6,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "Suzzallo Roasters",
+        "UW Medical Brew",
+        "Odegaard Cafe",
+        "HUB Coffee"
+      ],
+      "seasonal": true,
+      "calories": 197
+    },
+    {
+      "item_id": "ITM-078",
+      "category": "Smoothie",
+      "name": "Smoothie Signature Special",
+      "price": 7.22,
+      "cost_of_goods": 2.09,
+      "available_shops": [
+        "Portage Bay Espresso",
+        "HUB Coffee"
+      ],
+      "seasonal": false,
+      "calories": 433
+    }
+  ],
+  "last_updated": "2024-12-15",
+  "total_items": 78
+}

@@ -1,0 +1,34 @@
+{
+  "name": "data-storytelling-workshop",
+  "private": true,
+  "version": "0.1.0",
+  "description": "From Raw Data to Confident Narratives — UW Foster School of Business workshop materials.",
+  "license": "MIT",
+  "author": "Brett Reif",
+  "homepage": "https://brettreifs.github.io/data-storytelling-workshop/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrettReifs/data-storytelling-workshop.git"
+  },
+  "keywords": [
+    "workshop",
+    "slidev",
+    "data-storytelling",
+    "agent-skills",
+    "uw-foster"
+  ],
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "build:vercel": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.40.0"
+  }
+}

@@ -1,0 +1,153 @@
+/*
+  styles/index.css
+  Design tokens for data-storytelling-workshop Slidev deck.
+  University of Washington brand colors (purple/gold) with a clean,
+  analytical inner-slide aesthetic. Dark hero slides, light content slides.
+
+  Scoped to .slidev-layout so tokens do not leak into the presenter UI.
+*/
+
+:root {
+  /* UW brand palette */
+  --uw-purple-deep:  #2D1A52;
+  --uw-purple:       #4B2E83;
+  --uw-purple-mid:   #7B5DB0;
+  --uw-purple-light: #EDE8F5;
+  --uw-gold:         #B7A57A;
+  --uw-gold-bright:  #D4A853;
+  --uw-gold-pale:    #FAF5E8;
+
+  /* Typography */
+  --ds-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ds-font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+}
+
+.slidev-layout {
+  font-family: var(--ds-font-sans);
+
+  /* Neutral dark base */
+  --ds-bg:      #0F0F0F;
+  --ds-surface: #1A1A1A;
+  --ds-text:    #F5F5F4;
+  --ds-muted:   #A8A29E;
+  --ds-border:  #292524;
+
+  /* Spacing */
+  --ds-space-2:  0.5rem;
+  --ds-space-4:  1rem;
+  --ds-space-6:  1.5rem;
+  --ds-space-8:  2rem;
+  --ds-space-12: 3rem;
+  --ds-space-16: 4rem;
+
+  /* Radius */
+  --ds-radius-sm: 4px;
+  --ds-radius-md: 8px;
+  --ds-radius-lg: 12px;
+}
+
+/* ─── Slide themes ───────────────────────────────────────────────────── */
+
+/* Hero/title slides: UW purple gradient */
+.slidev-layout.hero {
+  background: linear-gradient(135deg, #2D1A52 0%, #4B2E83 45%, #7B5DB0 80%, #1a0a30 100%) !important;
+  color: #FFFFFF !important;
+}
+
+/* Section divider: subtle purple tint, light */
+.slidev-layout.section {
+  background: linear-gradient(160deg, #EDE8F5 0%, #FFFFFF 60%) !important;
+  color: #1a0a30 !important;
+}
+
+/* Reveal slides: clean white, analytical */
+.slidev-layout.reveal {
+  background: #FFFFFF !important;
+  color: #1C1917 !important;
+}
+
+/* Demo placeholder slides */
+.slidev-layout.demo {
+  background: #F5F3FF !important;
+  color: #1a0a30 !important;
+  border-top: 4px solid var(--uw-gold-bright);
+}
+
+/* ─── Utility classes ────────────────────────────────────────────────── */
+
+/* Gold accent label */
+.uw-label {
+  font-family: var(--ds-font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--uw-gold-bright);
+  font-weight: 600;
+}
+
+/* Purple heading */
+.uw-heading {
+  color: var(--uw-purple);
+}
+
+/* Gold horizontal rule */
+.uw-rule {
+  border: none;
+  border-top: 2px solid var(--uw-gold-bright);
+  margin: 0.75rem 0;
+  width: 3rem;
+}
+
+/* Gold CTA pill */
+.gold-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  background: var(--uw-gold-bright);
+  color: #1a0a30;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.gold-cta:hover { background: var(--uw-gold); }
+
+/* Purple outline pill */
+.purple-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: var(--uw-purple);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  border: 2px solid var(--uw-purple);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.purple-cta:hover { background: var(--uw-purple); color: #fff; }
+
+/* Confidence score badge */
+.confidence-badge {
+  display: inline-block;
+  font-family: var(--ds-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--uw-gold-pale);
+  color: #1a0a30;
+  border: 1px solid var(--uw-gold-bright);
+}
+
+/* Goto dialog fix */
+#slidev-goto-dialog[class~="-top-20"] { display: none !important; }
+#slidev-goto-dialog.top-5 { top: clamp(1.25rem, 3vh, 3.5rem) !important; }
+#slidev-goto-dialog {
+  max-width: min(22.5rem, calc(100vw - 2.5rem)) !important;
+  width: min(22.5rem, calc(100vw - 2.5rem)) !important;
+}

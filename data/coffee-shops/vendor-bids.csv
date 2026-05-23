@@ -1,0 +1,41 @@
+bid_id,vendor,line_item,unit,price_quoted,delivery_days,contract_term_months,notes,bid_date
+BID-001,PacificBean Supply,Coffee Beans (lb),lb,,,,No quote submitted,2024-10-05
+BID-002,PacificBean Supply,Milk (gallon),gallon,,,,No quote submitted,2024-10-09
+BID-003,PacificBean Supply,Paper Cups (case/500),case/500,13.87,6,12,,2024-10-07
+BID-004,PacificBean Supply,Espresso Machine Service (annual),annual,977.41,7,12,Volume discount available,2024-10-08
+BID-005,PacificBean Supply,Cold Brew Kegs (5L),5L,31.99,2,12,Lead time 3 days,2024-10-07
+BID-006,PacificBean Supply,Pastry Delivery (weekly),weekly,118.21,4,24,,2024-10-07
+BID-007,PacificBean Supply,Syrup Bottles (case/12),case/12,43.36,7,12,Preferred supplier,2024-10-07
+BID-008,PacificBean Supply,Cleaning Supplies (monthly),monthly,,,,No quote submitted,2024-10-10
+BID-009,Seattle Roast Co.,Coffee Beans (lb),lb,6.44,4,24,Lead time 3 days,2024-10-10
+BID-010,Seattle Roast Co.,Milk (gallon),gallon,,,,No quote submitted,2024-10-20
+BID-011,Seattle Roast Co.,Paper Cups (case/500),case/500,14.72,2,6,,2024-10-28
+BID-012,Seattle Roast Co.,Espresso Machine Service (annual),annual,1028.82,5,6,Volume discount available,2024-10-27
+BID-013,Seattle Roast Co.,Cold Brew Kegs (5L),5L,49.37,7,6,,2024-10-16
+BID-014,Seattle Roast Co.,Pastry Delivery (weekly),weekly,100.14,4,12,Lead time 3 days,2024-10-23
+BID-015,Seattle Roast Co.,Syrup Bottles (case/12),case/12,54.54,6,12,Preferred supplier,2024-10-09
+BID-016,Seattle Roast Co.,Cleaning Supplies (monthly),monthly,69.49,6,6,,2024-10-06
+BID-017,CampusBev Distributors,Coffee Beans (lb),lb,8.07,5,12,,2024-10-02
+BID-018,CampusBev Distributors,Milk (gallon),gallon,2.84,2,12,,2024-10-25
+BID-019,CampusBev Distributors,Paper Cups (case/500),case/500,17.71,2,24,,2024-10-25
+BID-020,CampusBev Distributors,Espresso Machine Service (annual),annual,1018.63,4,12,Preferred supplier,2024-10-26
+BID-021,CampusBev Distributors,Cold Brew Kegs (5L),5L,49.5,7,12,,2024-10-20
+BID-022,CampusBev Distributors,Pastry Delivery (weekly),weekly,132.68,6,6,,2024-10-25
+BID-023,CampusBev Distributors,Syrup Bottles (case/12),case/12,60.56,7,24,,2024-10-26
+BID-024,CampusBev Distributors,Cleaning Supplies (monthly),monthly,70.33,2,24,,2024-10-24
+BID-025,Northwest Grains,Coffee Beans (lb),lb,,,,No quote submitted,2024-10-24
+BID-026,Northwest Grains,Milk (gallon),gallon,3.23,6,12,Lead time 3 days,2024-10-13
+BID-027,Northwest Grains,Paper Cups (case/500),case/500,16.92,5,6,Lead time 3 days,2024-10-01
+BID-028,Northwest Grains,Espresso Machine Service (annual),annual,823.16,7,6,,2024-10-09
+BID-029,Northwest Grains,Cold Brew Kegs (5L),5L,,,,No quote submitted,2024-10-19
+BID-030,Northwest Grains,Pastry Delivery (weekly),weekly,100.64,7,12,Volume discount available,2024-10-03
+BID-031,Northwest Grains,Syrup Bottles (case/12),case/12,54.06,6,6,Lead time 3 days,2024-10-10
+BID-032,Northwest Grains,Cleaning Supplies (monthly),monthly,,,,No quote submitted,2024-10-02
+BID-033,EspressoEdge LLC,Coffee Beans (lb),lb,10.32,5,12,,2024-10-07
+BID-034,EspressoEdge LLC,Milk (gallon),gallon,2.72,2,24,Preferred supplier,2024-10-19
+BID-035,EspressoEdge LLC,Paper Cups (case/500),case/500,18.23,3,24,Volume discount available,2024-10-23
+BID-036,EspressoEdge LLC,Espresso Machine Service (annual),annual,,,,No quote submitted,2024-10-15
+BID-037,EspressoEdge LLC,Cold Brew Kegs (5L),5L,48.43,2,24,Volume discount available,2024-10-09
+BID-038,EspressoEdge LLC,Pastry Delivery (weekly),weekly,93.72,4,24,Volume discount available,2024-10-11
+BID-039,EspressoEdge LLC,Syrup Bottles (case/12),case/12,49.76,1,12,,2024-10-02
+BID-040,EspressoEdge LLC,Cleaning Supplies (monthly),monthly,71.39,3,24,Lead time 3 days,2024-10-22

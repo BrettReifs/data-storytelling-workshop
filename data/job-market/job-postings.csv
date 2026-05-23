@@ -1,0 +1,401 @@
+posting_id,title,company,location,work_type,salary_min,salary_max,required_skills,experience_years,posted_date,uw_partnership,is_duplicate_flag,status
+JOB-0001,FP&A Analyst,Boeing,"Seattle, WA",Hybrid,115000,130000,A/B Testing; Stakeholder Management; dbt; AWS; Power BI; BigQuery,2,2023-07-08,True,False,Expired
+JOB-0002,FP&A Analyst,Starbucks,Remote,On-site,65000,80000,SQL; Azure; Power BI; Spark; Statistics; Excel; Communication,0,2024-09-05,False,False,Active
+JOB-0003,Business Intelligence Developer,KPMG,"Redmond, WA",Remote,100000,120000,Data Modeling; BigQuery; Stakeholder Management; Communication,0,2024-08-15,False,False,Active
+JOB-0004,Data Scientist I,IQVIA,"Seattle, WA",On-site,90000,110000,AWS; Excel; Tableau,3,2024-09-05,False,False,Active
+JOB-0005,Data Analyst,Remitly,Remote,Hybrid,55000,75000,Communication; Looker; Statistics; Power BI; R; Excel,1,2024-09-02,False,True,Active
+JOB-0006,Associate Data Analyst,EY,Remote,On-site,80000,90000,Excel; Tableau; Power BI; GCP,1,2024-07-02,False,False,Active
+JOB-0007,Data Analyst,Auth0,"Bellevue, WA",On-site,65000,90000,Looker; dbt; Communication; Tableau,3,2024-06-25,False,False,Active
+JOB-0008,Business Intelligence Developer,Costco,"Kirkland, WA",Remote,,,Spark; GCP; Communication; Python; Power BI; BigQuery; Stakeholder Management,1,2024-07-04,False,False,Active
+JOB-0009,Finance Analyst,Amazon,"Redmond, WA",Remote,115000,125000,AWS; Tableau; Stakeholder Management; GCP; A/B Testing; Statistics; Snowflake,2,2024-10-13,False,False,Active
+JOB-0010,FP&A Analyst,Providence Health,"Bellevue, WA",Remote,,,Spark; BigQuery; Snowflake,2,2024-06-05,False,False,Active
+JOB-0011,Data Scientist,Tableau,"Kirkland, WA",On-site,80000,100000,SQL; R; Statistics; Looker; Data Modeling,3,2024-10-11,False,False,Active
+JOB-0012,Data Scientist,Expedia,"Redmond, WA",Hybrid,,,Looker; Snowflake; Excel; R; Tableau; Power BI,2,2024-07-03,False,False,Active
+JOB-0013,Data Scientist I,Boeing,Remote,Hybrid,115000,135000,Data Modeling; Azure; Statistics; Looker,0,2024-12-24,False,False,Active
+JOB-0014,Ops Analyst,Microsoft,Remote,Remote,115000,140000,GCP; Tableau; BigQuery; Power BI; Statistics; SQL,2,2023-03-23,False,False,Expired
+JOB-0015,Product Data Analyst,T-Mobile,"Bellevue, WA",Hybrid,90000,100000,Stakeholder Management; Looker; SQL; Snowflake,0,2024-11-19,False,False,Active
+JOB-0016,Data Analyst I,Remitly,"Redmond, WA",Hybrid,72000,82000,Statistics; Spark; GCP; Tableau; Python; BigQuery; SQL,2,2024-08-05,False,False,Active
+JOB-0017,Associate Product Analyst,Costco,"Bellevue, WA",On-site,,,Power BI; Snowflake; R; Tableau; AWS; GCP; Statistics,3,2024-06-27,False,False,Active
+JOB-0018,Ops Analyst,REI,Remote,Hybrid,65000,75000,Snowflake; R; Communication; Spark; Tableau; Azure,1,2024-09-01,False,False,Active
+JOB-0019,BI Analyst,Convoy,"Bellevue, WA",Hybrid,,,Stakeholder Management; Communication; BigQuery; Power BI; SQL; Looker,1,2023-01-02,False,False,Expired
+JOB-0020,Product Analyst,Providence Health,"Kirkland, WA",Remote,,,GCP; dbt; Python; Statistics; Power BI; Spark,0,2024-11-17,False,False,Active
+JOB-0021,Associate Financial Analyst,Boeing,"Kirkland, WA",On-site,65000,85000,BigQuery; SQL; Python; Power BI,2,2024-10-23,True,False,Active
+JOB-0022,Data Engineer,McKinsey,Remote,Remote,100000,115000,dbt; A/B Testing; Python; Statistics; Excel; Snowflake,1,2024-09-15,False,False,Active
+JOB-0023,Growth Analyst,EY,Remote,On-site,72000,92000,Snowflake; Python; Data Modeling; Tableau,1,2023-03-23,False,False,Expired
+JOB-0024,Product Analyst,IQVIA,Remote,Hybrid,,,Communication; AWS; Python; Looker; Data Modeling; BigQuery,2,2024-10-11,False,False,Active
+JOB-0025,FP&A Analyst,Seattle Children's,"Redmond, WA",On-site,90000,115000,Stakeholder Management; Tableau; Data Modeling; Snowflake; Statistics; Power BI; Looker,1,2024-08-12,False,False,Active
+JOB-0026,Jr. Data Engineer,Auth0,"Bellevue, WA",On-site,,,Statistics; Snowflake; Python; dbt,0,2024-08-25,False,False,Active
+JOB-0027,Product Analyst,IQVIA,"Seattle, WA",Hybrid,,,GCP; SQL; Power BI; Tableau; Communication,1,2024-06-28,False,False,Active
+JOB-0028,Business Operations Analyst,Nordstrom,Remote,Hybrid,72000,87000,Communication; Data Modeling; GCP; BigQuery; Tableau,1,2024-10-12,False,False,Active
+JOB-0029,Jr. Data Engineer,REI,Remote,Hybrid,115000,140000,Communication; Statistics; A/B Testing; Looker,3,2024-08-07,False,False,Active
+JOB-0030,"Analyst, Data",T-Mobile,Remote,On-site,65000,80000,Statistics; SQL; dbt; Stakeholder Management; BigQuery,1,2024-11-07,False,False,Active
+JOB-0031,Ops Analyst,Seattle Children's,"Seattle, WA",Hybrid,100000,115000,Data Modeling; GCP; Azure; Python; Excel,3,2024-07-21,False,False,Active
+JOB-0032,Data Engineer,Zillow,"Redmond, WA",Hybrid,90000,110000,Machine Learning; GCP; Data Modeling; SQL; dbt; AWS,2,2024-08-18,False,False,Active
+JOB-0033,Jr. Data Scientist,PwC,"Seattle, WA",Remote,80000,105000,Power BI; Spark; BigQuery; Snowflake; SQL,1,2024-12-15,False,False,Active
+JOB-0034,Ops Analyst,Nordstrom,Remote,Hybrid,115000,130000,SQL; R; Machine Learning; Snowflake; A/B Testing; Excel; Python,2,2024-12-03,False,False,Active
+JOB-0035,Marketing Data Analyst,IQVIA,Remote,On-site,90000,110000,Azure; AWS; Snowflake; Python; Communication,0,2024-11-28,False,False,Active
+JOB-0036,Business Intelligence Developer,Microsoft,"Kirkland, WA",Remote,72000,82000,Power BI; Azure; Python; Spark; Snowflake; A/B Testing,1,2024-06-19,False,False,Active
+JOB-0037,Associate Financial Analyst,Seattle Children's,"Seattle, WA",Hybrid,,,A/B Testing; Tableau; SQL; AWS; BigQuery; Excel; Looker,1,2024-09-12,False,False,Active
+JOB-0038,Associate Data Scientist,Auth0,Remote,On-site,80000,90000,Excel; AWS; Azure; Looker; Stakeholder Management; R; Statistics,1,2024-12-28,False,False,Active
+JOB-0039,Product Analyst,Zillow,Remote,On-site,80000,90000,Looker; GCP; Stakeholder Management,2,2024-11-25,False,False,Active
+JOB-0040,Growth Analyst,Accenture,Remote,Remote,100000,120000,Power BI; Stakeholder Management; Azure; dbt,1,2024-10-01,True,False,Active
+JOB-0041,Marketing Data Analyst,Convoy,"Bellevue, WA",Hybrid,55000,80000,Snowflake; Data Modeling; Power BI; SQL; Azure; BigQuery,2,2024-07-06,False,False,Active
+JOB-0042,Associate Data Scientist,REI,"Seattle, WA",On-site,,,Snowflake; R; Python; Communication; SQL; Looker; GCP,3,2024-10-05,False,False,Active
+JOB-0043,Jr. Data Engineer,Nordstrom,"Kirkland, WA",Remote,55000,70000,Data Modeling; AWS; R,2,2024-12-07,False,False,Active
+JOB-0044,Ops Analyst,Convoy,Remote,Remote,115000,135000,Snowflake; A/B Testing; Python,3,2024-11-18,False,False,Active
+JOB-0045,Associate Financial Analyst,Tableau,"Kirkland, WA",Remote,100000,120000,Tableau; Spark; R; Azure; Power BI; GCP; Data Modeling,1,2024-10-18,False,False,Active
+JOB-0046,Product Data Analyst,Tableau,Remote,Remote,80000,105000,Excel; Spark; SQL; Tableau; Stakeholder Management; R; Looker,2,2024-11-14,False,False,Active
+JOB-0047,Jr. Data Engineer,Starbucks,"Redmond, WA",Remote,65000,90000,dbt; Looker; Tableau; Spark; Stakeholder Management; BigQuery; GCP,2,2024-12-15,False,False,Active
+JOB-0048,Data Engineer,Starbucks,"Bellevue, WA",Remote,55000,65000,Azure; Power BI; GCP,2,2024-12-01,False,False,Active
+JOB-0049,Jr. Data Engineer,KPMG,Remote,On-site,90000,100000,GCP; Python; R; Power BI,2,2024-07-21,False,False,Active
+JOB-0050,Associate Data Analyst,Seattle Children's,"Kirkland, WA",On-site,80000,95000,Data Modeling; Power BI; Tableau; R,1,2024-07-04,False,False,Active
+JOB-0051,Product Analyst,Amazon,"Kirkland, WA",Hybrid,,,BigQuery; Looker; Stakeholder Management,1,2023-01-12,False,False,Expired
+JOB-0052,Business Intelligence Developer,IQVIA,"Seattle, WA",Hybrid,,,BigQuery; Machine Learning; Tableau; R; Azure; Statistics; SQL,1,2024-11-22,False,False,Active
+JOB-0053,FP&A Analyst,Costco,"Kirkland, WA",Hybrid,90000,105000,AWS; dbt; Python; R,2,2024-08-04,False,False,Active
+JOB-0054,Data Scientist I,REI,"Redmond, WA",Remote,,,Excel; Data Modeling; R; Power BI; Machine Learning; Azure,2,2024-12-14,False,False,Active
+JOB-0055,Operations Analyst,Highspot,"Bellevue, WA",On-site,,,Python; Looker; Communication; Machine Learning,2,2024-11-07,False,False,Active
+JOB-0056,Associate Data Scientist,Deloitte,"Seattle, WA",Hybrid,55000,70000,R; Excel; Looker; GCP; A/B Testing; dbt; BigQuery,2,2024-09-05,False,False,Active
+JOB-0057,Associate Data Analyst,Microsoft,"Redmond, WA",On-site,,,Data Modeling; Statistics; Excel; dbt; SQL; AWS,0,2024-06-02,False,False,Active
+JOB-0058,Data Analyst I,Starbucks,"Redmond, WA",Remote,,,Python; Stakeholder Management; AWS,0,2024-12-11,False,False,Active
+JOB-0059,Jr. Data Scientist,Amazon,Remote,Hybrid,,,Tableau; R; GCP,2,2024-10-24,False,False,Active
+JOB-0060,Jr. Data Engineer,IQVIA,"Redmond, WA",Hybrid,72000,97000,Tableau; Snowflake; Spark; BigQuery,1,2024-09-10,False,False,Active
+JOB-0061,BI Developer,Accenture,"Kirkland, WA",On-site,,,R; Azure; Spark,0,2024-06-01,False,True,Active
+JOB-0062,Digital Marketing Analyst,Outreach,"Seattle, WA",Remote,,,Statistics; AWS; dbt; Stakeholder Management,2,2024-08-08,False,True,Active
+JOB-0063,Associate Financial Analyst,McKinsey,"Bellevue, WA",Hybrid,90000,110000,Azure; Python; Data Modeling,1,2024-07-15,False,False,Active
+JOB-0064,Associate Product Analyst,Expedia,"Kirkland, WA",On-site,65000,75000,Azure; BigQuery; Machine Learning,1,2024-12-18,False,True,Active
+JOB-0065,Associate Data Scientist,KPMG,"Seattle, WA",Hybrid,,,Azure; Power BI; Tableau; R,2,2024-11-09,False,False,Active
+JOB-0066,Data Analyst,REI,"Redmond, WA",On-site,65000,75000,Stakeholder Management; Communication; Looker,3,2023-04-16,False,False,Expired
+JOB-0067,Data Engineer,Starbucks,"Bellevue, WA",Hybrid,,,BigQuery; A/B Testing; dbt; Stakeholder Management; Machine Learning; Python; Data Modeling,1,2024-07-02,False,False,Active
+JOB-0068,Product Data Analyst,Amazon,"Kirkland, WA",Hybrid,55000,65000,dbt; Spark; A/B Testing; Excel,2,2024-06-17,True,False,Active
+JOB-0069,Product Data Analyst,IQVIA,"Redmond, WA",Hybrid,,,Machine Learning; Communication; GCP; Statistics; Spark; Excel; Data Modeling,1,2024-07-04,False,False,Active
+JOB-0070,Data Analyst,KPMG,Remote,Hybrid,,,GCP; Stakeholder Management; dbt; R; Looker; Power BI; Snowflake,1,2024-07-07,False,False,Active
+JOB-0071,Associate Data Scientist,Auth0,Remote,Hybrid,,,dbt; Azure; Machine Learning; BigQuery; GCP,2,2024-10-05,False,False,Active
+JOB-0072,Growth Analyst,Boeing,"Redmond, WA",Hybrid,,,dbt; Statistics; BigQuery; Power BI; Looker; GCP; Python,3,2024-09-08,True,False,Active
+JOB-0073,Data Analyst,Microsoft,"Kirkland, WA",Hybrid,,,Tableau; Snowflake; R; dbt; GCP; Excel,2,2024-12-02,True,False,Active
+JOB-0074,Product Analyst,Deloitte,"Kirkland, WA",On-site,,,GCP; Azure; Power BI; Statistics; Stakeholder Management; R,1,2024-06-28,True,True,Active
+JOB-0075,Associate Data Scientist,Accenture,"Seattle, WA",On-site,90000,100000,Spark; Stakeholder Management; Python; AWS; Tableau,3,2024-06-28,True,False,Active
+JOB-0076,Marketing Data Analyst,Highspot,"Kirkland, WA",Remote,115000,125000,Communication; Looker; Power BI,1,2023-09-01,False,False,Expired
+JOB-0077,Product Data Analyst,Accenture,Remote,Remote,100000,120000,Communication; Power BI; AWS; Data Modeling; Stakeholder Management; Snowflake; A/B Testing,2,2024-11-15,True,False,Active
+JOB-0078,Associate Product Analyst,Expedia,"Kirkland, WA",Remote,80000,95000,R; GCP; Power BI,2,2024-06-18,False,False,Active
+JOB-0079,Associate Data Analyst,Amazon,"Seattle, WA",On-site,65000,85000,Excel; A/B Testing; SQL,1,2024-11-14,True,False,Active
+JOB-0080,Marketing Analyst,Expedia,"Seattle, WA",Hybrid,100000,110000,Tableau; dbt; Machine Learning; Excel,2,2024-07-25,False,False,Active
+JOB-0081,Finance Analyst,Convoy,Remote,Hybrid,115000,135000,Stakeholder Management; GCP; Looker; AWS; Data Modeling,0,2024-08-13,False,False,Active
+JOB-0082,Data Analyst,PwC,"Redmond, WA",On-site,,,SQL; Communication; Looker; Snowflake; Power BI; GCP,1,2024-12-24,False,False,Active
+JOB-0083,Business Intelligence Analyst,Costco,"Redmond, WA",On-site,72000,97000,GCP; Stakeholder Management; dbt,3,2024-12-14,False,False,Active
+JOB-0084,Finance Analyst,Microsoft,"Redmond, WA",Remote,,,Tableau; Machine Learning; Power BI,0,2024-08-06,False,True,Active
+JOB-0085,Jr. Data Engineer,Starbucks,"Bellevue, WA",Hybrid,100000,125000,Looker; GCP; BigQuery; Spark; Statistics; Azure,0,2024-09-14,False,False,Active
+JOB-0086,BI Analyst,Remitly,"Bellevue, WA",Remote,72000,92000,SQL; Python; GCP; Power BI; Looker; Tableau,1,2024-11-23,False,False,Active
+JOB-0087,BI Analyst,Outreach,"Redmond, WA",Remote,55000,75000,Excel; R; AWS; A/B Testing,2,2024-11-03,False,False,Active
+JOB-0088,Data Analyst,Highspot,"Kirkland, WA",On-site,65000,90000,AWS; A/B Testing; Statistics; Looker,2,2024-10-05,False,False,Active
+JOB-0089,Jr. Data Engineer,Microsoft,Remote,Remote,90000,115000,SQL; dbt; Python; Spark; A/B Testing; Excel,1,2024-09-20,True,False,Active
+JOB-0090,BI Analyst,Providence Health,"Redmond, WA",Remote,,,Excel; BigQuery; Python; Communication; Stakeholder Management,3,2024-06-28,False,False,Active
+JOB-0091,Marketing Analyst,Deloitte,Remote,Remote,72000,92000,SQL; A/B Testing; BigQuery; AWS; Looker; Python,2,2024-12-05,False,False,Active
+JOB-0092,Financial Analyst,EY,"Redmond, WA",Remote,115000,140000,Communication; Data Modeling; R; Snowflake; SQL; Tableau; Azure,2,2024-08-28,False,False,Active
+JOB-0093,FP&A Analyst,T-Mobile,"Redmond, WA",Hybrid,,,Azure; Snowflake; Excel,3,2024-09-22,False,False,Active
+JOB-0094,Associate Data Engineer,Nordstrom,Remote,On-site,90000,110000,AWS; Statistics; GCP; Excel; SQL,0,2024-07-17,False,False,Active
+JOB-0095,BI Analyst,Remitly,"Kirkland, WA",On-site,80000,105000,Statistics; Excel; Azure; Stakeholder Management; Communication; Looker,3,2024-07-13,False,False,Active
+JOB-0096,Operations Analyst,Zillow,"Kirkland, WA",Hybrid,55000,80000,Snowflake; Stakeholder Management; Data Modeling,2,2024-08-13,False,False,Active
+JOB-0097,Finance Analyst,Tableau,"Redmond, WA",On-site,80000,105000,R; Snowflake; Machine Learning; Looker,1,2024-07-11,False,False,Active
+JOB-0098,Business Operations Analyst,Accenture,"Redmond, WA",On-site,55000,65000,Tableau; Data Modeling; Machine Learning; Looker; dbt; A/B Testing,2,2024-12-07,False,False,Active
+JOB-0099,Jr. Data Engineer,Zillow,"Redmond, WA",Hybrid,100000,115000,Statistics; Excel; Stakeholder Management,3,2024-11-08,False,False,Active
+JOB-0100,Ops Analyst,Tableau,Remote,Hybrid,72000,87000,Azure; Data Modeling; Machine Learning; R; Power BI,0,2024-09-17,False,False,Active
+JOB-0101,Product Analyst,Remitly,"Bellevue, WA",Remote,65000,75000,Snowflake; BigQuery; R; Machine Learning,0,2024-10-15,False,False,Active
+JOB-0102,Finance Analyst,McKinsey,"Kirkland, WA",On-site,55000,80000,Tableau; Excel; Python; AWS,2,2024-10-26,False,False,Active
+JOB-0103,Jr. Data Scientist,PwC,"Kirkland, WA",Hybrid,72000,97000,SQL; Statistics; Snowflake; Communication,0,2024-06-03,False,False,Active
+JOB-0104,Jr. Data Analyst,Deloitte,"Kirkland, WA",Hybrid,90000,110000,Statistics; SQL; Power BI; Excel,2,2024-10-08,False,False,Active
+JOB-0105,Jr. Data Analyst,Boeing,"Seattle, WA",Hybrid,115000,135000,GCP; Looker; R; SQL; Statistics; AWS,1,2024-08-01,True,True,Active
+JOB-0106,Associate Product Analyst,Providence Health,"Bellevue, WA",Remote,115000,140000,Communication; Data Modeling; dbt,1,2024-09-03,False,False,Active
+JOB-0107,Business Intelligence Developer,T-Mobile,Remote,Hybrid,65000,85000,GCP; Excel; Snowflake; A/B Testing; Statistics; Azure,1,2024-08-01,False,False,Active
+JOB-0108,Jr. Data Engineer,T-Mobile,"Kirkland, WA",Hybrid,,,Stakeholder Management; Spark; BigQuery; Looker; Excel; Statistics,2,2024-09-04,False,False,Active
+JOB-0109,Data Scientist,McKinsey,"Bellevue, WA",Hybrid,55000,75000,GCP; Data Modeling; Spark,1,2024-08-16,False,False,Active
+JOB-0110,Data Analyst,PwC,"Redmond, WA",Remote,72000,87000,R; Machine Learning; Power BI; SQL; Snowflake,3,2024-10-28,False,True,Active
+JOB-0111,"Analyst, Data",Seattle Children's,"Seattle, WA",On-site,72000,92000,Stakeholder Management; Looker; R; Power BI; Python,1,2024-07-05,False,False,Active
+JOB-0112,Marketing Data Analyst,Expedia,"Redmond, WA",On-site,,,Looker; dbt; Azure; SQL; Communication; Machine Learning,1,2024-08-19,False,False,Active
+JOB-0113,Finance Analyst,EY,"Kirkland, WA",Hybrid,65000,90000,GCP; Azure; Spark; R,2,2024-11-19,False,False,Active
+JOB-0114,Digital Marketing Analyst,Convoy,"Bellevue, WA",Hybrid,65000,75000,Data Modeling; Python; Machine Learning,2,2024-06-05,False,False,Active
+JOB-0115,Business Intelligence Analyst,Auth0,"Seattle, WA",Remote,65000,75000,Spark; Data Modeling; Statistics; Tableau; Python; Excel,0,2024-10-12,False,False,Active
+JOB-0116,Marketing Analyst,McKinsey,"Seattle, WA",Remote,72000,82000,BigQuery; Stakeholder Management; Machine Learning; Python; dbt; A/B Testing,3,2024-06-21,False,False,Active
+JOB-0117,Associate Data Analyst,Amazon,"Bellevue, WA",On-site,,,Spark; Python; Power BI,1,2024-07-10,True,False,Active
+JOB-0118,Analytics Engineer,Accenture,"Bellevue, WA",On-site,72000,97000,Azure; A/B Testing; Spark,1,2023-01-06,False,False,Expired
+JOB-0119,Marketing Analyst,Outreach,"Kirkland, WA",Hybrid,65000,85000,GCP; A/B Testing; Excel,3,2024-11-10,False,False,Active
+JOB-0120,Associate Data Scientist,EY,"Seattle, WA",Remote,115000,130000,Looker; dbt; Machine Learning; Python; Tableau,3,2024-07-15,False,False,Active
+JOB-0121,"Analyst, Data",T-Mobile,"Bellevue, WA",On-site,65000,85000,Looker; dbt; Machine Learning; Azure,0,2024-07-24,False,False,Active
+JOB-0122,BI Analyst,Starbucks,Remote,Remote,72000,92000,Stakeholder Management; Data Modeling; Tableau; Snowflake; Excel; Looker,3,2024-10-28,False,False,Active
+JOB-0123,Finance Analyst,Boeing,Remote,Remote,80000,95000,R; Tableau; SQL; Communication; Stakeholder Management; Statistics; GCP,1,2024-12-27,False,False,Active
+JOB-0124,Business Operations Analyst,Convoy,"Bellevue, WA",On-site,90000,110000,Snowflake; Python; Azure; Excel; Spark; Stakeholder Management; GCP,2,2024-09-06,False,False,Active
+JOB-0125,Product Analyst,T-Mobile,"Seattle, WA",Hybrid,,,R; GCP; dbt; Excel; Stakeholder Management; Statistics,1,2024-11-04,False,False,Active
+JOB-0126,Marketing Analyst,Costco,"Seattle, WA",Remote,,,Looker; Snowflake; SQL; Tableau; Communication; Excel; Power BI,2,2024-10-07,False,False,Active
+JOB-0127,Marketing Analyst,Microsoft,"Kirkland, WA",Hybrid,100000,110000,Spark; Data Modeling; Azure; GCP; Tableau,3,2024-09-16,True,False,Active
+JOB-0128,Associate Data Engineer,Accenture,"Bellevue, WA",On-site,100000,115000,Machine Learning; Stakeholder Management; A/B Testing; Python; Communication; Statistics; AWS,2,2023-10-22,True,False,Expired
+JOB-0129,Business Intelligence Developer,IQVIA,Remote,Hybrid,80000,95000,Communication; AWS; Snowflake; Machine Learning; Azure; R,3,2024-07-10,False,False,Active
+JOB-0130,FP&A Analyst,REI,"Seattle, WA",On-site,90000,115000,Communication; Spark; Machine Learning; SQL; Tableau; Snowflake; GCP,2,2024-11-16,False,False,Active
+JOB-0131,Business Intelligence Developer,Accenture,Remote,Hybrid,,,Power BI; A/B Testing; Machine Learning; Tableau; Excel,0,2024-06-09,True,False,Active
+JOB-0132,Associate Product Analyst,REI,"Seattle, WA",Remote,55000,70000,Azure; Tableau; R; dbt; Communication; Python,1,2024-12-22,False,False,Active
+JOB-0133,Data Engineer,Accenture,Remote,On-site,,,A/B Testing; Statistics; Python,2,2024-08-04,False,False,Active
+JOB-0134,Growth Analyst,Deloitte,"Kirkland, WA",On-site,,,Communication; dbt; Spark; Statistics; BigQuery,1,2024-11-27,True,False,Active
+JOB-0135,Financial Analyst,EY,"Seattle, WA",Hybrid,72000,82000,Excel; Statistics; Machine Learning; A/B Testing; Looker; GCP; R,2,2024-08-01,False,False,Active
+JOB-0136,Product Analyst,Starbucks,Remote,Hybrid,100000,125000,Data Modeling; AWS; Machine Learning; SQL; GCP; dbt; Statistics,1,2024-07-07,False,False,Active
+JOB-0137,Growth Analyst,Convoy,"Bellevue, WA",On-site,55000,70000,Looker; Power BI; SQL; Statistics,2,2024-07-08,False,False,Active
+JOB-0138,Data Analyst,Highspot,"Kirkland, WA",On-site,72000,97000,Excel; Stakeholder Management; Tableau; Power BI; Azure,3,2024-12-23,False,False,Active
+JOB-0139,Business Intelligence Analyst,Nordstrom,Remote,Remote,,,Stakeholder Management; Spark; AWS,0,2024-12-28,False,False,Active
+JOB-0140,Growth Analyst,REI,"Kirkland, WA",Hybrid,,,Stakeholder Management; Snowflake; Spark; Azure; Machine Learning; Power BI,1,2024-11-21,False,False,Active
+JOB-0141,Associate Financial Analyst,T-Mobile,"Kirkland, WA",Remote,,,Data Modeling; Stakeholder Management; dbt,3,2024-10-01,False,False,Active
+JOB-0142,Financial Analyst,Microsoft,"Bellevue, WA",On-site,,,Statistics; BigQuery; Tableau; Data Modeling; Machine Learning,2,2024-06-09,False,False,Active
+JOB-0143,FP&A Analyst,Amazon,"Redmond, WA",On-site,115000,135000,Snowflake; Looker; Excel; AWS; Python; Data Modeling,1,2024-11-12,True,False,Active
+JOB-0144,Associate Data Analyst,Convoy,"Redmond, WA",Hybrid,80000,90000,dbt; Communication; A/B Testing; Data Modeling; Azure; Python; SQL,1,2024-09-07,False,False,Active
+JOB-0145,Financial Analyst,Amazon,"Redmond, WA",Hybrid,90000,100000,Looker; Azure; Spark; AWS; GCP; SQL,3,2024-12-20,True,False,Active
+JOB-0146,"Analyst, Data",Zillow,"Redmond, WA",On-site,65000,80000,Snowflake; Communication; Power BI; Azure; Statistics; Stakeholder Management,1,2024-08-03,False,False,Active
+JOB-0147,Financial Analyst,Remitly,"Kirkland, WA",On-site,,,GCP; A/B Testing; Power BI; R; Azure,3,2024-06-21,False,False,Active
+JOB-0148,Marketing Analyst,Deloitte,"Bellevue, WA",On-site,72000,92000,AWS; Python; Spark; dbt,2,2024-06-09,True,False,Active
+JOB-0149,Jr. Data Scientist,Accenture,Remote,Hybrid,,,AWS; dbt; Data Modeling; Stakeholder Management; Excel; BigQuery,2,2024-12-19,False,False,Active
+JOB-0150,Operations Analyst,Nordstrom,Remote,Hybrid,100000,125000,Excel; BigQuery; Looker,3,2024-09-07,False,True,Active
+JOB-0151,Digital Marketing Analyst,T-Mobile,Remote,Remote,55000,65000,AWS; Snowflake; Statistics; Tableau; A/B Testing,1,2024-08-20,False,False,Active
+JOB-0152,Data Scientist I,PwC,Remote,On-site,72000,87000,Spark; Statistics; Communication; BigQuery; AWS; Snowflake,3,2024-07-05,True,False,Active
+JOB-0153,Business Intelligence Developer,KPMG,Remote,Remote,100000,115000,Azure; Communication; Statistics; GCP; Excel; SQL; Tableau,3,2024-07-23,False,False,Active
+JOB-0154,"Analyst, Data",Starbucks,"Bellevue, WA",On-site,72000,87000,Communication; SQL; Azure; R; GCP; Looker,2,2024-07-20,False,False,Active
+JOB-0155,Data Scientist I,Zillow,"Redmond, WA",On-site,,,GCP; Tableau; Power BI; Excel; Azure; A/B Testing; R,3,2024-10-03,False,False,Active
+JOB-0156,Marketing Data Analyst,KPMG,"Bellevue, WA",Hybrid,,,A/B Testing; Excel; Looker; AWS; Machine Learning; Tableau; Communication,1,2024-08-05,False,False,Active
+JOB-0157,Data Scientist I,Highspot,Remote,On-site,100000,125000,Data Modeling; Communication; Snowflake; GCP; A/B Testing,1,2024-11-26,False,False,Active
+JOB-0158,Associate Data Analyst,Outreach,"Kirkland, WA",On-site,,,Statistics; Data Modeling; AWS; dbt; Excel; Spark; Azure,2,2024-06-21,False,False,Active
+JOB-0159,Business Intelligence Developer,IQVIA,"Kirkland, WA",On-site,80000,100000,Python; SQL; Data Modeling; Power BI; Machine Learning; dbt; Azure,0,2024-07-14,False,False,Active
+JOB-0160,Financial Analyst,Costco,"Kirkland, WA",Hybrid,100000,115000,Snowflake; AWS; GCP; dbt; Python,1,2024-06-05,False,False,Active
+JOB-0161,Associate Data Analyst,Seattle Children's,"Seattle, WA",On-site,90000,105000,Looker; Python; GCP; Tableau; Spark,1,2024-11-04,False,False,Active
+JOB-0162,Associate Financial Analyst,PwC,"Bellevue, WA",On-site,100000,115000,Stakeholder Management; AWS; Tableau; Statistics,2,2024-09-04,False,False,Active
+JOB-0163,Financial Analyst,REI,"Redmond, WA",Remote,,,dbt; GCP; Data Modeling; Statistics; Azure; Power BI,3,2024-10-15,False,False,Active
+JOB-0164,Associate Financial Analyst,KPMG,"Seattle, WA",On-site,115000,130000,Data Modeling; dbt; Python; Looker; Communication; R; Azure,1,2024-10-08,False,False,Active
+JOB-0165,Data Scientist,Convoy,"Seattle, WA",On-site,90000,115000,R; Power BI; BigQuery; A/B Testing,2,2024-11-01,False,False,Active
+JOB-0166,Marketing Data Analyst,Expedia,"Seattle, WA",On-site,65000,80000,AWS; Communication; Looker; Tableau; GCP,3,2024-11-05,False,False,Active
+JOB-0167,BI Developer,Remitly,"Redmond, WA",Hybrid,,,R; A/B Testing; SQL,1,2024-07-27,False,False,Active
+JOB-0168,Growth Analyst,Costco,Remote,On-site,72000,87000,Stakeholder Management; Snowflake; Excel; Spark,1,2024-07-07,False,False,Active
+JOB-0169,Associate Financial Analyst,Zillow,"Seattle, WA",Remote,80000,90000,GCP; Statistics; Machine Learning,3,2024-12-23,False,False,Active
+JOB-0170,Data Engineer,Remitly,"Seattle, WA",On-site,72000,82000,Spark; Looker; Statistics,2,2024-09-01,False,False,Active
+JOB-0171,Product Data Analyst,T-Mobile,"Kirkland, WA",On-site,,,Power BI; Looker; Excel; A/B Testing,3,2024-11-16,False,True,Active
+JOB-0172,FP&A Analyst,Deloitte,"Bellevue, WA",Hybrid,65000,75000,Machine Learning; Snowflake; Python; SQL,1,2024-07-16,False,False,Active
+JOB-0173,Business Intelligence Analyst,Highspot,"Redmond, WA",On-site,55000,80000,dbt; GCP; Python; Looker; Spark,2,2024-11-14,False,True,Active
+JOB-0174,Business Intelligence Developer,McKinsey,"Kirkland, WA",Hybrid,80000,90000,Communication; Excel; Stakeholder Management; R; Spark; Snowflake,1,2023-09-10,False,False,Expired
+JOB-0175,Business Operations Analyst,Deloitte,"Bellevue, WA",Hybrid,90000,115000,SQL; Python; dbt; GCP,2,2023-02-19,True,False,Expired
+JOB-0176,Marketing Data Analyst,Convoy,"Seattle, WA",Hybrid,80000,100000,Stakeholder Management; Statistics; Snowflake; Azure,3,2023-11-26,False,True,Expired
+JOB-0177,Jr. Data Analyst,REI,Remote,On-site,65000,80000,BigQuery; Snowflake; Machine Learning; SQL; Stakeholder Management; Python,2,2024-06-07,False,False,Active
+JOB-0178,Analytics Engineer,Starbucks,"Kirkland, WA",On-site,,,AWS; Stakeholder Management; Excel; Snowflake,3,2024-12-25,False,False,Active
+JOB-0179,Business Intelligence Analyst,Remitly,"Seattle, WA",Hybrid,90000,110000,Stakeholder Management; R; AWS; Tableau; dbt; SQL; GCP,0,2024-11-16,False,False,Active
+JOB-0180,Product Analyst,PwC,"Redmond, WA",On-site,,,dbt; A/B Testing; Excel; R; Machine Learning,2,2024-08-01,True,False,Active
+JOB-0181,Jr. Data Scientist,Costco,"Kirkland, WA",Remote,,,Azure; Power BI; Stakeholder Management; Python; Tableau; Looker,1,2023-02-10,False,False,Expired
+JOB-0182,Ops Analyst,Amazon,Remote,Remote,80000,95000,Python; Excel; Statistics; Data Modeling; Stakeholder Management; Tableau,2,2024-07-26,False,False,Active
+JOB-0183,Product Data Analyst,EY,"Redmond, WA",Remote,80000,90000,Machine Learning; SQL; Communication; AWS; Stakeholder Management,1,2024-11-10,False,False,Active
+JOB-0184,Business Operations Analyst,McKinsey,"Seattle, WA",Hybrid,,,R; Snowflake; Power BI; Azure; Statistics; SQL,1,2024-08-17,False,False,Active
+JOB-0185,Jr. Data Engineer,REI,Remote,On-site,,,Snowflake; Stakeholder Management; A/B Testing,1,2024-12-01,False,False,Active
+JOB-0186,Product Analyst,Starbucks,"Seattle, WA",On-site,,,Azure; SQL; Stakeholder Management,1,2024-12-25,False,False,Active
+JOB-0187,Data Engineer,Tableau,"Bellevue, WA",Hybrid,115000,135000,Snowflake; SQL; Python,3,2024-06-27,False,False,Active
+JOB-0188,Growth Analyst,Highspot,"Bellevue, WA",On-site,72000,97000,AWS; Excel; R; GCP; Statistics; Snowflake,2,2024-11-15,False,False,Active
+JOB-0189,Ops Analyst,Auth0,Remote,Hybrid,115000,135000,Statistics; AWS; Python; R; Machine Learning; Spark,1,2023-08-13,False,False,Expired
+JOB-0190,Data Analyst,Providence Health,"Bellevue, WA",Hybrid,115000,130000,Machine Learning; dbt; Looker; A/B Testing,3,2024-07-05,False,False,Active
+JOB-0191,Growth Analyst,Seattle Children's,Remote,Remote,,,Communication; Power BI; Tableau,2,2024-11-10,False,False,Active
+JOB-0192,Marketing Data Analyst,Amazon,"Redmond, WA",Remote,72000,92000,Excel; AWS; Looker; SQL,0,2024-08-18,False,False,Active
+JOB-0193,Product Analyst,IQVIA,"Kirkland, WA",On-site,115000,130000,Statistics; Looker; Stakeholder Management; Machine Learning; BigQuery; Azure; Excel,1,2024-07-09,False,False,Active
+JOB-0194,Associate Data Engineer,EY,"Seattle, WA",On-site,80000,105000,BigQuery; Spark; A/B Testing; GCP; Python,1,2024-09-02,False,False,Active
+JOB-0195,Product Analyst,Boeing,"Kirkland, WA",Remote,65000,90000,Statistics; Power BI; Python,2,2024-11-09,False,False,Active
+JOB-0196,Data Analyst I,Zillow,"Seattle, WA",Remote,,,Python; dbt; SQL,3,2024-08-24,False,False,Active
+JOB-0197,Business Operations Analyst,T-Mobile,"Redmond, WA",Remote,72000,87000,GCP; Snowflake; Machine Learning; Python; AWS,1,2024-06-01,False,False,Active
+JOB-0198,Marketing Data Analyst,Microsoft,Remote,On-site,115000,130000,Python; Machine Learning; Communication; Snowflake; GCP; Looker; Statistics,0,2023-04-27,False,False,Expired
+JOB-0199,FP&A Analyst,Providence Health,"Seattle, WA",Hybrid,65000,90000,Spark; Python; R; Tableau; Statistics; BigQuery; Power BI,2,2024-09-07,False,False,Active
+JOB-0200,Jr. Data Engineer,Outreach,"Kirkland, WA",On-site,115000,130000,Azure; Looker; Communication; Power BI; R; BigQuery; Excel,3,2024-12-26,False,False,Active
+JOB-0201,Jr. Data Engineer,McKinsey,"Redmond, WA",On-site,80000,95000,Communication; AWS; Spark; R; Looker; Snowflake,1,2024-08-07,False,False,Active
+JOB-0202,Operations Analyst,Microsoft,Remote,On-site,55000,70000,Communication; Tableau; R; GCP; Snowflake; Looker; Statistics,0,2024-07-21,True,False,Active
+JOB-0203,FP&A Analyst,PwC,"Kirkland, WA",On-site,90000,105000,GCP; Communication; Machine Learning; Tableau,2,2024-08-17,False,False,Active
+JOB-0204,Finance Analyst,Outreach,"Seattle, WA",Hybrid,100000,120000,Stakeholder Management; BigQuery; Communication,2,2024-11-23,False,False,Active
+JOB-0205,Product Analyst,Seattle Children's,Remote,Remote,72000,87000,Looker; A/B Testing; Snowflake; AWS; GCP,1,2024-10-14,False,False,Active
+JOB-0206,Associate Financial Analyst,Providence Health,Remote,Remote,80000,95000,R; AWS; dbt; SQL; Statistics,2,2024-11-11,False,False,Active
+JOB-0207,Data Analyst I,Auth0,"Seattle, WA",Remote,,,Looker; Python; AWS,2,2024-06-16,False,False,Active
+JOB-0208,Product Data Analyst,Starbucks,Remote,Remote,,,Excel; Stakeholder Management; Spark; Statistics; GCP; dbt,2,2024-10-26,False,False,Active
+JOB-0209,"Analyst, Data",Seattle Children's,"Seattle, WA",Hybrid,65000,80000,BigQuery; Statistics; Python; Tableau; Communication; Azure,2,2024-08-14,False,True,Active
+JOB-0210,BI Developer,Microsoft,"Seattle, WA",Remote,72000,92000,Communication; Excel; R; Azure,1,2024-09-11,True,False,Active
+JOB-0211,Jr. Data Analyst,PwC,"Seattle, WA",On-site,65000,90000,Python; R; A/B Testing,1,2024-09-02,False,False,Active
+JOB-0212,Data Analyst I,Auth0,Remote,Hybrid,90000,110000,Azure; R; Statistics; AWS; dbt,1,2024-10-06,False,False,Active
+JOB-0213,Financial Analyst,Accenture,"Seattle, WA",On-site,65000,90000,dbt; GCP; AWS; Statistics,0,2024-07-04,False,False,Active
+JOB-0214,Data Analyst,EY,Remote,Remote,100000,110000,Communication; Looker; R; Data Modeling,0,2024-10-02,False,False,Active
+JOB-0215,Business Operations Analyst,Starbucks,"Kirkland, WA",Hybrid,100000,125000,R; Tableau; BigQuery,3,2024-08-22,False,False,Active
+JOB-0216,"Analyst, Data",Microsoft,"Bellevue, WA",On-site,80000,95000,Communication; Machine Learning; Looker; Spark; Power BI; A/B Testing,3,2024-10-16,False,False,Active
+JOB-0217,Data Scientist,Outreach,"Bellevue, WA",On-site,80000,90000,Azure; Python; dbt; Stakeholder Management; Statistics; Looker,1,2024-08-28,False,False,Active
+JOB-0218,Operations Analyst,Expedia,"Bellevue, WA",Hybrid,80000,90000,Power BI; Looker; A/B Testing; Azure; BigQuery; R; AWS,1,2023-10-22,False,False,Expired
+JOB-0219,Associate Data Analyst,Amazon,Remote,Remote,55000,80000,A/B Testing; Excel; Spark; R; Statistics; dbt; Machine Learning,2,2024-06-04,False,False,Active
+JOB-0220,Business Intelligence Analyst,Amazon,"Kirkland, WA",Remote,115000,135000,Stakeholder Management; Tableau; Excel; Communication,1,2024-09-02,True,False,Active
+JOB-0221,Associate Financial Analyst,Amazon,Remote,Hybrid,90000,105000,SQL; Python; Statistics; Excel; Azure; Stakeholder Management; AWS,2,2024-06-26,True,False,Active
+JOB-0222,Business Intelligence Analyst,REI,"Seattle, WA",Hybrid,80000,100000,SQL; Tableau; Azure; dbt,2,2024-09-07,False,True,Active
+JOB-0223,Associate Data Analyst,McKinsey,"Seattle, WA",Remote,100000,125000,Stakeholder Management; Power BI; SQL; AWS; Communication; Snowflake,2,2024-12-20,False,False,Active
+JOB-0224,Marketing Analyst,McKinsey,"Kirkland, WA",On-site,55000,75000,Machine Learning; Data Modeling; Spark; Looker; Tableau; Communication,3,2024-10-24,False,False,Active
+JOB-0225,Marketing Analyst,Auth0,"Seattle, WA",Remote,,,Stakeholder Management; BigQuery; SQL; Communication; Azure; GCP; Spark,1,2024-12-08,False,False,Active
+JOB-0226,Jr. Data Analyst,Auth0,"Bellevue, WA",Hybrid,,,BigQuery; GCP; Excel; Snowflake,3,2024-12-17,False,False,Active
+JOB-0227,Marketing Data Analyst,Accenture,"Seattle, WA",Hybrid,115000,135000,AWS; Power BI; Machine Learning; SQL; Python; dbt; Data Modeling,3,2024-12-18,False,False,Active
+JOB-0228,Marketing Analyst,Providence Health,"Bellevue, WA",Hybrid,100000,125000,SQL; dbt; Data Modeling,1,2024-11-16,False,False,Active
+JOB-0229,Digital Marketing Analyst,Zillow,"Redmond, WA",On-site,72000,92000,Data Modeling; R; Stakeholder Management; Tableau; Machine Learning; Communication,2,2024-06-25,False,False,Active
+JOB-0230,Product Analyst,Amazon,Remote,Remote,,,GCP; Python; Data Modeling; Looker; AWS; Power BI,0,2024-09-12,False,False,Active
+JOB-0231,Data Analyst,Outreach,"Kirkland, WA",On-site,55000,70000,Power BI; AWS; Azure; Communication; Statistics,0,2024-08-14,False,False,Active
+JOB-0232,Ops Analyst,Seattle Children's,"Bellevue, WA",On-site,90000,115000,Communication; Looker; Azure; dbt; Snowflake; Spark,1,2024-06-06,False,False,Active
+JOB-0233,Data Scientist I,PwC,"Redmond, WA",Hybrid,,,Communication; A/B Testing; Azure; GCP; Spark; Snowflake; Power BI,2,2024-07-25,False,False,Active
+JOB-0234,FP&A Analyst,Zillow,"Bellevue, WA",On-site,72000,82000,Power BI; Data Modeling; Snowflake; Azure; Statistics; Python; Excel,1,2024-09-03,False,False,Active
+JOB-0235,Growth Analyst,Providence Health,Remote,Remote,,,Excel; Power BI; R; Data Modeling,2,2024-06-03,False,False,Active
+JOB-0236,Associate Data Analyst,Deloitte,"Redmond, WA",Hybrid,100000,120000,dbt; Machine Learning; R; Spark; Power BI,2,2024-12-01,True,False,Active
+JOB-0237,Associate Product Analyst,Providence Health,"Bellevue, WA",Remote,65000,90000,BigQuery; Statistics; Power BI; Spark; Machine Learning; SQL,1,2024-08-28,False,False,Active
+JOB-0238,Associate Data Engineer,Convoy,Remote,Hybrid,,,SQL; Excel; GCP; AWS; dbt,0,2024-08-01,False,False,Active
+JOB-0239,Ops Analyst,Tableau,"Kirkland, WA",Remote,115000,125000,A/B Testing; BigQuery; Looker; Spark,2,2023-05-14,False,False,Expired
+JOB-0240,Jr. Data Analyst,Providence Health,"Bellevue, WA",Hybrid,,,Statistics; SQL; Tableau; Python; AWS,3,2023-10-19,False,False,Expired
+JOB-0241,Product Analyst,Expedia,"Redmond, WA",Remote,90000,100000,Machine Learning; Statistics; Snowflake; Communication; Stakeholder Management,2,2024-06-04,False,False,Active
+JOB-0242,"Analyst, Data",Highspot,"Seattle, WA",Hybrid,,,dbt; Stakeholder Management; AWS,2,2024-10-23,False,False,Active
+JOB-0243,Business Intelligence Developer,T-Mobile,"Bellevue, WA",Remote,65000,80000,Power BI; Stakeholder Management; AWS; Data Modeling; R; Excel; Statistics,2,2024-09-22,False,False,Active
+JOB-0244,Product Analyst,Remitly,"Bellevue, WA",Hybrid,115000,140000,R; Tableau; Stakeholder Management; Statistics; Snowflake; Spark,2,2024-07-02,False,False,Active
+JOB-0245,Digital Marketing Analyst,Providence Health,"Seattle, WA",Remote,90000,110000,Excel; R; Tableau,2,2024-12-25,False,False,Active
+JOB-0246,"Analyst, Data",Boeing,"Redmond, WA",Remote,,,AWS; Power BI; Statistics; Azure; BigQuery; Excel,0,2024-06-20,False,False,Active
+JOB-0247,BI Developer,Seattle Children's,"Bellevue, WA",Hybrid,,,Snowflake; Python; Communication; Looker; Power BI,2,2024-10-02,False,False,Active
+JOB-0248,Associate Data Scientist,Costco,Remote,Remote,80000,90000,Communication; Looker; GCP; BigQuery; Spark; SQL; Stakeholder Management,0,2024-10-26,False,False,Active
+JOB-0249,Business Intelligence Developer,Microsoft,Remote,Remote,,,BigQuery; Statistics; AWS; Python; Snowflake,2,2023-09-22,False,False,Expired
+JOB-0250,Data Analyst,Highspot,"Kirkland, WA",Hybrid,115000,125000,R; GCP; Machine Learning; BigQuery,3,2024-09-26,False,False,Active
+JOB-0251,BI Analyst,IQVIA,"Bellevue, WA",Hybrid,,,Spark; Power BI; Communication; Azure; dbt; R; Excel,1,2024-08-01,False,False,Active
+JOB-0252,Marketing Data Analyst,Microsoft,"Redmond, WA",Remote,,,Tableau; Data Modeling; Looker; Azure; A/B Testing,1,2024-06-13,False,False,Active
+JOB-0253,Finance Analyst,Expedia,"Kirkland, WA",On-site,100000,125000,AWS; Excel; Azure; Machine Learning,0,2024-11-28,False,False,Active
+JOB-0254,Jr. Data Analyst,Microsoft,"Kirkland, WA",Remote,100000,115000,Snowflake; Spark; BigQuery; Machine Learning; Azure,1,2023-04-12,False,False,Expired
+JOB-0255,Finance Analyst,Microsoft,"Seattle, WA",Remote,,,Stakeholder Management; Python; SQL; R,1,2024-12-23,True,False,Active
+JOB-0256,Jr. Data Engineer,Microsoft,"Bellevue, WA",On-site,,,Data Modeling; Excel; Communication; Power BI; Statistics,3,2024-11-01,False,False,Active
+JOB-0257,Product Analyst,Deloitte,"Kirkland, WA",Hybrid,,,Power BI; dbt; Statistics; Stakeholder Management; A/B Testing,0,2024-10-28,True,False,Active
+JOB-0258,Associate Data Engineer,EY,Remote,Hybrid,100000,120000,Looker; R; Excel; Power BI; BigQuery; Spark; Data Modeling,3,2024-12-15,False,False,Active
+JOB-0259,Analytics Engineer,Providence Health,Remote,On-site,,,Power BI; Python; Data Modeling; Excel; SQL; dbt; Spark,2,2024-06-13,False,False,Active
+JOB-0260,Business Intelligence Developer,Outreach,"Redmond, WA",On-site,80000,100000,AWS; Tableau; A/B Testing; GCP; dbt; Snowflake,1,2024-11-09,False,True,Active
+JOB-0261,Business Intelligence Developer,Microsoft,"Seattle, WA",Hybrid,72000,87000,Looker; SQL; Azure; dbt; R,2,2024-11-22,True,False,Active
+JOB-0262,Jr. Data Engineer,Providence Health,"Redmond, WA",Remote,80000,95000,Tableau; Statistics; GCP,2,2024-07-02,False,False,Active
+JOB-0263,Associate Data Analyst,KPMG,"Redmond, WA",Remote,72000,92000,Tableau; SQL; Machine Learning; Power BI,1,2024-11-08,False,False,Active
+JOB-0264,Business Intelligence Developer,Outreach,"Redmond, WA",Hybrid,55000,80000,Communication; Data Modeling; Stakeholder Management; GCP,2,2024-07-19,False,False,Active
+JOB-0265,Data Scientist,Microsoft,"Redmond, WA",Remote,,,Looker; dbt; GCP; Excel; Data Modeling,1,2024-07-17,False,False,Active
+JOB-0266,Digital Marketing Analyst,Costco,"Kirkland, WA",On-site,,,Communication; Looker; Power BI; Tableau; dbt; Python; Statistics,3,2024-08-25,False,False,Active
+JOB-0267,Growth Analyst,Deloitte,Remote,On-site,115000,125000,Communication; Stakeholder Management; Snowflake; Statistics; SQL; GCP; Azure,2,2024-07-03,False,False,Active
+JOB-0268,FP&A Analyst,PwC,"Kirkland, WA",Hybrid,,,dbt; Python; Tableau; Power BI; Machine Learning,3,2024-09-05,True,False,Active
+JOB-0269,Associate Product Analyst,McKinsey,"Redmond, WA",On-site,,,Data Modeling; Machine Learning; A/B Testing; Looker; SQL; Stakeholder Management; Snowflake,0,2024-10-06,False,True,Active
+JOB-0270,Associate Product Analyst,Expedia,"Kirkland, WA",Remote,100000,120000,Stakeholder Management; Machine Learning; Azure,2,2024-10-28,False,False,Active
+JOB-0271,Finance Analyst,Seattle Children's,"Redmond, WA",Hybrid,100000,110000,AWS; Communication; Data Modeling; Machine Learning; Excel; A/B Testing; Snowflake,3,2024-11-21,False,False,Active
+JOB-0272,Associate Product Analyst,Boeing,Remote,Hybrid,65000,80000,Power BI; Spark; R; dbt; GCP,1,2024-06-06,True,False,Active
+JOB-0273,Digital Marketing Analyst,Amazon,"Seattle, WA",On-site,,,SQL; Excel; AWS,1,2024-08-21,False,False,Active
+JOB-0274,Analytics Engineer,Deloitte,"Bellevue, WA",On-site,65000,80000,dbt; Tableau; A/B Testing; Machine Learning; Excel; Looker; Snowflake,2,2024-10-18,False,False,Active
+JOB-0275,Business Intelligence Analyst,McKinsey,Remote,Remote,100000,110000,SQL; Data Modeling; Python; Power BI; Communication; Statistics,2,2024-06-16,False,False,Active
+JOB-0276,Marketing Data Analyst,Remitly,"Seattle, WA",On-site,90000,110000,Tableau; R; Data Modeling; Snowflake,1,2024-06-27,False,True,Active
+JOB-0277,Growth Analyst,Costco,"Bellevue, WA",Remote,,,Snowflake; SQL; A/B Testing; Power BI; Excel,0,2024-06-10,False,False,Active
+JOB-0278,Analytics Engineer,McKinsey,"Kirkland, WA",On-site,115000,125000,SQL; Spark; R,3,2024-10-13,False,False,Active
+JOB-0279,Associate Data Analyst,Deloitte,"Redmond, WA",Remote,80000,90000,Tableau; Statistics; dbt; Looker; Data Modeling,2,2024-07-16,True,False,Active
+JOB-0280,Associate Financial Analyst,Starbucks,Remote,On-site,90000,115000,Power BI; Machine Learning; Communication; Tableau,1,2024-06-09,False,False,Active
+JOB-0281,Marketing Data Analyst,Outreach,"Bellevue, WA",Remote,100000,115000,Tableau; Excel; A/B Testing; Power BI,2,2024-10-05,False,False,Active
+JOB-0282,"Analyst, Data",Zillow,"Bellevue, WA",Remote,115000,125000,Communication; Azure; Looker; Power BI,3,2024-07-01,False,False,Active
+JOB-0283,Growth Analyst,Accenture,"Seattle, WA",On-site,115000,140000,A/B Testing; Statistics; Python; GCP,3,2024-12-15,False,False,Active
+JOB-0284,Product Data Analyst,Tableau,"Bellevue, WA",Remote,115000,130000,Azure; Tableau; Power BI; AWS,2,2024-06-20,False,False,Active
+JOB-0285,Analytics Engineer,Costco,"Redmond, WA",On-site,,,Spark; Looker; Data Modeling,1,2024-10-12,False,False,Active
+JOB-0286,Data Engineer,Highspot,"Seattle, WA",Hybrid,72000,92000,Tableau; Python; BigQuery; AWS; Communication,1,2024-11-26,False,False,Active
+JOB-0287,FP&A Analyst,Seattle Children's,"Seattle, WA",Hybrid,,,BigQuery; Statistics; Snowflake; R; Excel; SQL,3,2024-08-26,False,False,Active
+JOB-0288,Marketing Data Analyst,Deloitte,"Redmond, WA",On-site,80000,105000,Tableau; A/B Testing; Stakeholder Management,0,2024-11-22,False,False,Active
+JOB-0289,Finance Analyst,Providence Health,"Bellevue, WA",On-site,80000,90000,Machine Learning; Excel; A/B Testing; R; Snowflake; dbt; Azure,2,2024-11-14,False,False,Active
+JOB-0290,Data Scientist I,Seattle Children's,Remote,Hybrid,,,Excel; Snowflake; A/B Testing; dbt; Spark,2,2024-08-05,False,False,Active
+JOB-0291,Business Operations Analyst,Zillow,"Bellevue, WA",Hybrid,72000,92000,Communication; GCP; Python; Machine Learning; BigQuery; SQL,3,2024-07-12,False,False,Active
+JOB-0292,Ops Analyst,KPMG,Remote,Hybrid,72000,97000,Data Modeling; GCP; Statistics; R; Spark; BigQuery; A/B Testing,2,2024-11-05,False,False,Active
+JOB-0293,Ops Analyst,PwC,"Redmond, WA",Hybrid,115000,125000,SQL; dbt; Excel; Power BI; Data Modeling; Statistics; GCP,2,2024-07-01,False,False,Active
+JOB-0294,BI Analyst,Microsoft,Remote,On-site,,,Stakeholder Management; BigQuery; Excel,1,2024-09-07,True,False,Active
+JOB-0295,Data Scientist I,Accenture,Remote,Hybrid,100000,120000,Machine Learning; A/B Testing; Python,0,2024-08-12,False,False,Active
+JOB-0296,Operations Analyst,IQVIA,"Kirkland, WA",Hybrid,90000,100000,Looker; Python; BigQuery; AWS; Stakeholder Management; Azure,2,2024-07-02,False,False,Active
+JOB-0297,Data Engineer,Starbucks,"Bellevue, WA",Remote,65000,90000,Tableau; Azure; Communication; Data Modeling; Machine Learning; Looker,1,2023-12-07,False,False,Expired
+JOB-0298,Business Intelligence Developer,Starbucks,"Bellevue, WA",On-site,80000,95000,AWS; Spark; Stakeholder Management; Tableau; A/B Testing; Python,1,2024-07-18,False,False,Active
+JOB-0299,Finance Analyst,Expedia,"Kirkland, WA",On-site,55000,70000,GCP; BigQuery; dbt; Excel; SQL; Azure; Spark,1,2024-09-15,False,False,Active
+JOB-0300,Data Analyst,Starbucks,"Redmond, WA",Remote,80000,100000,AWS; A/B Testing; Spark,2,2023-03-06,False,False,Expired
+JOB-0301,Digital Marketing Analyst,IQVIA,Remote,Hybrid,55000,80000,Azure; AWS; Statistics; Data Modeling,0,2024-06-03,False,False,Active
+JOB-0302,Financial Analyst,PwC,"Kirkland, WA",On-site,,,Data Modeling; BigQuery; AWS; Statistics; Communication; Snowflake; Looker,1,2024-10-22,True,False,Active
+JOB-0303,Growth Analyst,Nordstrom,"Bellevue, WA",Hybrid,,,GCP; dbt; Stakeholder Management; A/B Testing; Machine Learning; Communication; Data Modeling,1,2024-10-11,False,False,Active
+JOB-0304,Marketing Data Analyst,T-Mobile,"Kirkland, WA",Remote,55000,80000,Machine Learning; R; Tableau; Data Modeling; Statistics,2,2024-11-07,False,False,Active
+JOB-0305,Growth Analyst,REI,"Seattle, WA",Hybrid,,,Python; Stakeholder Management; Machine Learning; Data Modeling,0,2024-06-25,False,False,Active
+JOB-0306,Marketing Data Analyst,Remitly,"Redmond, WA",On-site,90000,105000,Communication; BigQuery; SQL; Power BI; Python,0,2024-08-26,False,False,Active
+JOB-0307,Data Engineer,Nordstrom,"Redmond, WA",Remote,80000,100000,Data Modeling; A/B Testing; R; dbt; Statistics,1,2024-12-12,False,False,Active
+JOB-0308,Product Analyst,Deloitte,Remote,On-site,,,dbt; Data Modeling; Azure; Communication,1,2024-10-18,True,False,Active
+JOB-0309,Jr. Data Scientist,Remitly,Remote,Remote,,,Excel; dbt; GCP,2,2024-10-21,False,False,Active
+JOB-0310,Associate Data Scientist,Auth0,"Bellevue, WA",Hybrid,115000,140000,SQL; Python; Looker; GCP,0,2024-12-09,False,False,Active
+JOB-0311,Ops Analyst,Microsoft,Remote,Remote,,,Data Modeling; SQL; GCP,2,2024-12-15,True,False,Active
+JOB-0312,Product Data Analyst,Expedia,"Kirkland, WA",Hybrid,115000,130000,Spark; Snowflake; Machine Learning; Tableau,3,2024-11-11,False,False,Active
+JOB-0313,Business Intelligence Developer,Tableau,"Seattle, WA",On-site,55000,70000,dbt; Tableau; Azure,1,2024-07-21,False,False,Active
+JOB-0314,Jr. Data Scientist,Boeing,"Kirkland, WA",Hybrid,55000,75000,GCP; Data Modeling; Tableau; Machine Learning; Snowflake; dbt; Stakeholder Management,2,2023-11-04,False,False,Expired
+JOB-0315,Marketing Analyst,T-Mobile,"Seattle, WA",Hybrid,90000,115000,BigQuery; Communication; Statistics; Excel; AWS; Python; Tableau,3,2024-08-06,False,False,Active
+JOB-0316,Business Operations Analyst,Microsoft,"Redmond, WA",Hybrid,80000,100000,Python; Data Modeling; Looker,1,2024-12-26,False,False,Active
+JOB-0317,Jr. Data Analyst,Starbucks,"Bellevue, WA",Remote,,,Spark; R; Communication,1,2024-06-15,False,False,Active
+JOB-0318,Associate Data Engineer,Outreach,"Seattle, WA",On-site,100000,110000,BigQuery; GCP; Azure; Tableau; R; Communication; Power BI,1,2024-08-18,False,False,Active
+JOB-0319,Associate Financial Analyst,Boeing,"Bellevue, WA",Remote,72000,92000,Power BI; Stakeholder Management; Communication; BigQuery; Statistics,3,2024-06-25,False,False,Active
+JOB-0320,Associate Data Analyst,Highspot,"Bellevue, WA",Hybrid,,,Looker; A/B Testing; Spark; Azure; Power BI,3,2024-06-21,False,False,Active
+JOB-0321,Jr. Data Engineer,Providence Health,"Seattle, WA",Remote,72000,92000,Stakeholder Management; Azure; dbt,3,2024-11-04,False,False,Active
+JOB-0322,Product Analyst,Zillow,Remote,Hybrid,,,BigQuery; SQL; Stakeholder Management; Statistics; Snowflake; AWS; R,1,2024-12-13,False,False,Active
+JOB-0323,Product Data Analyst,T-Mobile,"Kirkland, WA",Remote,55000,70000,GCP; Looker; AWS,0,2024-08-15,False,False,Active
+JOB-0324,Marketing Analyst,Amazon,"Seattle, WA",On-site,80000,95000,Stakeholder Management; A/B Testing; Communication; Azure,1,2024-10-09,True,False,Active
+JOB-0325,Product Analyst,REI,"Bellevue, WA",On-site,115000,135000,Python; Excel; dbt; Tableau; Spark; GCP,1,2024-07-20,False,False,Active
+JOB-0326,Analytics Engineer,PwC,"Redmond, WA",Hybrid,55000,80000,SQL; A/B Testing; R; Excel,0,2024-07-03,False,False,Active
+JOB-0327,Jr. Data Analyst,Convoy,"Seattle, WA",Remote,,,Stakeholder Management; Excel; GCP; Statistics; Power BI; Azure; Communication,1,2024-06-22,False,False,Active
+JOB-0328,Product Data Analyst,Accenture,"Redmond, WA",Remote,55000,70000,Looker; AWS; GCP; SQL; Statistics; BigQuery; Python,1,2024-07-11,False,False,Active
+JOB-0329,Marketing Analyst,Seattle Children's,"Bellevue, WA",Hybrid,65000,75000,A/B Testing; SQL; Statistics,1,2024-10-22,False,False,Active
+JOB-0330,Product Data Analyst,Expedia,"Seattle, WA",Remote,,,GCP; Stakeholder Management; A/B Testing; Spark; Power BI,1,2024-10-03,False,False,Active
+JOB-0331,Jr. Data Engineer,T-Mobile,"Bellevue, WA",Hybrid,,,Stakeholder Management; Python; A/B Testing,1,2023-01-08,False,False,Expired
+JOB-0332,Growth Analyst,Highspot,"Redmond, WA",On-site,,,Stakeholder Management; Excel; GCP,2,2024-07-06,False,False,Active
+JOB-0333,Financial Analyst,Boeing,"Bellevue, WA",Remote,,,Excel; Python; Looker; Power BI; Communication; Snowflake,1,2024-07-17,False,False,Active
+JOB-0334,Business Operations Analyst,Convoy,"Kirkland, WA",Remote,55000,70000,Power BI; SQL; Azure; Statistics; R; Data Modeling; AWS,1,2024-10-28,False,False,Active
+JOB-0335,Finance Analyst,Boeing,"Redmond, WA",Hybrid,72000,92000,Statistics; Azure; BigQuery; A/B Testing; Looker; Power BI,3,2024-08-20,True,False,Active
+JOB-0336,FP&A Analyst,Convoy,"Seattle, WA",On-site,55000,75000,dbt; Snowflake; AWS; GCP,1,2024-06-21,False,False,Active
+JOB-0337,Financial Analyst,Nordstrom,Remote,On-site,72000,97000,Communication; dbt; Power BI; Snowflake; BigQuery; Tableau; Stakeholder Management,1,2024-09-05,False,True,Active
+JOB-0338,Analytics Engineer,Outreach,"Kirkland, WA",Hybrid,,,Data Modeling; Machine Learning; Azure; Statistics; AWS,0,2024-08-14,False,False,Active
+JOB-0339,Business Intelligence Developer,Boeing,"Kirkland, WA",Remote,80000,90000,Statistics; Spark; R; Excel,0,2024-06-22,True,False,Active
+JOB-0340,Operations Analyst,Accenture,"Redmond, WA",Remote,,,Spark; Excel; R; Python; Data Modeling,2,2024-08-16,False,False,Active
+JOB-0341,Financial Analyst,T-Mobile,"Kirkland, WA",Remote,65000,75000,Power BI; Machine Learning; Snowflake; BigQuery; Azure,2,2024-07-02,False,False,Active
+JOB-0342,FP&A Analyst,REI,"Seattle, WA",Remote,65000,85000,Data Modeling; Statistics; Communication; Python,1,2024-10-22,False,False,Active
+JOB-0343,Jr. Data Analyst,McKinsey,Remote,Remote,,,Python; A/B Testing; Stakeholder Management; GCP,0,2024-10-20,False,False,Active
+JOB-0344,Data Engineer,Zillow,Remote,On-site,65000,80000,Azure; Machine Learning; R; Looker; Tableau,0,2024-11-11,False,False,Active
+JOB-0345,Analytics Engineer,Highspot,"Kirkland, WA",Remote,65000,75000,Power BI; Data Modeling; Machine Learning; Python; Excel; Stakeholder Management; Spark,1,2024-07-07,False,False,Active
+JOB-0346,Associate Product Analyst,T-Mobile,"Bellevue, WA",On-site,72000,87000,BigQuery; Spark; Data Modeling; Tableau; Looker; Snowflake,2,2024-08-25,False,False,Active
+JOB-0347,Data Engineer,Convoy,"Bellevue, WA",Remote,80000,90000,SQL; GCP; R; dbt; Power BI; Data Modeling; Communication,2,2024-12-21,False,False,Active
+JOB-0348,Product Data Analyst,Microsoft,Remote,Hybrid,,,dbt; Communication; Looker; Python; GCP; Power BI,3,2024-10-19,True,False,Active
+JOB-0349,Associate Product Analyst,McKinsey,"Bellevue, WA",Hybrid,80000,90000,Data Modeling; SQL; Stakeholder Management; Machine Learning; Tableau,2,2024-10-14,False,False,Active
+JOB-0350,Marketing Data Analyst,Amazon,"Kirkland, WA",Hybrid,80000,90000,Power BI; AWS; BigQuery; Looker; Spark; Stakeholder Management; Statistics,3,2024-08-05,True,False,Active
+JOB-0351,Jr. Data Engineer,Auth0,"Seattle, WA",Hybrid,115000,140000,Azure; AWS; Data Modeling; Communication; Snowflake,1,2023-01-11,False,False,Expired
+JOB-0352,Jr. Data Scientist,Outreach,Remote,On-site,90000,110000,A/B Testing; Snowflake; Data Modeling; Stakeholder Management; dbt; Spark; Statistics,1,2024-08-04,False,False,Active
+JOB-0353,Data Analyst,Amazon,"Kirkland, WA",Remote,65000,85000,Azure; SQL; Excel; Looker; R,2,2024-10-20,False,False,Active
+JOB-0354,Jr. Data Scientist,Auth0,"Kirkland, WA",Remote,,,Snowflake; Looker; Communication,2,2023-11-26,False,False,Expired
+JOB-0355,Growth Analyst,Amazon,"Kirkland, WA",Remote,,,AWS; Looker; Snowflake; R; GCP; Power BI; dbt,1,2024-10-15,False,False,Active
+JOB-0356,Financial Analyst,Zillow,"Kirkland, WA",Remote,,,Spark; SQL; Machine Learning; Communication,2,2024-07-25,False,False,Active
+JOB-0357,Data Scientist,Outreach,Remote,Hybrid,90000,100000,Data Modeling; Statistics; AWS; Machine Learning; Power BI; Python; Communication,1,2024-10-21,False,True,Active
+JOB-0358,Jr. Data Scientist,Zillow,"Bellevue, WA",Remote,,,Azure; Tableau; GCP; R; Python; Snowflake,2,2023-12-11,False,False,Expired
+JOB-0359,Product Analyst,Zillow,"Bellevue, WA",Hybrid,115000,130000,Snowflake; Data Modeling; dbt,1,2024-09-03,False,False,Active
+JOB-0360,Associate Data Scientist,EY,"Seattle, WA",Remote,55000,75000,GCP; Python; Data Modeling; Machine Learning; Excel; dbt; Statistics,1,2024-12-05,False,False,Active
+JOB-0361,Marketing Data Analyst,IQVIA,"Bellevue, WA",Hybrid,100000,115000,Data Modeling; R; BigQuery; Looker; Python; SQL; Power BI,1,2024-08-28,False,False,Active
+JOB-0362,Associate Data Scientist,IQVIA,"Redmond, WA",On-site,,,GCP; Snowflake; Excel; Spark,3,2024-06-12,False,False,Active
+JOB-0363,Jr. Data Scientist,Starbucks,"Redmond, WA",Remote,90000,105000,Tableau; Looker; Excel; Spark,3,2024-09-06,False,False,Active
+JOB-0364,Financial Analyst,Outreach,"Kirkland, WA",Remote,72000,82000,A/B Testing; GCP; Looker,1,2023-03-22,False,False,Expired
+JOB-0365,Jr. Data Scientist,Amazon,"Seattle, WA",Hybrid,115000,135000,BigQuery; Data Modeling; Stakeholder Management,2,2024-09-26,True,False,Active
+JOB-0366,Business Operations Analyst,Auth0,"Seattle, WA",Hybrid,90000,110000,Power BI; Data Modeling; AWS; SQL; Stakeholder Management,2,2024-09-20,False,False,Active
+JOB-0367,Data Engineer,Microsoft,"Kirkland, WA",Hybrid,115000,140000,Tableau; Stakeholder Management; AWS; BigQuery; Spark; Data Modeling; dbt,1,2024-10-13,False,False,Active
+JOB-0368,Associate Data Analyst,Zillow,"Redmond, WA",Hybrid,,,Snowflake; dbt; SQL,2,2024-11-19,False,False,Active
+JOB-0369,Operations Analyst,Remitly,"Kirkland, WA",On-site,55000,70000,Machine Learning; Azure; Excel; Communication; SQL; BigQuery,0,2024-12-02,False,False,Active
+JOB-0370,FP&A Analyst,Tableau,"Kirkland, WA",On-site,,,Snowflake; Communication; Machine Learning; Stakeholder Management; Power BI; dbt,1,2024-12-23,False,False,Active
+JOB-0371,Data Analyst,Microsoft,"Bellevue, WA",Remote,65000,85000,Statistics; Power BI; Snowflake; Python; A/B Testing; SQL,1,2024-12-25,True,False,Active
+JOB-0372,Associate Financial Analyst,Auth0,"Seattle, WA",On-site,,,Communication; BigQuery; A/B Testing; Data Modeling; Power BI; Tableau,1,2024-09-13,False,False,Active
+JOB-0373,Product Data Analyst,Accenture,"Seattle, WA",On-site,100000,125000,Tableau; AWS; Statistics; dbt; R,1,2024-06-23,False,False,Active
+JOB-0374,Business Operations Analyst,Providence Health,"Seattle, WA",On-site,55000,65000,GCP; Power BI; Stakeholder Management; R,0,2024-06-04,False,False,Active
+JOB-0375,"Analyst, Data",Starbucks,"Seattle, WA",Hybrid,100000,115000,R; Spark; BigQuery; Stakeholder Management; Tableau,2,2024-11-03,False,False,Active
+JOB-0376,Marketing Analyst,Auth0,"Seattle, WA",Hybrid,,,Spark; Power BI; SQL,2,2024-06-10,False,False,Active
+JOB-0377,"Analyst, Data",Amazon,"Kirkland, WA",On-site,,,Machine Learning; Power BI; Azure; Data Modeling; Looker; SQL; dbt,2,2024-09-28,False,False,Active
+JOB-0378,"Analyst, Data",Tableau,"Redmond, WA",Hybrid,65000,75000,Data Modeling; Power BI; Communication; Spark; AWS; Looker,2,2024-06-08,False,False,Active
+JOB-0379,Associate Data Engineer,Expedia,"Redmond, WA",Remote,115000,140000,BigQuery; Snowflake; Data Modeling; AWS; GCP; R; Statistics,0,2024-09-27,False,False,Active
+JOB-0380,Jr. Data Analyst,Convoy,"Seattle, WA",On-site,115000,125000,Communication; Python; Machine Learning; Power BI,0,2024-10-08,False,False,Active
+JOB-0381,Data Analyst,Zillow,"Kirkland, WA",On-site,,,A/B Testing; Snowflake; Communication,1,2024-12-22,False,False,Active
+JOB-0382,Data Analyst,Seattle Children's,"Redmond, WA",Remote,115000,135000,A/B Testing; Spark; Python; Power BI; Snowflake; Data Modeling,3,2024-07-15,False,False,Active
+JOB-0383,BI Developer,Amazon,"Kirkland, WA",Remote,100000,110000,A/B Testing; Azure; Spark; Machine Learning; BigQuery; dbt,2,2024-09-03,True,False,Active
+JOB-0384,"Analyst, Data",EY,"Redmond, WA",Remote,90000,100000,GCP; dbt; SQL; Power BI; Excel; Looker; Python,2,2024-09-09,False,False,Active
+JOB-0385,BI Analyst,Zillow,Remote,Remote,,,R; GCP; Data Modeling; Communication,1,2024-09-03,False,False,Active
+JOB-0386,BI Analyst,IQVIA,Remote,Remote,,,SQL; A/B Testing; Machine Learning; dbt; Azure,1,2024-08-16,False,False,Active
+JOB-0387,Jr. Data Scientist,Starbucks,"Bellevue, WA",Hybrid,90000,110000,Snowflake; Excel; AWS; Looker,1,2024-10-09,False,False,Active
+JOB-0388,Business Operations Analyst,IQVIA,"Kirkland, WA",Remote,,,BigQuery; Communication; A/B Testing; Power BI,1,2024-10-10,False,False,Active
+JOB-0389,Finance Analyst,Deloitte,"Seattle, WA",Hybrid,55000,65000,Snowflake; Excel; R; A/B Testing; Communication; Data Modeling,1,2024-10-18,False,False,Active
+JOB-0390,Product Data Analyst,Expedia,"Bellevue, WA",Remote,100000,125000,Python; A/B Testing; Machine Learning; dbt; Spark,0,2024-12-14,False,False,Active
+JOB-0391,Finance Analyst,McKinsey,"Kirkland, WA",Hybrid,90000,115000,Azure; Snowflake; Looker; AWS; Data Modeling; Spark; BigQuery,1,2023-04-19,False,False,Expired
+JOB-0392,Business Intelligence Developer,Accenture,"Kirkland, WA",Hybrid,72000,82000,Stakeholder Management; Tableau; Excel; A/B Testing; Azure; Looker; Spark,1,2024-10-25,False,False,Active
+JOB-0393,Jr. Data Engineer,Auth0,"Bellevue, WA",On-site,,,Data Modeling; GCP; Azure,0,2023-06-03,False,False,Expired
+JOB-0394,Ops Analyst,Starbucks,"Kirkland, WA",Hybrid,72000,87000,BigQuery; Machine Learning; Azure; R; dbt; Stakeholder Management; GCP,2,2024-08-07,False,False,Active
+JOB-0395,BI Developer,McKinsey,"Redmond, WA",Hybrid,55000,80000,AWS; R; GCP; Statistics; BigQuery; A/B Testing; Communication,3,2024-06-13,False,False,Active
+JOB-0396,Associate Data Analyst,Outreach,"Redmond, WA",On-site,65000,80000,GCP; R; Communication; Stakeholder Management; BigQuery; Machine Learning; Azure,3,2024-09-27,False,False,Active
+JOB-0397,Data Scientist I,Outreach,"Kirkland, WA",On-site,55000,70000,Snowflake; Azure; Statistics,0,2024-11-17,False,False,Active
+JOB-0398,Associate Data Analyst,Auth0,"Seattle, WA",On-site,65000,90000,Python; Spark; Stakeholder Management; Tableau; Excel; Power BI; SQL,1,2024-10-21,False,False,Active
+JOB-0399,Ops Analyst,Expedia,"Seattle, WA",On-site,65000,90000,Excel; Communication; GCP; A/B Testing; AWS,2,2024-06-06,False,False,Active
+JOB-0400,Digital Marketing Analyst,EY,"Seattle, WA",On-site,90000,115000,Python; Power BI; Snowflake; Azure,0,2024-12-15,False,False,Active
