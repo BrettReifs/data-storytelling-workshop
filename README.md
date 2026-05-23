@@ -121,7 +121,7 @@ npm run dev      # Dev server at http://localhost:3030
 npm run export   # Export to PPTX (requires playwright-chromium)
 ```
 
-Slides are also deployed to Vercel. See the repo description for the public URL.
+Slides are also deployed to Vercel: **[data-storytelling-workshop.vercel.app](https://data-storytelling-workshop.vercel.app)**
 
 ## License
 
