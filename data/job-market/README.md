@@ -30,6 +30,8 @@ Synthetic data representing the Seattle-area data analytics job and internship m
 - `status = Expired`: ~8% of rows are old listings (2023) still in the feed from aggregator sources.
 - `is_duplicate_flag = true`: ~5% of rows are near-duplicate postings from the same company.
 
+See [`../QUALITY-ISSUES.md`](../QUALITY-ISSUES.md) for root cause analysis and real-world frequency assessment of all quality issues.
+
 **Row count:** 400
 
 ---

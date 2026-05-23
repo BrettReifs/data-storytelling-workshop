@@ -25,6 +25,8 @@ Daily transaction records for 5 campus coffee shops, July 1 – December 31, 202
 - `shop_name`: "HUB Coffee" appears as "The HUB," "hub-coffee," and "HUB." Standardize before grouping.
 - Shop S3 (Suzzallo Roasters): daily transaction count is suspiciously flat (28-32/day). Possible POS sync issue since October 2024.
 
+See [`../QUALITY-ISSUES.md`](../QUALITY-ISSUES.md) for root cause analysis and real-world frequency assessment of all quality issues.
+
 **Approximate volume:** ~46,000 rows
 
 ---
