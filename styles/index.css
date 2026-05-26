@@ -15,6 +15,7 @@
   --uw-purple-light: #EDE8F5;
   --uw-gold:         #B7A57A;
   --uw-gold-bright:  #D4A853;
+  --uw-gold-dark:    #785A0F;   /* WCAG AA: 6.4:1 on white, for labels on light backgrounds */
   --uw-gold-pale:    #FAF5E8;
 
   /* Typography */
@@ -75,14 +76,21 @@
 
 /* ─── Utility classes ────────────────────────────────────────────────── */
 
-/* Gold accent label */
+/* Gold accent label.
+   Default color (gold-bright) is used on dark hero slides where it passes AA (~4.7:1).
+   On light slide classes, swap to the darker gold variant so it still passes AA. */
 .uw-label {
   font-family: var(--ds-font-mono);
-  font-size: 0.65rem;
+  font-size: 0.7rem;             /* bumped from 0.65rem for legibility */
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--uw-gold-bright);
-  font-weight: 600;
+  font-weight: 700;
+}
+.slidev-layout.section .uw-label,
+.slidev-layout.reveal  .uw-label,
+.slidev-layout.demo    .uw-label {
+  color: var(--uw-gold-dark);
 }
 
 /* Purple heading */
@@ -130,6 +138,34 @@
   transition: background 0.15s, color 0.15s;
 }
 .purple-cta:hover { background: var(--uw-purple); color: #fff; }
+
+/* When .purple-cta is rendered on a dark hero gradient the default purple-on-purple
+   has ~2:1 contrast and fails WCAG. Override to white outline + white text on hero. */
+.slidev-layout.hero .purple-cta {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.slidev-layout.hero .purple-cta:hover {
+  background: #ffffff;
+  color: var(--uw-purple);
+}
+
+/* Ensure markdown inline code and links stay readable on hero gradients. */
+.slidev-layout.hero :not(pre) > code {
+  background: rgba(255, 255, 255, 0.94);
+  color: #2D1A52;
+  border: 1px solid rgba(45, 26, 82, 0.22);
+  font-weight: 600;
+}
+
+.slidev-layout.hero a {
+  color: #FCE8B2;
+  text-decoration-color: currentColor;
+}
+
+.slidev-layout.hero a:hover {
+  color: #FFFFFF;
+}
 
 /* Confidence score badge */
 .confidence-badge {

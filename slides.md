@@ -158,7 +158,7 @@ class: reveal
 <div class="agenda-page">
 <div class="uw-label mb-4">The Plan</div>
 
-# 4-Step Visual Agenda
+# 4 Milestones
 
 <div class="uw-rule mt-3 mb-5"></div>
 
