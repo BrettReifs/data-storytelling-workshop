@@ -71,10 +71,12 @@ python scripts/generate_data.py  # Regenerate all synthetic data files
 
 ### Workshop skills
 bootstrap-preflight       | preflight check, environment setup, verify tools, student quickstart, presenter setup | skills/bootstrap-preflight/SKILL.md
+slidev                    | edit slides.md, add Slidev slide, code walkthrough slide, magic-move animation, layout/transition help (antfu/skills@slidev) | skills/slidev/SKILL.md
 data-confidence-scorer    | confidence scores, add confidence, document assumptions, source lineage, audit analysis, defensible report | skills/data-confidence-scorer/SKILL.md
 data-refinement-interview | pre-analysis interview, refine scope, ask questions before analyzing, structured intake, grill data | skills/data-refinement-interview/SKILL.md
 html-infographic-builder  | create data report, generate infographic, make this visual, HTML dashboard, chart from data | skills/html-infographic-builder/SKILL.md
 spotlight-walkthrough     | add tour, guided walkthrough, Shepherd.js, interactive report, self-presenting, tour the report | skills/spotlight-walkthrough/SKILL.md
+live-demo-recipe          | add live demo slide, convert M1/M2/M4 to recipe card, use RecipeDemo, recipe-card walkthrough, demo funnel slide | skills/live-demo-recipe/SKILL.md
 sync-skills-index         | update skills index, sync AGENTS.md, regenerate skills list, stale index | skills/sync-skills-index/SKILL.md
 
 ## Safe Defaults
