@@ -1,0 +1,47 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0d0d" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0d0d0d" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <!-- Terminal background -->
+  <rect width="560" height="370" fill="#0d0d0d"/>
+  <!-- Terminal chrome -->
+  <rect width="560" height="28" fill="#1c1c1c"/>
+  <circle cx="14" cy="14" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="14" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="14" r="4.5" fill="#28CA41"/>
+  <text x="280" y="19" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#666" text-anchor="middle">Terminal — programmatic EDA</text>
+  <!-- Terminal content -->
+  <rect x="0" y="28" width="560" height="342" fill="#0d0d0d"/>
+  <!-- Shell prompt + command -->
+  <text x="18" y="52" font-family="Consolas,monospace" font-size="11" fill="#3fb950">❯</text>
+  <text x="32" y="52" font-family="Consolas,monospace" font-size="11" fill="#e6edf3">/programmatic-eda  data/coffee-shops/</text>
+  <text x="18" y="70" font-family="Consolas,monospace" font-size="10" fill="#484f58">Running EDA on 5 files in data/coffee-shops/ …</text>
+  <!-- Divider -->
+  <line x1="18" y1="80" x2="542" y2="80" stroke="#333" stroke-width="1"/>
+  <!-- Issue 1 — Anomaly (yellow/gold) -->
+  <rect x="18" y="88" width="524" height="54" rx="5" fill="#1a1500" stroke="#5a3e0a" stroke-width="1"/>
+  <text x="30" y="106" font-family="Consolas,monospace" font-size="10" fill="#e3b341" font-weight="700">⚠ ANOMALY  [shop-sales.csv]</text>
+  <text x="30" y="122" font-family="Consolas,monospace" font-size="10" fill="#d4a853">   rows 2847–2893:  S3 Capitol Hill  47 consecutive days · $0.00 revenue</text>
+  <text x="30" y="136" font-family="Consolas,monospace" font-size="9" fill="#8b6914">   Possible data quality issue — investigate before including in analysis</text>
+  <!-- Issue 2 — Format (blue) -->
+  <rect x="18" y="152" width="524" height="54" rx="5" fill="#0a1625" stroke="#1f4e8c" stroke-width="1"/>
+  <text x="30" y="170" font-family="Consolas,monospace" font-size="10" fill="#79c0ff" font-weight="700">⚠ FORMAT   [shop-sales.csv]</text>
+  <text x="30" y="186" font-family="Consolas,monospace" font-size="10" fill="#58a6ff">   rows 1–100:  MM/DD/YYYY   vs   rows 101+: YYYY-MM-DD</text>
+  <text x="30" y="200" font-family="Consolas,monospace" font-size="9" fill="#388bfd">   Date format inconsistency — normalize before time-series aggregation</text>
+  <!-- Issue 3 — Entity (orange/red) -->
+  <rect x="18" y="216" width="524" height="54" rx="5" fill="#1a0a00" stroke="#7a2e0a" stroke-width="1"/>
+  <text x="30" y="234" font-family="Consolas,monospace" font-size="10" fill="#f0883e" font-weight="700">⚠ ENTITY   [shop-profiles.md]</text>
+  <text x="30" y="250" font-family="Consolas,monospace" font-size="10" fill="#db7c26">   "HUB Coffee"  ·  "Hub Coffee LLC"  ·  "HUB Coffee Co."  →  3 records</text>
+  <text x="30" y="264" font-family="Consolas,monospace" font-size="9" fill="#9a5820">   Entity resolution needed — merge as single shop or revenue is split</text>
+  <!-- Summary line -->
+  <line x1="18" y1="280" x2="542" y2="280" stroke="#333" stroke-width="1"/>
+  <text x="18" y="298" font-family="Consolas,monospace" font-size="11" fill="#3fb950">✓ EDA complete</text>
+  <text x="150" y="298" font-family="Consolas,monospace" font-size="10" fill="#8b949e">3 issues flagged  ·  0 critical data losses  ·  ready for scoped analysis</text>
+  <!-- Cursor -->
+  <text x="18" y="318" font-family="Consolas,monospace" font-size="11" fill="#3fb950">❯ </text>
+  <rect x="28" y="305" width="8" height="14" fill="#3fb950" opacity="0.7"/>
+  <rect x="0" y="326" width="560" height="44" fill="url(#bottomFade)"/>
+</svg>

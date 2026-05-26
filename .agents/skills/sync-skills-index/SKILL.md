@@ -9,14 +9,14 @@ Keeps the pipe-compressed skills index in AGENTS.md synchronized with the actual
 
 ## When to Use
 
-- After adding a new skill to `skills/` or `workspace-harnessed/.agents/skills/`
+- After adding a new skill to `.agents/skills/` or `workspace-harnessed/.agents/skills/`
 - After removing or renaming a skill directory
 - When the AGENTS.md index appears stale or incomplete
 - As a routine maintenance step at session end
 
 ## Process
 
-1. Scan all subdirectories of `skills/` for `SKILL.md` files
+1. Scan all subdirectories of `.agents/skills/` for `SKILL.md` files
 2. Also scan `workspace-harnessed/.agents/skills/` for any additional skills
 3. For each found `SKILL.md`, extract:
    - `name:` from frontmatter
@@ -43,17 +43,17 @@ Rules:
 
 ```
 <!-- pipe-compressed: name | triggers | path -->
-bootstrap-preflight | preflight check, environment setup, verify tools, student quickstart | skills/bootstrap-preflight/SKILL.md
-data-confidence-scorer | confidence scores, add confidence, document assumptions, source lineage, audit analysis | skills/data-confidence-scorer/SKILL.md
-data-refinement-interview | pre-analysis interview, refine scope, ask questions before analyzing, structured EDA intake | skills/data-refinement-interview/SKILL.md
-html-infographic-builder | create data report, generate infographic, make this visual, HTML dashboard | skills/html-infographic-builder/SKILL.md
-spotlight-walkthrough | add tour, guided walkthrough, Shepherd.js, interactive report, self-presenting | skills/spotlight-walkthrough/SKILL.md
-sync-skills-index | update skills index, sync AGENTS.md, regenerate skills list | skills/sync-skills-index/SKILL.md
+bootstrap-preflight | preflight check, environment setup, verify tools, student quickstart | .agents/skills/bootstrap-preflight/SKILL.md
+data-confidence-scorer | confidence scores, add confidence, document assumptions, source lineage, audit analysis | .agents/skills/data-confidence-scorer/SKILL.md
+data-refinement-interview | pre-analysis interview, refine scope, ask questions before analyzing, structured EDA intake | .agents/skills/data-refinement-interview/SKILL.md
+html-infographic-builder | create data report, generate infographic, make this visual, HTML dashboard | .agents/skills/html-infographic-builder/SKILL.md
+spotlight-walkthrough | add tour, guided walkthrough, Shepherd.js, interactive report, self-presenting | .agents/skills/spotlight-walkthrough/SKILL.md
+sync-skills-index | update skills index, sync AGENTS.md, regenerate skills list | .agents/skills/sync-skills-index/SKILL.md
 ```
 
 ## Acceptance Criteria
 
-- [ ] All SKILL.md files in `skills/` are represented in the index
+- [ ] All SKILL.md files in `.agents/skills/` are represented in the index
 - [ ] Each entry has name, triggers (4-6), and correct relative path
 - [ ] AGENTS.md is updated in place (not a new file created)
 - [ ] Format matches pipe-compressed convention exactly

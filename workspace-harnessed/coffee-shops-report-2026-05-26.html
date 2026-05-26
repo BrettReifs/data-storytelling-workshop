@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UW Campus Coffee Shops: Revenue &amp; Operations Report (Jul-Dec 2024)</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@11/dist/css/shepherd.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@11/dist/js/shepherd.min.js"></script>
+    <style>
+        :root {
+            --uw-purple: #4B2E83;
+            --uw-purple-mid: #7B5DB0;
+            --uw-gold: #D4A853;
+            --uw-gold-pale: #FAF5E8;
+            --text-primary: #1C1917;
+            --text-muted: #78716C;
+            --surface: #FFFFFF;
+            --surface-alt: #F5F5F5;
+            --border: #E7E5E4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+            background: var(--surface-alt);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--uw-purple);
+            color: white;
+            padding: 2rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        header p {
+            color: var(--uw-gold);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            margin-top: 1rem;
+        }
+
+        .btn-tour {
+            background: var(--uw-gold);
+            color: #1a0a30;
+            border: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: Inter, sans-serif;
+        }
+
+        .btn-tour:hover { opacity: 0.9; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        /* KPI Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-card .value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--uw-purple);
+        }
+
+        .stat-card .subtext {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .confidence-badge {
+            display: inline-block;
+            background: var(--uw-gold-pale);
+            color: var(--uw-purple);
+            border: 1px solid var(--uw-gold);
+            border-radius: 4px;
+            padding: 0.1rem 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.25rem;
+            vertical-align: middle;
+        }
+
+        .confidence-badge.high { background: #dcfce7; border-color: #86efac; color: #166534; }
+        .confidence-badge.moderate { background: var(--uw-gold-pale); border-color: var(--uw-gold); color: #92400e; }
+        .confidence-badge.low { background: #fef3c7; border-color: #fbbf24; color: #92400e; }
+
+        /* Tabs */
+        .tabs {
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-nav {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            font-family: Inter, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--uw-purple);
+            border-bottom-color: var(--uw-purple);
+            font-weight: 600;
+        }
+
+        .tab-btn:hover { color: var(--uw-purple-mid); }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--uw-purple);
+        }
+
+        .card .caption {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .card .source {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            padding-top: 0.5rem;
+        }
+
+        .card canvas {
+            width: 100% !important;
+            max-height: 280px;
+        }
+
+        /* Data Quality */
+        .quality-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quality-section summary {
+            font-weight: 600;
+            color: var(--uw-purple);
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .quality-section .quality-content {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .quality-section ul {
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .quality-section li {
+            margin-bottom: 0.25rem;
+        }
+
+        .flag { color: #b91c1c; font-weight: 500; }
+        .ok { color: #166534; font-weight: 500; }
+
+        /* Footer */
+        footer {
+            background: var(--uw-purple);
+            color: rgba(255,255,255,0.85);
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        footer h4 {
+            color: var(--uw-gold);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer ul { padding-left: 1.25rem; }
+        footer li { margin-bottom: 0.2rem; }
+        footer .gen-date { margin-top: 1rem; opacity: 0.7; }
+
+        /* Confidence detail blocks */
+        .confidence-detail {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            font-size: 0.8rem;
+        }
+
+        .confidence-detail summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--uw-purple);
+        }
+
+        .confidence-detail .detail-body {
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Shepherd overrides */
+        .shepherd-header { background: #4B2E83 !important; }
+        .shepherd-title { color: #FFFFFF !important; font-family: Inter, sans-serif; }
+        .shepherd-text { font-family: Inter, sans-serif; color: #1C1917; }
+        .shepherd-button-primary { background: #D4A853 !important; color: #1a0a30 !important; }
+        .shepherd-button-secondary { background: transparent; border: 1px solid #4B2E83; color: #4B2E83; }
+
+        @media (max-width: 768px) {
+            .card-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<header data-tour-step="report-header">
+    <h1>UW Campus Coffee Shops: Revenue and Operations Report</h1>
+    <p>July - December 2024 | 5 Locations | 45,835 Transactions Analyzed</p>
+    <div class="header-actions">
+        <button class="btn-tour" id="start-tour-btn">Start Tour</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Headline KPIs -->
+    <div class="stats-row" data-tour-step="kpi-row">
+        <div class="stat-card">
+            <div class="label">Total Revenue</div>
+            <div class="value">$305,252</div>
+            <div class="subtext">6-month gross sales <span class="confidence-badge high">0.92</span></div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Top Shop</div>
+            <div class="value">HUB Coffee</div>
+            <div class="subtext">$68,458 (22.4%) <span class="confidence-badge high">0.90</span></div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Avg Daily Rev</div>
+            <div class="value">$332/day</div>
+            <div class="subtext">Across all 5 shops <span class="confidence-badge high">0.88</span></div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Top Category</div>
+            <div class="value">Sandwich</div>
+            <div class="subtext">$77,779 (25.5%) <span class="confidence-badge high">0.92</span></div>
+        </div>
+    </div>
+
+    <!-- Confidence Scores Panel -->
+    <div class="quality-section" data-tour-step="confidence-panel">
+        <details>
+            <summary>Confidence Scores: Headline Claims</summary>
+            <div class="quality-content">
+                <div class="confidence-detail">
+                    <details>
+                        <summary>CLAIM: Total 6-month revenue = $305,251.75 <span class="confidence-badge high">0.92</span></summary>
+                        <div class="detail-body">
+                            <strong>Score Rationale:</strong> Large sample (n=45,835), 0% missing in total column, full 184-day coverage. Minor deduction for 14.9% date format inconsistency (resolved by standardization) and 16 shop name variants requiring canonicalization.<br>
+                            <strong>Assumption:</strong> Revenue = gross sales (total column). No returns or refunds reflected.<br>
+                            <strong>Data Quality:</strong> Date format normalized. Shop names canonicalized from 16 variants to 5.<br>
+                            <strong>Source Lineage:</strong> shop-sales.csv :: total :: all rows (n=45,835, Jul 1 - Dec 31 2024)
+                        </div>
+                    </details>
+                </div>
+                <div class="confidence-detail">
+                    <details>
+                        <summary>CLAIM: HUB Coffee leads revenue at $68,458 (22.4% share) <span class="confidence-badge high">0.90</span></summary>
+                        <div class="detail-body">
+                            <strong>Score Rationale:</strong> Robust sample (n=10,265 transactions). Name canonicalization from 4 variants ("HUB Coffee", "The HUB", "hub-coffee", "HUB") introduces minor risk if variants belonged to different entities.<br>
+                            <strong>Assumption:</strong> All name variants reference the same physical location (Husky Union Building).<br>
+                            <strong>Data Quality:</strong> 4 name variants consolidated. No missing totals.<br>
+                            <strong>Source Lineage:</strong> shop-sales.csv :: shop_name + total :: rows where canonical = "HUB Coffee" (n=10,265)
+                        </div>
+                    </details>
+                </div>
+                <div class="confidence-detail">
+                    <details>
+                        <summary>CLAIM: Suzzallo Roasters shows anomalously flat daily revenue (CV=10.3%) <span class="confidence-badge moderate">0.78</span></summary>
+                        <div class="detail-body">
+                            <strong>Score Rationale:</strong> Clear statistical signal (CV=10.3% vs 27.7% for HUB Coffee). Lower confidence because root cause is unconfirmed. POS sync issue is a hypothesis, not verified.<br>
+                            <strong>Assumption:</strong> Normal daily variance for campus coffee shops is CV 20-30%.<br>
+                            <strong>Data Quality:</strong> Anomaly flagged, not excluded. May represent actual low-variance operations or data pipeline issue.<br>
+                            <strong>Source Lineage:</strong> shop-sales.csv :: total :: Suzzallo Roasters Oct-Dec 2024 (n=2,753, 92 days)
+                        </div>
+                    </details>
+                </div>
+                <div class="confidence-detail">
+                    <details>
+                        <summary>CLAIM: HUB Coffee viral TikTok spike (engagement 5.92, week of Oct 28) <span class="confidence-badge moderate">0.75</span></summary>
+                        <div class="detail-body">
+                            <strong>Score Rationale:</strong> Single data point (1 week), but clearly an outlier (32x the shop's baseline avg of 0.1854). Confidence limited by inability to verify cause or whether metrics are accurate.<br>
+                            <strong>Assumption:</strong> Engagement rate formula is consistent across all rows. Viral event is real, not a data entry error.<br>
+                            <strong>Data Quality:</strong> Excluded from average calculations. Reported separately.<br>
+                            <strong>Source Lineage:</strong> social-signals.csv :: engagement_rate :: row week_start=2024-10-28, shop=HUB Coffee (n=1)
+                        </div>
+                    </details>
+                </div>
+                <div class="confidence-detail">
+                    <details>
+                        <summary>CLAIM: Card payments dominate at 60.2% of revenue <span class="confidence-badge high">0.93</span></summary>
+                        <div class="detail-body">
+                            <strong>Score Rationale:</strong> Full population (n=45,835), 0% missing in payment_method column, no ambiguous categories.<br>
+                            <strong>Assumption:</strong> Payment method labels are accurate and mutually exclusive.<br>
+                            <strong>Data Quality:</strong> Clean column with only 3 values (Card, Cash, Mobile). No nulls.<br>
+                            <strong>Source Lineage:</strong> shop-sales.csv :: payment_method + total :: all rows (n=45,835)
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <!-- Audience Tabs -->
+    <div class="tabs" data-tour-step="audience-tabs">
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="shop-manager">Shop Manager</button>
+            <button class="tab-btn" data-tab="campus-vp">Campus VP</button>
+            <button class="tab-btn" data-tab="vendor-committee">Vendor Committee</button>
+        </nav>
+
+        <!-- TAB: Shop Manager -->
+        <div class="tab-panel active" id="tab-shop-manager">
+            <div class="card-grid">
+                <div class="card" data-tour-step="primary-chart">
+                    <h3>Daily Revenue by Shop <span class="confidence-badge high">0.88</span></h3>
+                    <p class="caption">Average daily gross revenue over 184 operating days. Suzzallo's lower volume reflects its premium, low-capacity positioning (18 seats).</p>
+                    <canvas id="chart-daily-revenue"></canvas>
+                    <p class="source">Source: shop-sales.csv :: total, grouped by canonical shop_name / unique dates (n=45,835, 184 days per shop)</p>
+                </div>
+                <div class="card">
+                    <h3>Revenue by Category <span class="confidence-badge high">0.92</span></h3>
+                    <p class="caption">Sandwiches drive the most revenue ($77.8K), while espresso beverages represent the highest transaction volume among drinks.</p>
+                    <canvas id="chart-category"></canvas>
+                    <p class="source">Source: shop-sales.csv :: category + total :: all rows (n=45,835, Jul-Dec 2024)</p>
+                </div>
+                <div class="card">
+                    <h3>Payment Method Mix <span class="confidence-badge high">0.93</span></h3>
+                    <p class="caption">Card transactions account for 60% of revenue. Mobile payments (20%) rival cash, suggesting further contactless infrastructure may be warranted.</p>
+                    <canvas id="chart-payment"></canvas>
+                    <p class="source">Source: shop-sales.csv :: payment_method + total :: all rows (n=45,835)</p>
+                </div>
+                <div class="card">
+                    <h3>Suzzallo Roasters: Daily Revenue Flatness <span class="confidence-badge moderate">0.78</span></h3>
+                    <p class="caption">Suzzallo's coefficient of variation (10.3%) is less than half of other shops (~28%). This pattern began October 2024 and warrants a POS system audit.</p>
+                    <canvas id="chart-suzzallo-anomaly"></canvas>
+                    <p class="source">Source: shop-sales.csv :: total :: Suzzallo Roasters Oct-Dec 2024 (92 days, CV=10.3%) vs HUB Coffee (CV=27.7%)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: Campus VP -->
+        <div class="tab-panel" id="tab-campus-vp">
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Monthly Revenue Trend: All Shops <span class="confidence-badge high">0.90</span></h3>
+                    <p class="caption">Portfolio revenue remained stable at ~$50-55K/month. Odegaard peaked in July (back-to-school), UW Medical surged in December (flu season staffing).</p>
+                    <canvas id="chart-monthly-trend"></canvas>
+                    <p class="source">Source: shop-sales.csv :: date + total :: grouped by month and canonical shop (n=45,835, Jul-Dec 2024)</p>
+                </div>
+                <div class="card">
+                    <h3>Revenue Share by Shop <span class="confidence-badge high">0.90</span></h3>
+                    <p class="caption">Four shops contribute roughly equal shares (21-22% each). Suzzallo operates as a premium low-volume concept by design (12.1% share).</p>
+                    <canvas id="chart-revenue-share"></canvas>
+                    <p class="source">Source: shop-sales.csv :: total :: grouped by canonical shop_name (n=45,835)</p>
+                </div>
+                <div class="card">
+                    <h3>Social Media Engagement Comparison <span class="confidence-badge moderate">0.72</span></h3>
+                    <p class="caption">HUB Coffee's average engagement (excluding Oct 28 viral spike) is 0.19, comparable to peers. The viral TikTok event (5.92 engagement) was a one-time outlier.</p>
+                    <canvas id="chart-social"></canvas>
+                    <p class="source">Source: social-signals.csv :: engagement_rate :: 27 weekly observations per shop. HUB viral week excluded from average.</p>
+                </div>
+                <div class="card">
+                    <h3>Total Revenue: Shop Comparison <span class="confidence-badge high">0.92</span></h3>
+                    <p class="caption">The top four shops are tightly clustered ($64.6K-$68.5K). Suzzallo's $37K reflects deliberate capacity constraints (18 seats, limited hours).</p>
+                    <canvas id="chart-total-by-shop"></canvas>
+                    <p class="source">Source: shop-sales.csv :: total :: grouped by canonical shop_name (n=45,835, Jul-Dec 2024)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: Vendor Committee -->
+        <div class="tab-panel" id="tab-vendor-committee">
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Vendor Bid Coverage <span class="confidence-badge moderate">0.80</span></h3>
+                    <p class="caption">20% of bid line items have no quote submitted (8 of 40). PacificBean and Northwest Grains have the most gaps. This is expected for specialized items not in every vendor's catalog.</p>
+                    <canvas id="chart-vendor-coverage"></canvas>
+                    <p class="source">Source: vendor-bids.csv :: price_quoted :: all rows (n=40, 5 vendors x 8 line items)</p>
+                </div>
+                <div class="card">
+                    <h3>Coffee Bean Price Comparison <span class="confidence-badge moderate">0.76</span></h3>
+                    <p class="caption">Coffee beans (per lb) range from $6.44 (Seattle Roast Co.) to $10.32 (EspressoEdge). PacificBean submitted no quote for this critical line item.</p>
+                    <canvas id="chart-bean-price"></canvas>
+                    <p class="source">Source: vendor-bids.csv :: price_quoted :: line_item="Coffee Beans (lb)" (n=5 vendors, 1 no-quote)</p>
+                </div>
+                <div class="card">
+                    <h3>Pastry Delivery Cost Comparison <span class="confidence-badge moderate">0.80</span></h3>
+                    <p class="caption">Weekly pastry delivery ranges from $93.72 (EspressoEdge) to $132.68 (CampusBev). All 5 vendors quoted this item, enabling direct comparison.</p>
+                    <canvas id="chart-pastry-cost"></canvas>
+                    <p class="source">Source: vendor-bids.csv :: price_quoted :: line_item="Pastry Delivery (weekly)" (n=5 vendors, 0 missing)</p>
+                </div>
+                <div class="card">
+                    <h3>Contract Term Preferences <span class="confidence-badge moderate">0.76</span></h3>
+                    <p class="caption">Vendors split between 6, 12, and 24-month terms. Longer terms may offer better pricing but reduce flexibility for renegotiation.</p>
+                    <canvas id="chart-contract-terms"></canvas>
+                    <p class="source">Source: vendor-bids.csv :: contract_term_months :: rows with quotes submitted (n=32)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Quality Section -->
+    <div class="quality-section" data-tour-step="data-quality">
+        <details open>
+            <summary>Data Quality Disclosure</summary>
+            <div class="quality-content">
+                <h4 style="margin-top:0.5rem; color: var(--uw-purple);">shop-sales.csv (45,835 rows)</h4>
+                <ul>
+                    <li><span class="ok">0% missing values</span> in all key columns (total, category, payment_method, date)</li>
+                    <li><span class="flag">16 shop name variants</span> canonicalized to 5 entities (e.g., "The HUB", "hub-coffee", "HUB" all mapped to "HUB Coffee")</li>
+                    <li><span class="flag">14.9% of dates (6,818 rows)</span> used MM/DD/YYYY format instead of ISO; standardized during analysis</li>
+                    <li><span class="flag">Suzzallo Roasters anomaly:</span> Daily revenue CV=10.3% (Oct-Dec), compared to 27.7% for HUB Coffee. Flagged as potential POS sync issue. Not excluded from totals.</li>
+                </ul>
+                <h4 style="margin-top:0.75rem; color: var(--uw-purple);">social-signals.csv (135 rows)</h4>
+                <ul>
+                    <li><span class="ok">0% missing values.</span> 27 weekly observations per shop (5 shops, 27 weeks).</li>
+                    <li><span class="flag">HUB Coffee viral spike (week of Oct 28):</span> engagement_rate=5.92, which is 32x baseline (0.19). Excluded from averages, reported separately.</li>
+                </ul>
+                <h4 style="margin-top:0.75rem; color: var(--uw-purple);">vendor-bids.csv (40 rows)</h4>
+                <ul>
+                    <li><span class="flag">20% of bids (8 of 40)</span> have no quote submitted. This is legitimate missing data (not all vendors carry all items).</li>
+                    <li><span class="ok">No format inconsistencies</span> in quoted prices or dates.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer data-tour-step="assumptions-log">
+    <div class="container">
+        <h4>Assumptions Log</h4>
+        <ul>
+            <li>Revenue = gross sales (total column in shop-sales.csv). No returns, refunds, or discounts reflected.</li>
+            <li>All shop name variants consolidated to canonical names based on operational profiles (shop-profiles.md).</li>
+            <li>Date formats (ISO and MM/DD/YYYY) standardized to ISO for grouping. No dates were ambiguous (all months clearly distinguishable).</li>
+            <li>Suzzallo Roasters daily flatness flagged but included in all totals and averages.</li>
+            <li>HUB Coffee viral TikTok spike (week of Oct 28) excluded from engagement averages but noted as a finding.</li>
+            <li>Vendor bids with no quote submitted are treated as "not offered" (legitimate business decision), not data errors.</li>
+            <li>184 operating days assumed for all shops (Jul 1 - Dec 31 2024, all calendar days).</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Data Sources</h4>
+        <ul>
+            <li>shop-sales.csv: 45,835 transactions, Jul 1 - Dec 31 2024</li>
+            <li>social-signals.csv: 135 weekly observations, Jul 1 - Dec 30 2024</li>
+            <li>vendor-bids.csv: 40 bid records, October 2024</li>
+            <li>shop-profiles.md: Operational context for 5 campus locations</li>
+            <li>menu-catalog.json: 30+ menu items with pricing and cost data</li>
+        </ul>
+        <p class="gen-date">Report generated: May 26, 2026 | Analysis window: July 1 - December 31, 2024</p>
+    </div>
+</footer>
+
+<script>
+// Chart color palette
+const UW_COLORS = ['#4B2E83', '#D4A853', '#7B5DB0', '#B7A57A', '#9C8AAE'];
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+});
+
+// Chart: Daily Revenue by Shop
+new Chart(document.getElementById('chart-daily-revenue'), {
+    type: 'bar',
+    data: {
+        labels: ['HUB Coffee', 'Odegaard Cafe', 'UW Medical Brew', 'Portage Bay Espresso', 'Suzzallo Roasters'],
+        datasets: [{
+            label: 'Avg Daily Revenue ($)',
+            data: [372.05, 367.27, 367.22, 351.22, 201.21],
+            backgroundColor: UW_COLORS
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + v } } }
+    }
+});
+
+// Chart: Revenue by Category
+new Chart(document.getElementById('chart-category'), {
+    type: 'bar',
+    data: {
+        labels: ['Sandwich', 'Smoothie', 'Cold Brew', 'Espresso', 'Pastry', 'Tea', 'Drip Coffee'],
+        datasets: [{
+            label: 'Revenue ($)',
+            data: [77779, 58656, 45381, 42057, 30555, 28490, 22335],
+            backgroundColor: ['#4B2E83', '#D4A853', '#7B5DB0', '#B7A57A', '#9C8AAE', '#6B4FA0', '#C9995A']
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, ticks: { callback: v => '$' + (v/1000).toFixed(0) + 'K' } } }
+    }
+});
+
+// Chart: Payment Method
+new Chart(document.getElementById('chart-payment'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Card (60.2%)', 'Cash (20.0%)', 'Mobile (19.7%)'],
+        datasets: [{
+            data: [183836, 61187, 60229],
+            backgroundColor: ['#4B2E83', '#D4A853', '#7B5DB0']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+    }
+});
+
+// Chart: Suzzallo Anomaly (CV comparison)
+new Chart(document.getElementById('chart-suzzallo-anomaly'), {
+    type: 'bar',
+    data: {
+        labels: ['HUB Coffee', 'Odegaard Cafe', 'UW Medical Brew', 'Portage Bay Espresso', 'Suzzallo Roasters'],
+        datasets: [{
+            label: 'CV % (Oct-Dec)',
+            data: [27.7, 25.2, 26.1, 24.8, 10.3],
+            backgroundColor: ['#7B5DB0', '#7B5DB0', '#7B5DB0', '#7B5DB0', '#b91c1c']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Coefficient of Variation (%)' } } }
+    }
+});
+
+// Chart: Monthly Trend
+new Chart(document.getElementById('chart-monthly-trend'), {
+    type: 'line',
+    data: {
+        labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [
+            { label: 'HUB Coffee', data: [11275, 10824, 11524, 12125, 10751, 11959], borderColor: '#4B2E83', backgroundColor: '#4B2E83', tension: 0.3, fill: false },
+            { label: 'Odegaard Cafe', data: [13123, 10334, 10536, 11757, 10995, 10832], borderColor: '#D4A853', backgroundColor: '#D4A853', tension: 0.3, fill: false },
+            { label: 'UW Medical Brew', data: [11160, 11508, 10552, 10866, 10885, 12599], borderColor: '#7B5DB0', backgroundColor: '#7B5DB0', tension: 0.3, fill: false },
+            { label: 'Portage Bay Espresso', data: [10827, 10725, 10896, 11473, 10795, 9910], borderColor: '#B7A57A', backgroundColor: '#B7A57A', tension: 0.3, fill: false },
+            { label: 'Suzzallo Roasters', data: [6296, 6406, 6156, 6153, 5841, 6172], borderColor: '#9C8AAE', backgroundColor: '#9C8AAE', tension: 0.3, fill: false }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: { y: { beginAtZero: false, ticks: { callback: v => '$' + (v/1000).toFixed(1) + 'K' } } }
+    }
+});
+
+// Chart: Revenue Share (pie)
+new Chart(document.getElementById('chart-revenue-share'), {
+    type: 'pie',
+    data: {
+        labels: ['HUB Coffee (22.4%)', 'Odegaard Cafe (22.1%)', 'UW Medical Brew (22.1%)', 'Portage Bay (21.2%)', 'Suzzallo (12.1%)'],
+        datasets: [{
+            data: [68458, 67578, 67569, 64625, 37022],
+            backgroundColor: UW_COLORS
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+    }
+});
+
+// Chart: Social Engagement
+new Chart(document.getElementById('chart-social'), {
+    type: 'bar',
+    data: {
+        labels: ['HUB Coffee*', 'Portage Bay Espresso', 'Odegaard Cafe', 'UW Medical Brew', 'Suzzallo Roasters'],
+        datasets: [{
+            label: 'Avg Weekly Engagement Rate',
+            data: [0.1854, 0.2734, 0.2413, 0.2208, 0.1936],
+            backgroundColor: UW_COLORS
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            title: { display: true, text: '*HUB Coffee excludes Oct 28 viral spike (5.92)', font: { size: 11 }, color: '#78716C' }
+        },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Engagement Rate' } } }
+    }
+});
+
+// Chart: Total Revenue by Shop
+new Chart(document.getElementById('chart-total-by-shop'), {
+    type: 'bar',
+    data: {
+        labels: ['HUB Coffee', 'Odegaard Cafe', 'UW Medical Brew', 'Portage Bay Espresso', 'Suzzallo Roasters'],
+        datasets: [{
+            label: 'Total Revenue ($)',
+            data: [68458, 67578, 67569, 64625, 37022],
+            backgroundColor: UW_COLORS
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + (v/1000).toFixed(0) + 'K' } } }
+    }
+});
+
+// Chart: Vendor Bid Coverage
+new Chart(document.getElementById('chart-vendor-coverage'), {
+    type: 'bar',
+    data: {
+        labels: ['PacificBean Supply', 'Seattle Roast Co.', 'CampusBev Distributors', 'Northwest Grains', 'EspressoEdge LLC'],
+        datasets: [
+            { label: 'Quotes Submitted', data: [5, 7, 8, 6, 7], backgroundColor: '#4B2E83' },
+            { label: 'No Quote', data: [3, 1, 0, 2, 1], backgroundColor: '#E7E5E4' }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Line Items (of 8)' } } }
+    }
+});
+
+// Chart: Coffee Bean Price Comparison
+new Chart(document.getElementById('chart-bean-price'), {
+    type: 'bar',
+    data: {
+        labels: ['Seattle Roast Co.', 'CampusBev Distributors', 'Northwest Grains', 'EspressoEdge LLC', 'PacificBean Supply'],
+        datasets: [{
+            label: 'Price per lb ($)',
+            data: [6.44, 8.07, 0, 10.32, 0],
+            backgroundColor: ['#4B2E83', '#D4A853', '#E7E5E4', '#7B5DB0', '#E7E5E4']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Gray = No quote submitted', font: { size: 11 }, color: '#78716C' } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + v.toFixed(2) } } }
+    }
+});
+
+// Chart: Pastry Delivery Cost
+new Chart(document.getElementById('chart-pastry-cost'), {
+    type: 'bar',
+    data: {
+        labels: ['EspressoEdge', 'Northwest Grains', 'Seattle Roast Co.', 'PacificBean Supply', 'CampusBev Distributors'],
+        datasets: [{
+            label: 'Weekly Cost ($)',
+            data: [93.72, 100.64, 100.14, 118.21, 132.68],
+            backgroundColor: UW_COLORS
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + v } } }
+    }
+});
+
+// Chart: Contract Terms
+new Chart(document.getElementById('chart-contract-terms'), {
+    type: 'doughnut',
+    data: {
+        labels: ['6 months', '12 months', '24 months'],
+        datasets: [{
+            data: [9, 13, 10],
+            backgroundColor: ['#D4A853', '#4B2E83', '#7B5DB0']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+    }
+});
+
+// Shepherd.js Tour
+const tour = new Shepherd.Tour({
+    useModalOverlay: true,
+    defaultStepOptions: {
+        classes: 'shepherd-theme-custom',
+        scrollTo: { behavior: 'smooth', block: 'center' },
+        cancelIcon: { enabled: true }
+    }
+});
+
+tour.addStep({
+    id: 'step-header',
+    title: 'Welcome to the Report',
+    text: 'This report analyzes 6 months of transaction data (Jul-Dec 2024) across 5 UW campus coffee shops. It covers 45,835 transactions totaling over $305K in gross revenue.',
+    attachTo: { element: '[data-tour-step="report-header"]', on: 'bottom' },
+    buttons: [{ text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }]
+});
+
+tour.addStep({
+    id: 'step-kpis',
+    title: 'Headline KPIs',
+    text: 'These four numbers summarize the portfolio. Each includes a confidence badge (green = high confidence, gold = moderate). HUB Coffee leads revenue, and sandwiches are the top category by dollar volume.',
+    attachTo: { element: '[data-tour-step="kpi-row"]', on: 'bottom' },
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }
+    ]
+});
+
+tour.addStep({
+    id: 'step-primary-chart',
+    title: 'Daily Revenue Comparison',
+    text: 'This chart shows average daily revenue per shop. Four shops cluster around $350-370/day, while Suzzallo operates at $201/day by design (smaller space, limited hours, premium positioning).',
+    attachTo: { element: '[data-tour-step="primary-chart"]', on: 'top' },
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }
+    ]
+});
+
+tour.addStep({
+    id: 'step-data-quality',
+    title: 'Data Quality Transparency',
+    text: 'Every analysis has limitations. This section documents what we found: 16 shop name variants, mixed date formats, Suzzallo\'s suspicious flatness, and a viral social spike. All were handled explicitly rather than ignored.',
+    attachTo: { element: '[data-tour-step="data-quality"]', on: 'top' },
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }
+    ]
+});
+
+tour.addStep({
+    id: 'step-confidence',
+    title: 'Confidence Scoring',
+    text: 'Each headline claim carries a confidence score (0.0-1.0) based on sample size, data quality, outlier handling, and temporal coverage. Expand any score to see the full rationale, assumptions, and source lineage.',
+    attachTo: { element: '[data-tour-step="confidence-panel"]', on: 'top' },
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }
+    ]
+});
+
+tour.addStep({
+    id: 'step-tabs',
+    title: 'Three Audience Views',
+    text: 'The same data tells different stories depending on who reads it. Shop Managers see daily operations and staffing signals. The Campus VP sees portfolio trends. The Vendor Committee sees procurement comparisons.',
+    attachTo: { element: '[data-tour-step="audience-tabs"]', on: 'top' },
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }
+    ]
+});
+
+tour.addStep({
+    id: 'step-assumptions',
+    title: 'Assumptions and Sources',
+    text: 'The footer documents every assumption made during analysis: revenue definition, name consolidation logic, date handling, and outlier treatment. This is where a reviewer validates the methodology.',
+    attachTo: { element: '[data-tour-step="assumptions-log"]', on: 'top' },
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Next', action: tour.next, classes: 'shepherd-button-primary' }
+    ]
+});
+
+tour.addStep({
+    id: 'step-cta',
+    title: 'What to Do Next',
+    text: 'Recommended actions: (1) Schedule IT audit of Suzzallo POS system, (2) Investigate the HUB viral TikTok to see if it can be replicated, (3) Use vendor bid data to open contract negotiations with shortlisted suppliers.',
+    buttons: [
+        { text: 'Back', action: tour.back, classes: 'shepherd-button-secondary' },
+        { text: 'Done', action: tour.complete, classes: 'shepherd-button-primary' }
+    ]
+});
+
+// Start tour button
+document.getElementById('start-tour-btn').addEventListener('click', () => tour.start());
+
+// Auto-start tour if ?tour=1 in URL
+if (new URLSearchParams(window.location.search).get('tour') === '1') {
+    window.addEventListener('load', () => setTimeout(() => tour.start(), 500));
+}
+</script>
+
+</body>
+</html>

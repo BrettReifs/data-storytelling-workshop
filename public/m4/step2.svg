@@ -1,0 +1,57 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="370" fill="#1a1a2e"/>
+  <!-- Browser chrome -->
+  <rect width="560" height="34" fill="#2c2c2c"/>
+  <circle cx="14" cy="17" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="17" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="17" r="4.5" fill="#28CA41"/>
+  <rect x="58" y="6" width="444" height="22" rx="4" fill="#3c3c3c"/>
+  <text x="280" y="22" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#aaa" text-anchor="middle">file:///workspace-harnessed/final-report.html</text>
+  <!-- Page (dimmed/blurred by overlay) -->
+  <rect x="0" y="34" width="560" height="336" fill="#f7f8fc" opacity="0.35"/>
+  <!-- Blur effect simulation: a semi-transparent overlay -->
+  <rect x="0" y="34" width="560" height="336" fill="#0a0a1a" opacity="0.4"/>
+  <!-- Highlighted section visible behind tour -->
+  <rect x="18" y="96" width="200" height="70" rx="7" fill="#4b2d8b" opacity="0.4"/>
+  <rect x="18" y="96" width="200" height="70" rx="7" fill="none" stroke="#d4a853" stroke-width="2"/>
+  <text x="118" y="126" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#d4a853" text-anchor="middle" font-weight="600">S3 Anomaly</text>
+  <text x="118" y="142" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#e6edf3" text-anchor="middle">47-day flat-sales  ·  Conf. 0.92</text>
+  <text x="118" y="158" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#d4a853" text-anchor="middle">rows 2847–2893</text>
+  <!-- Gold arrow pointing to highlighted section -->
+  <polygon points="230,131 250,122 250,140" fill="#d4a853"/>
+  <line x1="250" y1="131" x2="278" y2="131" stroke="#d4a853" stroke-width="2"/>
+  <!-- Shepherd.js tour popup -->
+  <rect x="268" y="90" width="268" height="190" rx="10" fill="#1e1e2e" stroke="#4b2d8b" stroke-width="2"/>
+  <!-- Tour header -->
+  <rect x="268" y="90" width="268" height="38" rx="10" fill="#4b2d8b"/>
+  <rect x="268" y="110" width="268" height="18" fill="#4b2d8b"/>
+  <text x="380" y="108" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="white" text-anchor="middle">Step 2 of 5</text>
+  <text x="284" y="108" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#d4a853">Spotlight Tour</text>
+  <!-- Tour step title -->
+  <text x="284" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#e6edf3" font-weight="700">S3 Flat-Sales Anomaly</text>
+  <!-- Tour description -->
+  <text x="284" y="168" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">47 consecutive days of $0 revenue at</text>
+  <text x="284" y="183" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">S3 Capitol Hill. Flagged, documented,</text>
+  <text x="284" y="198" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">and excluded from trend calculation.</text>
+  <!-- Confidence score display in popup -->
+  <rect x="284" y="210" width="120" height="26" rx="6" fill="#0d2018" stroke="#1a4731" stroke-width="1"/>
+  <text x="344" y="228" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#3fb950" text-anchor="middle">Confidence: 0.92</text>
+  <!-- Progress dots -->
+  <circle cx="390" cy="224" r="3.5" fill="#3fb950"/>
+  <circle cx="405" cy="224" r="3.5" fill="#3fb950"/>
+  <circle cx="420" cy="224" r="3.5" fill="#4b2d8b"/>
+  <circle cx="435" cy="224" r="3.5" fill="#30363d"/>
+  <circle cx="450" cy="224" r="3.5" fill="#30363d"/>
+  <!-- Prev/Next buttons -->
+  <rect x="284" y="246" width="96" height="26" rx="6" fill="#30363d"/>
+  <text x="332" y="264" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">◀ Previous</text>
+  <rect x="390" y="246" width="96" height="26" rx="6" fill="#4b2d8b"/>
+  <text x="438" y="264" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="white" text-anchor="middle">Next ▶</text>
+  <rect x="0" y="316" width="560" height="54" fill="url(#bottomFade)"/>
+</svg>

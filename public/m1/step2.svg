@@ -1,0 +1,43 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="370" fill="#0d1117"/>
+  <rect width="560" height="28" fill="#161b22"/>
+  <circle cx="14" cy="14" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="14" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="14" r="4.5" fill="#28CA41"/>
+  <text x="280" y="19" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6e7681" text-anchor="middle">claude.ai</text>
+  <rect x="0" y="28" width="48" height="342" fill="#010409"/>
+  <rect x="48" y="28" width="512" height="342" fill="#0d1117"/>
+  <!-- User message -->
+  <rect x="320" y="38" width="220" height="36" rx="8" fill="#1c3a5e"/>
+  <text x="430" y="61" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3" text-anchor="middle">Analyze this data and tell me</text>
+  <!-- AI response — confident findings -->
+  <rect x="68" y="86" width="424" height="214" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="86" y="108" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#e6edf3" font-weight="700">Here's what I found interesting in your data:</text>
+  <line x1="86" y1="116" x2="474" y2="116" stroke="#30363d" stroke-width="1"/>
+  <!-- Findings -->
+  <circle cx="98" cy="132" r="3" fill="#58a6ff"/>
+  <text x="110" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3">S1 Pike Place leads total revenue at <tspan font-weight="600" fill="#79c0ff">$42,847</tspan> over 6 months</text>
+  <circle cx="98" cy="154" r="3" fill="#58a6ff"/>
+  <text x="110" y="158" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3">Revenue trend: <tspan font-weight="600" fill="#3fb950">+12.3%</tspan> month-over-month across all locations</text>
+  <circle cx="98" cy="176" r="3" fill="#58a6ff"/>
+  <text x="110" y="180" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3">Top 3 shops account for <tspan font-weight="600">61%</tspan> of total transaction volume</text>
+  <circle cx="98" cy="198" r="3" fill="#58a6ff"/>
+  <text x="110" y="202" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3">January shows a seasonal dip across all locations simultaneously</text>
+  <circle cx="98" cy="220" r="3" fill="#58a6ff"/>
+  <text x="110" y="224" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3">Weekend transactions average <tspan font-weight="600">34% higher</tspan> than weekday volume</text>
+  <circle cx="98" cy="242" r="3" fill="#58a6ff"/>
+  <text x="110" y="246" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3">S3 Capitol Hill shows the strongest Q1 growth trajectory</text>
+  <line x1="86" y1="258" x2="474" y2="258" stroke="#30363d" stroke-width="1"/>
+  <!-- No caveats notice (subtle, muted) -->
+  <text x="86" y="276" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#484f58">0 source citations  ·  0 confidence ranges  ·  0 data quality disclosures</text>
+  <!-- Input -->
+  <rect x="78" y="318" width="404" height="38" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="104" y="342" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#484f58">Message Claude…</text>
+  <rect x="0" y="318" width="560" height="52" fill="url(#bottomFade)"/>
+</svg>

@@ -23,7 +23,7 @@ data-storytelling-workshop/
 │   └── job-market/            Track B: 3 files, 400 postings
 ├── workspace-naive/           Demo workspace — minimal, no skills
 ├── workspace-harnessed/       Demo workspace — full skills suite
-├── skills/                    Source of truth for custom skills
+├── .agents/skills/            Source of truth for custom skills
 ├── milestones/                README + prompts for each workshop milestone
 └── scripts/                   Data generation + setup scripts
 ```
@@ -35,7 +35,10 @@ data-storytelling-workshop/
 - **`data/`**: Source of truth for all data files. Do not modify data files unless regenerating via `python scripts/generate_data.py`.
 - **`workspace-naive/data/`**: Mirror of `data/coffee-shops/` only. Sync when source data changes.
 - **`workspace-harnessed/data/`**: Mirrors of both tracks. Sync when source data changes.
-- **`skills/`**: Source of truth for custom skills. Mirror to `workspace-harnessed/.agents/skills/` after changes.
+- **`public/data/coffee-shops/`**: Mirror of `workspace-naive/data/` served via Vercel for participant downloads. Sync when `data/coffee-shops/` changes.
+- **`public/data/coffee-shops.zip`**: Pre-built zip of all 5 coffee-shop files. Rebuild with `Compress-Archive -Path workspace-naive/data/* -DestinationPath public/data/coffee-shops.zip` when source data changes.
+- **`public/harness-starter.md`**: Consolidated harness document built from `workspace-harnessed/AGENTS.md` + the 5 core skill files. Regenerate when skill content changes.
+- **`.agents/skills/`**: Source of truth for custom skills. Mirror to `workspace-harnessed/.agents/skills/` after changes.
 - **`.agents/skills/<name>/SKILL.md`**: Keep body focused. Description must be retrieval-optimized (verb-led, trigger phrases).
 
 ### Voice and Content Rules
@@ -62,7 +65,7 @@ python scripts/generate_data.py  # Regenerate all synthetic data files
 ## When Working On...
 - **slides.md**: One idea per slide. Maintain the 4-milestone arc. Presenter notes are the script.
 - **data files**: Never hand-edit — regenerate via the Python script to preserve intentional quality issues.
-- **skills/**: Keep body ≤ 80 lines for SKILL.md. Move deep content to `reference.md`. After any CRUD, run `/sync-skills-index`.
+- **`.agents/skills/`**: Keep body ≤ 80 lines for SKILL.md. Move deep content to `reference.md`. After any CRUD, run `/sync-skills-index`.
 - **workspace-harnessed/**: The CLAUDE.md here is the agent's operating instructions. Keep it accurate.
 - **workspace-naive/**: Must stay minimal. No CLAUDE.md with skills. No `.agents/` directory.
 
@@ -70,14 +73,14 @@ python scripts/generate_data.py  # Regenerate all synthetic data files
 <!-- pipe-compressed: name | triggers | path -->
 
 ### Workshop skills
-bootstrap-preflight       | preflight check, environment setup, verify tools, student quickstart, presenter setup | skills/bootstrap-preflight/SKILL.md
-slidev                    | edit slides.md, add Slidev slide, code walkthrough slide, magic-move animation, layout/transition help (antfu/skills@slidev) | skills/slidev/SKILL.md
-data-confidence-scorer    | confidence scores, add confidence, document assumptions, source lineage, audit analysis, defensible report | skills/data-confidence-scorer/SKILL.md
-data-refinement-interview | pre-analysis interview, refine scope, ask questions before analyzing, structured intake, grill data | skills/data-refinement-interview/SKILL.md
-html-infographic-builder  | create data report, generate infographic, make this visual, HTML dashboard, chart from data | skills/html-infographic-builder/SKILL.md
-spotlight-walkthrough     | add tour, guided walkthrough, Shepherd.js, interactive report, self-presenting, tour the report | skills/spotlight-walkthrough/SKILL.md
-live-demo-recipe          | add live demo slide, convert M1/M2/M4 to recipe card, use RecipeDemo, recipe-card walkthrough, demo funnel slide | skills/live-demo-recipe/SKILL.md
-sync-skills-index         | update skills index, sync AGENTS.md, regenerate skills list, stale index | skills/sync-skills-index/SKILL.md
+bootstrap-preflight       | preflight check, environment setup, verify tools, student quickstart, presenter setup | .agents/skills/bootstrap-preflight/SKILL.md
+slidev                    | edit slides.md, add Slidev slide, code walkthrough slide, magic-move animation, layout/transition help (antfu/skills@slidev) | .agents/skills/slidev/SKILL.md
+data-confidence-scorer    | confidence scores, add confidence, document assumptions, source lineage, audit analysis, defensible report | .agents/skills/data-confidence-scorer/SKILL.md
+data-refinement-interview | pre-analysis interview, refine scope, ask questions before analyzing, structured intake, grill data | .agents/skills/data-refinement-interview/SKILL.md
+html-infographic-builder  | create data report, generate infographic, make this visual, HTML dashboard, chart from data | .agents/skills/html-infographic-builder/SKILL.md
+spotlight-walkthrough     | add tour, guided walkthrough, Shepherd.js, interactive report, self-presenting, tour the report | .agents/skills/spotlight-walkthrough/SKILL.md
+live-demo-recipe          | add live demo slide, convert M1/M2/M4 to recipe card, use RecipeDemo, recipe-card walkthrough, demo funnel slide | .agents/skills/live-demo-recipe/SKILL.md
+sync-skills-index         | update skills index, sync AGENTS.md, regenerate skills list, stale index | .agents/skills/sync-skills-index/SKILL.md
 
 ## Safe Defaults
 - Never commit `.env`, API keys, or local dev secrets.

@@ -1,0 +1,56 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="370" fill="#1a1a2e"/>
+  <!-- Browser chrome -->
+  <rect width="560" height="34" fill="#2c2c2c"/>
+  <circle cx="14" cy="17" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="17" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="17" r="4.5" fill="#28CA41"/>
+  <rect x="58" y="6" width="444" height="22" rx="4" fill="#3c3c3c"/>
+  <text x="280" y="22" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#aaa" text-anchor="middle">file:///workspace-harnessed/final-report.html</text>
+  <!-- Page content -->
+  <rect x="0" y="34" width="560" height="336" fill="#f7f8fc"/>
+  <!-- Header -->
+  <rect x="0" y="34" width="560" height="48" fill="#4b2d8b"/>
+  <text x="280" y="55" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="700">Coffee Shop Confident Narrative — VP Briefing</text>
+  <text x="280" y="74" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#d4a853" text-anchor="middle">Confidence scores on all claims  ·  Source citations included  ·  Generated with harness</text>
+  <!-- Claim cards row -->
+  <!-- Card 1 -->
+  <rect x="18" y="96" width="162" height="86" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="30" y="116" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#666" letter-spacing="0.08em">REVENUE GROWTH</text>
+  <text x="30" y="138" font-family="system-ui,-apple-system,sans-serif" font-size="20" fill="#22863a" font-weight="700">+12.3%</text>
+  <text x="30" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888">month-over-month</text>
+  <!-- Confidence badge -->
+  <rect x="108" y="104" width="62" height="22" rx="11" fill="#e6f4ea" stroke="#22863a" stroke-width="1"/>
+  <text x="139" y="119" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#22863a" text-anchor="middle" font-weight="600">● 0.87</text>
+  <text x="30" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#aaa">rows 1–46,112</text>
+  <!-- Card 2 -->
+  <rect x="196" y="96" width="162" height="86" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="208" y="116" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#666" letter-spacing="0.08em">S3 ANOMALY</text>
+  <text x="208" y="133" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" fill="#1a1a2e" font-weight="700">Confirmed &amp; Scoped</text>
+  <text x="208" y="149" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888">47-day flat-sales period</text>
+  <rect x="286" y="104" width="62" height="22" rx="11" fill="#e6f4ea" stroke="#22863a" stroke-width="1"/>
+  <text x="317" y="119" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#22863a" text-anchor="middle" font-weight="600">● 0.92</text>
+  <text x="208" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#aaa">rows 2847–2893</text>
+  <!-- Card 3 -->
+  <rect x="374" y="96" width="166" height="86" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="386" y="116" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#666" letter-spacing="0.08em">MARKET SHARE</text>
+  <text x="386" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="18" fill="#1a1a2e" font-weight="700">61%</text>
+  <text x="386" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888">Top 3 shops combined</text>
+  <rect x="454" y="104" width="62" height="22" rx="11" fill="#fef9e7" stroke="#e3b341" stroke-width="1"/>
+  <text x="485" y="119" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#b8860b" text-anchor="middle" font-weight="600">● 0.78</text>
+  <text x="386" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#aaa">shop-profiles.md · merged</text>
+  <!-- Assumptions section -->
+  <rect x="18" y="196" width="524" height="46" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="30" y="214" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#666" letter-spacing="0.1em" font-weight="600">LOGGED ASSUMPTIONS</text>
+  <text x="30" y="232" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#555">1. HUB Coffee variants merged as single entity  ·  2. S3 anomaly excluded from trend  ·  3. Date formats normalized</text>
+  <!-- Spotlight tour trigger -->
+  <rect x="18" y="256" width="524" height="40" rx="7" fill="#4b2d8b" opacity="0.9"/>
+  <text x="280" y="280" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="600">▶  Launch Guided Spotlight Tour  (5 steps)</text>
+  <rect x="0" y="316" width="560" height="54" fill="url(#bottomFade)"/>
+</svg>

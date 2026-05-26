@@ -4,7 +4,7 @@
     "slidev": {
       "source": "antfu/skills",
       "sourceType": "github",
-      "skillPath": "skills/slidev/SKILL.md",
+      "skillPath": ".agents/skills/slidev/SKILL.md",
       "computedHash": "ecde2e0d684f770a50c8718ab036e5df5e1ead082cb608739673507079a524a3"
     }
   }

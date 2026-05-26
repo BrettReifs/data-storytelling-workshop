@@ -1,0 +1,34 @@
+// markdownlint config tuned for a Slidev deck + skill docs.
+// Rationale: slides.md is HTML-heavy with YAML frontmatter and `---` slide
+// separators, and SKILL.md files use sibling headings and long trigger lists.
+// Default rules produce hundreds of false positives in this repo.
+{
+  "default": true,
+
+  // Slidev frontmatter and slide separators mean the file does not start
+  // with an H1 and contains many H1s / repeated sibling headings.
+  "MD041": false, // first-line-h1
+  "MD025": false, // single-title / single-h1
+  "MD024": false, // no-duplicate-heading (siblings are fine)
+
+  // Slidev slides are intentionally HTML-rich (layouts, components, <style>).
+  "MD033": false, // no-inline-html
+
+  // Trigger lists and prose paragraphs routinely exceed 80 cols.
+  "MD013": false, // line-length
+
+  // Headings sometimes end with `:` or `?` by design.
+  "MD026": false, // no-trailing-punctuation in headings
+
+  // Emphasis-as-heading shows up in presenter notes and callouts.
+  "MD036": false, // no-emphasis-as-heading
+
+  // Bare URLs are acceptable in skill docs and references.
+  "MD034": false, // no-bare-urls
+
+  // Skill docs use both ordered and unordered lists adjacent to code.
+  // Keep MD031/MD032 (blanks around fences/lists) on — they catch real issues.
+
+  // Allow either fenced or indented code; Slidev examples mix both.
+  "MD046": false  // code-block-style
+}

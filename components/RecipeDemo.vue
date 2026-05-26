@@ -201,6 +201,7 @@ function pipClass(i) {
               <span class="v">
                 {{ it.value }}
                 <small v-if="it.note">{{ it.note }}</small>
+                <a v-if="it.href" class="rd-dl-chip" :href="it.href" download>&#8595; download</a>
               </span>
             </li>
           </ul>
@@ -479,6 +480,25 @@ function pipClass(i) {
   display: block; color: #6B6356; font-size: 0.85em;
   margin-top: 0.05em; font-family: var(--mono, monospace);
 }
+
+/* Download chip */
+.rd-dl-chip {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.22em;
+  font-size: 0.7em;
+  padding: 0.18em 0.5em;
+  background: var(--uw-purple, #4B2E83);
+  color: #FFFFFF;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: var(--mono, monospace);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+.rd-dl-chip:hover { background: #2D1A52; }
 
 /* Steps */
 .rd-step-list {

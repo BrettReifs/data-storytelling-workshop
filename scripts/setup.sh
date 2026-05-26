@@ -74,9 +74,9 @@ for s in $REQUIRED_SKILLS; do
     if [ -f "$SKILLS_DIR/$s/SKILL.md" ]; then
         echo "[PASS] $s"
     else
-        echo "[WARN] $s not found in $SKILLS_DIR — copying from skills/"
+        echo "[WARN] $s not found in $SKILLS_DIR — copying from .agents/skills/"
         mkdir -p "$SKILLS_DIR/$s"
-        cp "skills/$s/SKILL.md" "$SKILLS_DIR/$s/SKILL.md"
+        cp ".agents/skills/$s/SKILL.md" "$SKILLS_DIR/$s/SKILL.md"
     fi
 done
 

@@ -354,9 +354,10 @@ clicks: 3
   eyebrow="Milestone 1 of 4 · Live Demo · Desktop 2"
   title="The Naive Pass"
   meta="★ 3/5 · workspace-naive · ~8 min walkthrough"
+  heroSrc="/m1/setup.svg"
   :ingredients="[
     { label: 'Workspace', value: 'workspace-naive/', note: 'no skills, no CLAUDE.md' },
-    { label: 'Data', value: 'shop-sales.csv', note: '~46k rows, 6 months' },
+    { label: 'Data', value: 'shop-sales.csv', note: '~46k rows, 6 months', href: '/data/coffee-shops/shop-sales.csv' },
     { label: 'Platform', value: 'Claude.ai / ChatGPT / Copilot', note: 'any platform, file upload' },
     { label: 'Commands', value: 'upload + one open-ended prompt' },
   ]"
@@ -365,6 +366,7 @@ clicks: 3
     {
       kicker: 'Step 1',
       title: 'Load the data',
+      heroSrc: '/m1/step1.svg',
       heroCaption: 'Upload shop-sales.csv — no framing, no context',
       detail: 'Upload shop-sales.csv to your platform. No framing, no context, no instructions.',
       expected: 'File accepted; platform ready to receive a prompt.',
@@ -372,6 +374,7 @@ clicks: 3
     {
       kicker: 'Step 2',
       title: 'Run the naive prompt',
+      heroSrc: '/m1/step2.svg',
       heroCaption: 'Analyze this data and tell me what is interesting.',
       detail: 'Prompt the AI bare: Analyze this data and tell me what is interesting. No guidance.',
       expected: 'Confident output: revenue trends, top shops, volume stats. No caveats.',
@@ -379,6 +382,7 @@ clicks: 3
     {
       kicker: 'Step 3',
       title: 'Audit one finding',
+      heroSrc: '/m1/step3.svg',
       heroCaption: 'Push on a claim — ask it to cite the rows',
       detail: 'Push on any claim. Ask: which rows in the data support this finding?',
       expected: 'Agent cites a range OR restates without proof. The gap is visible.',
@@ -405,6 +409,7 @@ clicks: 3
   eyebrow="Milestone 2 of 4 · Live Demo · Desktop 2"
   title="The Infographic"
   meta="★ 3/5 · workspace-naive · ~8 min walkthrough"
+  heroSrc="/m2/setup.svg"
   :ingredients="[
     { label: 'Workspace', value: 'workspace-naive/', note: 'same session as M1' },
     { label: 'Data', value: 'shop-sales.csv loaded', note: 'no re-upload needed' },
@@ -416,6 +421,7 @@ clicks: 3
     {
       kicker: 'Step 1',
       title: 'Generate the report',
+      heroSrc: '/m2/step1.svg',
       heroCaption: 'One prompt: HTML infographic with 3+ charts',
       detail: 'Ask for a standalone HTML infographic with 3+ charts and professional styling.',
       expected: 'Self-contained HTML with charts, metric cards, and formatted layout.',
@@ -423,6 +429,7 @@ clicks: 3
     {
       kicker: 'Step 2',
       title: 'View as a stakeholder',
+      heroSrc: '/m2/step2.svg',
       heroCaption: 'Open in browser — not as the developer who built it',
       detail: 'Open in browser. View it as your VP would — not as the developer who built it.',
       expected: 'Polished report, looks presentation-ready. No data quality disclosures visible.',
@@ -430,6 +437,7 @@ clicks: 3
     {
       kicker: 'Step 3',
       title: 'Challenge one number',
+      heroSrc: '/m2/step3.svg',
       heroCaption: 'Ask: which rows support this metric exactly?',
       detail: 'Pick any displayed metric. Ask: which rows in the file support this number?',
       expected: 'Agent hedges or cannot cite rows. Surface quality exceeded the foundation.'
@@ -446,6 +454,149 @@ The tension: the report looks credible. It isn't defensible. That gap is the les
 -->
 
 ---
+layout: default
+class: section
+---
+
+<div class="uw-label mb-2">Setup Pause &middot; 3 min</div>
+
+# Get Set Up for Milestone 3
+
+<div class="uw-rule mt-2 mb-5"></div>
+
+<div class="setup-body">
+
+  <div class="setup-col">
+    <div class="setup-col-title">Get the data</div>
+    <p class="setup-col-desc">Five coffee shop files used in Milestones 1 through 4. The zip contains everything.</p>
+    <div class="setup-dl-stack">
+      <a class="gold-cta" href="/data/coffee-shops.zip" download>&#8595; All 5 files (.zip)</a>
+      <div class="setup-file-links">
+        <a href="/data/coffee-shops/shop-sales.csv" download>shop-sales.csv</a>
+        <a href="/data/coffee-shops/social-signals.csv" download>social-signals.csv</a>
+        <a href="/data/coffee-shops/vendor-bids.csv" download>vendor-bids.csv</a>
+        <a href="/data/coffee-shops/menu-catalog.json" download>menu-catalog.json</a>
+        <a href="/data/coffee-shops/shop-profiles.md" download>shop-profiles.md</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="setup-col">
+    <div class="setup-col-title">Load the harness</div>
+    <div class="setup-platforms">
+      <div class="platform-row">
+        <span class="pname">Claude.ai</span>
+        <span class="pinst">Create a Project &rarr; add harness-starter.md to project knowledge &rarr; upload data files</span>
+      </div>
+      <div class="platform-row">
+        <span class="pname">ChatGPT</span>
+        <span class="pinst">Settings &rarr; Custom Instructions &rarr; paste harness-starter.md &rarr; upload data files in chat</span>
+      </div>
+      <div class="platform-row">
+        <span class="pname">Gemini / Other</span>
+        <span class="pinst">Paste harness-starter.md as the first message of a new conversation, then share files</span>
+      </div>
+    </div>
+    <a class="purple-cta" style="margin-top: 0.75rem;" href="/harness-starter.md" download>&#8595; harness-starter.md</a>
+  </div>
+
+</div>
+
+<div class="trigger-ref">
+  <div class="trigger-head">Trigger phrases &mdash; no slash commands needed on web platforms</div>
+  <div class="trigger-grid">
+    <span class="tk">data-refinement-interview</span><span class="tv">"Before analyzing, ask me 4 targeted questions about scope, outliers, audience, and data quality."</span>
+    <span class="tk">programmatic-eda</span><span class="tv">"Scan the data: check types, null rates, outliers, and format issues. Cite file and row range."</span>
+    <span class="tk">data-confidence-scorer</span><span class="tv">"Add confidence scores (0-1) and source lineage to every claim."</span>
+    <span class="tk">html-infographic-builder</span><span class="tv">"Generate a standalone HTML report with Chart.js and UW purple/gold styling."</span>
+  </div>
+</div>
+
+<style scoped>
+h1 { font-size: 2em !important; margin: 0 !important; }
+.setup-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+.setup-col-title {
+  font-family: var(--ds-font-mono, monospace);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--uw-gold-dark, #785A0F);
+  margin-bottom: 0.4rem;
+}
+.setup-col-desc { font-size: 0.82rem; color: #444; margin: 0 0 0.75rem; line-height: 1.45; }
+.setup-dl-stack { display: flex; flex-direction: column; gap: 0.5rem; }
+.setup-file-links {
+  display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem;
+  margin-top: 0.2rem;
+}
+.setup-file-links a {
+  font-family: var(--ds-font-mono, monospace);
+  font-size: 0.72rem;
+  color: var(--uw-purple, #4B2E83);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--uw-purple, #4B2E83);
+  padding-bottom: 1px;
+}
+.setup-file-links a:hover { color: #2D1A52; border-color: #2D1A52; }
+.setup-platforms { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 0.75rem; }
+.platform-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.5rem;
+  align-items: start;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.pname {
+  font-family: var(--ds-font-mono, monospace);
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: var(--uw-purple, #4B2E83);
+  padding-top: 0.1em;
+}
+.pinst { color: #333; }
+.trigger-ref {
+  border-top: 1px solid rgba(75,46,131,0.18);
+  padding-top: 0.75rem;
+}
+.trigger-head {
+  font-family: var(--ds-font-mono, monospace);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--uw-gold-dark, #785A0F);
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+.trigger-grid {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.2rem 0.75rem;
+  align-items: baseline;
+}
+.tk {
+  font-family: var(--ds-font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--uw-purple, #4B2E83);
+  white-space: nowrap;
+}
+.tv { font-size: 0.76rem; color: #333; }
+</style>
+
+<!--
+Pause here. 3 minutes.
+"Download the zip, load harness-starter.md on your platform of choice, and note the trigger phrases in the table below. No slash commands needed -- just say the phrase."
+Confirm everyone is ready before switching to Desktop 3 for Milestone 3.
+-->
+
+---
 layout: none
 class: demo
 clicks: 4
@@ -456,6 +607,7 @@ clicks: 4
   eyebrow="Milestone 3 of 4 · Live Demo · Desktop 3"
   title="The Enrichment"
   meta="★ 5/5 · workspace-harnessed · ~6 min walkthrough"
+  heroSrc="/m3/setup.svg"
   :ingredients="[
     { label: 'Workspace', value: 'workspace-harnessed/', note: 'CLAUDE.md visible in editor' },
     { label: 'Skills', value: '.agents/skills/', note: '6 skills auto-loaded' },
@@ -467,6 +619,7 @@ clicks: 4
     {
       kicker: 'Step 1',
       title: 'Open the workspace',
+      heroSrc: '/m3/step1.svg',
       heroCaption: 'CLAUDE.md and .agents/skills/ visible in the editor',
       detail: 'Show students the CLAUDE.md operating instructions and the skill files that ship with the workspace.',
       expected: 'Skills are listed in chat; agent acknowledges the operating instructions.',
@@ -474,6 +627,7 @@ clicks: 4
     {
       kicker: 'Step 2',
       title: 'Trigger the interview',
+      heroSrc: '/m3/step2.svg',
       heroCaption: 'Run /data-refinement-interview',
       detail: 'The agent will ask 3–5 grounded questions before touching the data.',
       expected: '≤ 5 questions, each tied to a specific column, file, or audience.',
@@ -481,6 +635,7 @@ clicks: 4
     {
       kicker: 'Step 3',
       title: 'Answer the interview',
+      heroSrc: '/m3/step3.svg',
       heroCaption: 'Resolve audience, scope, and outlier handling',
       detail: 'Tell it: audience is the VP; investigate S3 flat-sales; treat HUB Coffee variants as one shop.',
       expected: 'Scope, audience, and outlier rules logged at the top of the analysis.',
@@ -488,6 +643,7 @@ clicks: 4
     {
       kicker: 'Step 4',
       title: 'Run programmatic EDA',
+      heroSrc: '/m3/step4.svg',
       heroCaption: 'Run /programmatic-eda — watch it flag the same issues we missed in M1',
       detail: 'The agent flags the S3 flat-sales anomaly, date format inconsistency, and shop name variants — all on its own.',
       expected: 'Three data quality issues surfaced, each with file + row range citations.',
@@ -513,6 +669,7 @@ clicks: 4
   eyebrow="Milestone 4 of 4 · Live Demo · Desktop 3"
   title="The Confident Narrative"
   meta="★ 5/5 · workspace-harnessed · ~10 min walkthrough"
+  heroSrc="/m4/setup.svg"
   :ingredients="[
     { label: 'Workspace', value: 'workspace-harnessed/', note: 'CLAUDE.md active, all skills' },
     { label: 'Data', value: 'data/coffee-shops/', note: 'all 5 files, same as M1' },
@@ -524,6 +681,7 @@ clicks: 4
     {
       kicker: 'Step 1',
       title: 'Generate the final report',
+      heroSrc: '/m4/step1.svg',
       heroCaption: 'Invoke all three output skills in one prompt',
       detail: 'Invoke all three output skills in one prompt. Let them run without interruption.',
       expected: 'HTML with confidence score (0–1) on every claim, assumptions logged, row citations.',
@@ -531,6 +689,7 @@ clicks: 4
     {
       kicker: 'Step 2',
       title: 'Run the spotlight tour',
+      heroSrc: '/m4/step2.svg',
       heroCaption: 'Launch the Shepherd.js guided walkthrough',
       detail: 'Open the report in browser. Launch the Shepherd.js guided walkthrough from the menu.',
       expected: 'Tour walks 4–6 narrative beats in the order a stakeholder should read them.',
@@ -538,6 +697,7 @@ clicks: 4
     {
       kicker: 'Step 3',
       title: 'Compare to M2',
+      heroSrc: '/m4/step3.svg',
       heroCaption: 'The data did not change. The harness did.',
       detail: 'The data did not change between M2 and M4. Name the specific differences aloud.',
       expected: 'Confidence scores, source lineage, audience variants — all absent from M2.',
@@ -545,6 +705,7 @@ clicks: 4
     {
       kicker: 'Step 4',
       title: 'Watch for context bleed',
+      heroSrc: '/m4/step4.svg',
       heroCaption: 'Risk: multiple datasets, no scoping = silent blending',
       detail: 'Loading multiple datasets without scoping lets the agent blend context silently.',
       expected: 'Use CLAUDE.md dataset scoping. Explicit references prevent cross-dataset confusion.',

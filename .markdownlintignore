@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vercel/
+public/
+.agents/
+# Mirrored skill copies — lint the source of truth in skills/ instead.
+workspace-harnessed/.agents/
+# Vendored upstream skill content (antfu/skills).
+skills/slidev/references/
+skills/slidev/LICENSE.md
+skills/slidev/README.md

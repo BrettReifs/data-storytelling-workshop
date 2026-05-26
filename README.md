@@ -57,7 +57,7 @@ data-storytelling-workshop/
 │   └── job-market/              Track B — 3 files, 400 postings
 ├── workspace-naive/             Demo workspace — no skills
 ├── workspace-harnessed/         Demo workspace — full harness
-├── skills/                      Six custom agent skills (source of truth)
+├── .agents/skills/              Six custom agent skills (source of truth)
 └── milestones/                  README + prompts for each milestone
 ```
 
@@ -78,7 +78,7 @@ data-storytelling-workshop/
 
 ## Custom Skills
 
-Six workshop-specific agent skills are in `skills/`:
+Six workshop-specific agent skills are in `.agents/skills/`:
 
 | Skill | What It Does |
 |-------|-------------|

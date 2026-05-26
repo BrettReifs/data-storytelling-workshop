@@ -1,0 +1,71 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0.75"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000040"/>
+    </filter>
+  </defs>
+  <rect width="560" height="370" fill="#1a1a2e"/>
+  <!-- Browser chrome -->
+  <rect width="560" height="34" fill="#2c2c2c"/>
+  <circle cx="14" cy="17" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="17" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="17" r="4.5" fill="#28CA41"/>
+  <rect x="58" y="6" width="444" height="22" rx="4" fill="#3c3c3c"/>
+  <text x="280" y="22" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#aaa" text-anchor="middle">file:///Users/demo/workspace-naive/report.html</text>
+  <!-- Page white bg -->
+  <rect x="0" y="34" width="560" height="336" fill="#f7f8fc"/>
+  <!-- Header bar -->
+  <rect x="0" y="34" width="560" height="46" fill="#4b2d8b"/>
+  <text x="280" y="61" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="700">Coffee Shop Performance Report — Q1 2025</text>
+  <!-- Tab row -->
+  <rect x="0" y="80" width="560" height="26" fill="#f0eef8"/>
+  <rect x="18" y="82" width="92" height="22" rx="4" fill="white" stroke="#d0cce8" stroke-width="1"/>
+  <text x="64" y="97" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#4b2d8b" text-anchor="middle" font-weight="600">Overview</text>
+  <text x="148" y="97" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#888" text-anchor="middle">Shops</text>
+  <text x="208" y="97" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#888" text-anchor="middle">Trends</text>
+  <!-- Metric cards -->
+  <rect x="18" y="116" width="154" height="60" rx="7" fill="white" filter="url(#shadow)"/>
+  <text x="95" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.1em">REVENUE</text>
+  <text x="95" y="158" font-family="system-ui,-apple-system,sans-serif" font-size="19" fill="#1a1a2e" text-anchor="middle" font-weight="700">$287,492</text>
+  <rect x="188" y="116" width="154" height="60" rx="7" fill="white" filter="url(#shadow)"/>
+  <text x="265" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.1em">TOP SHOP</text>
+  <text x="265" y="155" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#1a1a2e" text-anchor="middle" font-weight="700">S1 Pike Place</text>
+  <text x="265" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#888" text-anchor="middle">$42,847  ·  Rank #1</text>
+  <rect x="358" y="116" width="184" height="60" rx="7" fill="white" filter="url(#shadow)"/>
+  <text x="450" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.1em">GROWTH RATE</text>
+  <text x="450" y="157" font-family="system-ui,-apple-system,sans-serif" font-size="21" fill="#22863a" text-anchor="middle" font-weight="700">+12.3%</text>
+  <text x="450" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#888" text-anchor="middle">month-over-month</text>
+  <!-- Main chart area -->
+  <rect x="18" y="190" width="328" height="130" rx="7" fill="white" filter="url(#shadow)"/>
+  <text x="182" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="600">Revenue Trend — Oct to Mar</text>
+  <!-- Trend line (simplified) -->
+  <polyline points="40,300 90,285 140,278 190,265 240,258 300,248 330,240" fill="none" stroke="#4b2d8b" stroke-width="2.5"/>
+  <circle cx="40" cy="300" r="3" fill="#4b2d8b"/>
+  <circle cx="90" cy="285" r="3" fill="#4b2d8b"/>
+  <circle cx="140" cy="278" r="3" fill="#4b2d8b"/>
+  <circle cx="190" cy="265" r="3" fill="#4b2d8b"/>
+  <circle cx="240" cy="258" r="3" fill="#4b2d8b"/>
+  <circle cx="300" cy="248" r="3" fill="#4b2d8b"/>
+  <circle cx="330" cy="240" r="3" fill="#4b2d8b"/>
+  <text x="40" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">Oct</text>
+  <text x="90" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">Nov</text>
+  <text x="140" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">Dec</text>
+  <text x="190" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">Jan</text>
+  <text x="240" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">Feb</text>
+  <text x="300" y="314" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">Mar</text>
+  <!-- Right panel -->
+  <rect x="360" y="190" width="182" height="130" rx="7" fill="white" filter="url(#shadow)"/>
+  <text x="451" y="210" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="600">Summary</text>
+  <line x1="372" y1="216" x2="530" y2="216" stroke="#eee" stroke-width="1"/>
+  <text x="376" y="232" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#444">● 6 locations analyzed</text>
+  <text x="376" y="248" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#444">● 46,112 transactions processed</text>
+  <text x="376" y="264" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#444">● S1 leads by $8,340 margin</text>
+  <text x="376" y="280" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#444">● Weekend uplift +34%</text>
+  <line x1="372" y1="292" x2="530" y2="292" stroke="#eee" stroke-width="1"/>
+  <text x="451" y="308" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#ccc" text-anchor="middle">No confidence scores  ·  No source citations</text>
+  <rect x="0" y="316" width="560" height="54" fill="url(#bottomFade)"/>
+</svg>

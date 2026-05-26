@@ -1,0 +1,64 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e1e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1e1e1e" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="370" fill="#1e1e1e"/>
+  <!-- Title bar -->
+  <rect width="560" height="28" fill="#323233"/>
+  <circle cx="14" cy="14" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="14" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="14" r="4.5" fill="#28CA41"/>
+  <text x="280" y="19" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#ccc" text-anchor="middle">CLAUDE.md — workspace-harnessed</text>
+  <!-- Activity bar -->
+  <rect x="0" y="28" width="46" height="342" fill="#333333"/>
+  <text x="23" y="57" font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">⎗</text>
+  <!-- Editor panel (left 60%) -->
+  <rect x="46" y="28" width="306" height="328" fill="#1e1e1e"/>
+  <!-- Tab bar -->
+  <rect x="46" y="28" width="306" height="24" fill="#2d2d2d"/>
+  <rect x="46" y="28" width="120" height="24" fill="#1e1e1e"/>
+  <text x="58" y="44" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#4fc3f7">📄 CLAUDE.md  ×</text>
+  <!-- CLAUDE.md content -->
+  <text x="58" y="72" font-family="Consolas,monospace" font-size="11" fill="#d4a853"># Operating Instructions</text>
+  <text x="58" y="90" font-family="Consolas,monospace" font-size="10" fill="#6e7681"><!-- workspace-harnessed --></text>
+  <text x="58" y="110" font-family="Consolas,monospace" font-size="11" fill="#ce9178">## Role</text>
+  <text x="58" y="126" font-family="Consolas,monospace" font-size="10" fill="#cccccc">Data analysis agent · 6 skills active</text>
+  <text x="58" y="146" font-family="Consolas,monospace" font-size="11" fill="#ce9178">## Before Analyzing</text>
+  <text x="58" y="162" font-family="Consolas,monospace" font-size="10" fill="#cccccc">Run /data-refinement-interview</text>
+  <text x="58" y="178" font-family="Consolas,monospace" font-size="10" fill="#cccccc">to establish scope, audience, and</text>
+  <text x="58" y="194" font-family="Consolas,monospace" font-size="10" fill="#cccccc">outlier handling before any analysis.</text>
+  <text x="58" y="214" font-family="Consolas,monospace" font-size="11" fill="#ce9178">## Output Standards</text>
+  <text x="58" y="230" font-family="Consolas,monospace" font-size="10" fill="#cccccc">Every claim must cite source rows.</text>
+  <text x="58" y="246" font-family="Consolas,monospace" font-size="10" fill="#cccccc">Confidence scores required on all</text>
+  <text x="58" y="262" font-family="Consolas,monospace" font-size="10" fill="#cccccc">executive-facing findings.</text>
+  <!-- Chat panel (right 40%) -->
+  <rect x="352" y="28" width="208" height="328" fill="#252526"/>
+  <!-- Chat header -->
+  <rect x="352" y="28" width="208" height="24" fill="#2d2d2d"/>
+  <text x="456" y="44" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#ccc" text-anchor="middle">Claude (Chat)</text>
+  <!-- Chat content: skills loaded -->
+  <rect x="362" y="62" width="188" height="130" rx="6" fill="#0d2018" stroke="#1a4731" stroke-width="1"/>
+  <text x="456" y="80" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#3fb950" text-anchor="middle" font-weight="600">✓ Skills loaded successfully</text>
+  <line x1="370" y1="86" x2="542" y2="86" stroke="#1a4731" stroke-width="1"/>
+  <text x="370" y="100" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#3fb950">✓ data-refinement-interview</text>
+  <text x="370" y="115" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#3fb950">✓ data-confidence-scorer</text>
+  <text x="370" y="130" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#3fb950">✓ html-infographic-builder</text>
+  <text x="370" y="145" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#3fb950">✓ spotlight-walkthrough</text>
+  <text x="370" y="160" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#3fb950">✓ bootstrap-preflight</text>
+  <text x="370" y="175" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#3fb950">✓ live-demo-recipe</text>
+  <!-- Instruction acknowledgement -->
+  <rect x="362" y="202" width="188" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="370" y="218" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">Operating instructions loaded.</text>
+  <text x="370" y="232" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">I will run the interview before</text>
+  <text x="370" y="246" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#8b949e">touching any data files.</text>
+  <!-- Chat input -->
+  <rect x="362" y="276" width="188" height="30" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="374" y="295" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#484f58">Ask Claude…</text>
+  <!-- Status bar -->
+  <rect x="0" y="356" width="560" height="14" fill="#0078d4"/>
+  <text x="58" y="367" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="white">⎗ workspace-harnessed  ·  6 skills active</text>
+  <rect x="0" y="316" width="560" height="40" fill="url(#bottomFade)"/>
+</svg>

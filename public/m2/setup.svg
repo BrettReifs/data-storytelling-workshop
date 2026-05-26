@@ -1,0 +1,64 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <!-- Background (page-like) -->
+  <rect width="560" height="370" fill="#1a1a2e"/>
+  <!-- Browser chrome -->
+  <rect width="560" height="34" fill="#2c2c2c"/>
+  <circle cx="14" cy="17" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="17" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="17" r="4.5" fill="#28CA41"/>
+  <!-- URL bar -->
+  <rect x="58" y="6" width="444" height="22" rx="4" fill="#3c3c3c"/>
+  <text x="280" y="22" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#aaa" text-anchor="middle">file:///Users/demo/workspace-naive/report.html</text>
+  <!-- Dashboard page -->
+  <rect x="0" y="34" width="560" height="336" fill="#f7f8fc"/>
+  <!-- Dashboard header -->
+  <rect x="0" y="34" width="560" height="46" fill="#4b2d8b"/>
+  <text x="280" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="700">Coffee Shop Performance Report — Q1 2025</text>
+  <!-- Metric cards -->
+  <rect x="18" y="92" width="158" height="66" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="97" y="112" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#666" text-anchor="middle" letter-spacing="0.08em">TOTAL REVENUE</text>
+  <text x="97" y="138" font-family="system-ui,-apple-system,sans-serif" font-size="20" fill="#1a1a2e" text-anchor="middle" font-weight="700">$287,492</text>
+  <rect x="194" y="92" width="158" height="66" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="273" y="112" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#666" text-anchor="middle" letter-spacing="0.08em">TOP LOCATION</text>
+  <text x="273" y="134" font-family="system-ui,-apple-system,sans-serif" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="700">S1 Pike Place</text>
+  <text x="273" y="150" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#888" text-anchor="middle">$42,847 revenue</text>
+  <rect x="370" y="92" width="158" height="66" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="449" y="112" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#666" text-anchor="middle" letter-spacing="0.08em">GROWTH RATE</text>
+  <text x="449" y="134" font-family="system-ui,-apple-system,sans-serif" font-size="22" fill="#22863a" text-anchor="middle" font-weight="700">+12.3%</text>
+  <text x="449" y="150" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#888" text-anchor="middle">month-over-month</text>
+  <!-- Bar chart -->
+  <rect x="18" y="172" width="328" height="148" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="182" y="192" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#333" text-anchor="middle" font-weight="600">Revenue by Shop (Oct – Mar)</text>
+  <!-- Bars -->
+  <rect x="42"  y="274" width="34" height="36" fill="#4b2d8b" opacity="0.8"/>
+  <rect x="90"  y="248" width="34" height="62" fill="#4b2d8b"/>
+  <rect x="138" y="262" width="34" height="48" fill="#4b2d8b" opacity="0.65"/>
+  <rect x="186" y="268" width="34" height="42" fill="#4b2d8b" opacity="0.65"/>
+  <rect x="234" y="271" width="34" height="39" fill="#4b2d8b" opacity="0.5"/>
+  <rect x="282" y="269" width="34" height="41" fill="#4b2d8b" opacity="0.5"/>
+  <line x1="30" y1="310" x2="328" y2="310" stroke="#ddd" stroke-width="1"/>
+  <text x="59"  y="322" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">S1</text>
+  <text x="107" y="322" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">S2</text>
+  <text x="155" y="322" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">S3</text>
+  <text x="203" y="322" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">S4</text>
+  <text x="251" y="322" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">S5</text>
+  <text x="299" y="322" font-family="system-ui,sans-serif" font-size="8" fill="#999" text-anchor="middle">S6</text>
+  <!-- Key insights panel -->
+  <rect x="360" y="172" width="182" height="148" rx="7" fill="white" stroke="#e2e4ea" stroke-width="1"/>
+  <text x="451" y="192" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#333" text-anchor="middle" font-weight="600">Key Insights</text>
+  <line x1="372" y1="198" x2="530" y2="198" stroke="#eee" stroke-width="1"/>
+  <text x="376" y="214" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#444">● S1 leads by $8,340 margin</text>
+  <text x="376" y="230" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#444">● Q1 growth outpaced Q4</text>
+  <text x="376" y="246" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#444">● Weekend uplift: +34%</text>
+  <text x="376" y="262" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#444">● Jan seasonal dip: all shops</text>
+  <line x1="372" y1="276" x2="530" y2="276" stroke="#eee" stroke-width="1"/>
+  <text x="451" y="290" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#ccc" text-anchor="middle">Generated by AI  ·  No data citations</text>
+  <!-- Bottom fade for caption overlay -->
+  <rect x="0" y="318" width="560" height="52" fill="url(#bottomFade)"/>
+</svg>

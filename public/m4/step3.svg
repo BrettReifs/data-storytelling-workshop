@@ -1,0 +1,67 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="370" fill="#0d1117"/>
+  <!-- Top chrome bar -->
+  <rect width="560" height="28" fill="#161b22"/>
+  <circle cx="14" cy="14" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="14" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="14" r="4.5" fill="#28CA41"/>
+  <text x="280" y="19" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6e7681" text-anchor="middle">Side-by-side comparison — same data, different harness</text>
+  <!-- Divider: vertical center line -->
+  <line x1="280" y1="28" x2="280" y2="360" stroke="#30363d" stroke-width="1.5"/>
+  <!-- LEFT: M2 panel label -->
+  <rect x="0" y="28" width="280" height="26" fill="#1a0a0a" opacity="0.8"/>
+  <text x="140" y="46" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#f85149" text-anchor="middle" font-weight="700">Milestone 2 — No Harness</text>
+  <!-- RIGHT: M4 panel label -->
+  <rect x="280" y="28" width="280" height="26" fill="#0a1a0a" opacity="0.8"/>
+  <text x="420" y="46" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#3fb950" text-anchor="middle" font-weight="700">Milestone 4 — Full Harness</text>
+  <!-- LEFT M2 content -->
+  <!-- M2 browser chrome mini -->
+  <rect x="10" y="64" width="260" height="18" rx="3" fill="#2c2c2c"/>
+  <text x="140" y="77" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">file:///report.html</text>
+  <!-- M2 metric card (plain) -->
+  <rect x="18" y="90" width="252" height="70" rx="7" fill="white"/>
+  <text x="30" y="110" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888" letter-spacing="0.08em">REVENUE GROWTH</text>
+  <text x="30" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="24" fill="#22863a" font-weight="700">+12.3%</text>
+  <text x="30" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#aaa">month-over-month</text>
+  <!-- M2: no badge, no citation -->
+  <text x="140" y="178" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#f85149" text-anchor="middle">✗ No confidence score</text>
+  <text x="140" y="194" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#f85149" text-anchor="middle">✗ No source citation</text>
+  <text x="140" y="210" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#f85149" text-anchor="middle">✗ No assumptions logged</text>
+  <text x="140" y="226" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#f85149" text-anchor="middle">✗ S3 anomaly not disclosed</text>
+  <!-- M2 footer note -->
+  <rect x="18" y="240" width="252" height="20" rx="4" fill="#3d1a1a" opacity="0.6"/>
+  <text x="144" y="254" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#f85149" text-anchor="middle">Same data — no defensibility</text>
+  <!-- RIGHT M4 content -->
+  <!-- M4 browser chrome mini -->
+  <rect x="290" y="64" width="260" height="18" rx="3" fill="#2c2c2c"/>
+  <text x="420" y="77" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">file:///final-report.html</text>
+  <!-- M4 metric card (with scores) -->
+  <rect x="298" y="90" width="252" height="70" rx="7" fill="white" stroke="#22863a" stroke-width="1.5"/>
+  <text x="310" y="110" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="#888" letter-spacing="0.08em">REVENUE GROWTH</text>
+  <text x="310" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="24" fill="#22863a" font-weight="700">+12.3%</text>
+  <text x="310" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#aaa">S3 excluded · HUB Coffee merged</text>
+  <!-- Confidence badge -->
+  <rect x="458" y="98" width="80" height="24" rx="12" fill="#e6f4ea" stroke="#22863a" stroke-width="1.5"/>
+  <text x="498" y="114" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#22863a" text-anchor="middle" font-weight="700">● 0.87</text>
+  <!-- Citation chip -->
+  <rect x="458" y="128" width="80" height="20" rx="4" fill="#f0f8ff" stroke="#58a6ff" stroke-width="1"/>
+  <text x="498" y="142" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="#1f6feb" text-anchor="middle">rows 1–46,112</text>
+  <!-- M4: checks -->
+  <text x="420" y="178" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#3fb950" text-anchor="middle">✓ Confidence score: 0.87</text>
+  <text x="420" y="194" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#3fb950" text-anchor="middle">✓ Source: shop-sales.csv rows 1–46,112</text>
+  <text x="420" y="210" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#3fb950" text-anchor="middle">✓ 3 assumptions logged</text>
+  <text x="420" y="226" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#3fb950" text-anchor="middle">✓ S3 anomaly scoped and disclosed</text>
+  <!-- M4 footer note -->
+  <rect x="298" y="240" width="252" height="20" rx="4" fill="#0d2018" stroke="#1a4731" stroke-width="1"/>
+  <text x="424" y="254" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" fill="#3fb950" text-anchor="middle">Same data — defensible &amp; auditable</text>
+  <!-- Bottom comparison note -->
+  <rect x="60" y="276" width="440" height="32" rx="7" fill="#2d2200" stroke="#5a3e0a" stroke-width="1"/>
+  <text x="280" y="294" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#d4a853" text-anchor="middle" font-weight="600">The data did not change. The disciplines did.</text>
+  <rect x="0" y="318" width="560" height="52" fill="url(#bottomFade)"/>
+</svg>

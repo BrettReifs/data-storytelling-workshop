@@ -29,17 +29,19 @@ Skills are available as installed skills. Reference with `/skill-name` or descri
 These platforms don't have native skill discovery. Instead, paste the contents of the relevant `SKILL.md` file into your system prompt or conversation context before running the analysis.
 
 Example:
-1. Open `skills/data-refinement-interview/SKILL.md`
+
+1. Open `.agents/skills/data-refinement-interview/SKILL.md`
 2. Copy the full contents
 3. Paste into your conversation: "Use these instructions for this analysis: [paste SKILL.md]"
 4. Load your data and proceed
 
 ## Updating Skills
 
-Skills are defined in `skills/` (source of truth). After any changes, run:
+Skills are defined in `.agents/skills/` (source of truth). After any changes, run:
+
 ```bash
 # Copy updated skills to harnessed workspace
-cp -r skills/* workspace-harnessed/.agents/skills/
+cp -r .agents/skills/* workspace-harnessed/.agents/skills/
 
 # Regenerate AGENTS.md index
 # (or run /sync-skills-index in Claude Code)

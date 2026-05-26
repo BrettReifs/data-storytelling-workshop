@@ -1,0 +1,44 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="370" fill="#0d1117"/>
+  <rect width="560" height="28" fill="#161b22"/>
+  <circle cx="14" cy="14" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="14" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="14" r="4.5" fill="#28CA41"/>
+  <text x="280" y="19" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#6e7681" text-anchor="middle">Claude (workspace-harnessed)</text>
+  <rect x="0" y="28" width="48" height="342" fill="#010409"/>
+  <rect x="48" y="28" width="512" height="342" fill="#0d1117"/>
+  <!-- User command -->
+  <rect x="336" y="38" width="206" height="28" rx="7" fill="#1c3a5e"/>
+  <text x="439" y="56" font-family="Consolas,monospace" font-size="12" fill="#79c0ff" text-anchor="middle">/data-refinement-interview</text>
+  <!-- AI interview response -->
+  <rect x="68" y="78" width="424" height="220" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="86" y="98" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#e6edf3" font-weight="600">Before I touch the data, I have 5 quick questions:</text>
+  <line x1="86" y1="106" x2="474" y2="106" stroke="#30363d" stroke-width="1"/>
+  <!-- Questions -->
+  <text x="86" y="122" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">1.</text>
+  <text x="100" y="122" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#e6edf3">Who is the primary audience? (executive / operations / academic)</text>
+  <text x="86" y="140" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">2.</text>
+  <text x="100" y="140" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#e6edf3">Which shops or time periods should I prioritize in the analysis?</text>
+  <text x="86" y="158" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#d4a853">3.</text>
+  <text x="100" y="158" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#e6edf3"><tspan fill="#d4a853">[shop-profiles.md]</tspan> "HUB Coffee" has 3 name variants — treat as one?</text>
+  <text x="86" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#d4a853">4.</text>
+  <text x="100" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#e6edf3"><tspan fill="#d4a853">[shop-sales.csv]</tspan> S3 shows 47 days of flat $0 sales — anomaly or known issue?</text>
+  <text x="86" y="194" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">5.</text>
+  <text x="100" y="194" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#e6edf3">What confidence level do you need? (executive-grade / exploratory)</text>
+  <line x1="86" y1="206" x2="474" y2="206" stroke="#30363d" stroke-width="1"/>
+  <text x="86" y="222" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">Answer all 5, or the most critical ones. I'll log your answers</text>
+  <text x="86" y="238" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#8b949e">as scope constraints before proceeding.</text>
+  <!-- Gold callout: questions grounded in file/column -->
+  <rect x="86" y="252" width="340" height="22" rx="5" fill="#2d2200" stroke="#5a3e0a" stroke-width="1"/>
+  <text x="256" y="267" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#d4a853" text-anchor="middle">Questions 3 &amp; 4 cite specific files and column anomalies</text>
+  <!-- Input -->
+  <rect x="78" y="318" width="404" height="36" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="104" y="340" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#484f58">Answer the interview…</text>
+  <rect x="0" y="318" width="560" height="52" fill="url(#bottomFade)"/>
+</svg>

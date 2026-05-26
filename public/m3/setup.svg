@@ -1,0 +1,77 @@
+<svg viewBox="0 0 560 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e1e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1e1e1e" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <!-- VS Code background -->
+  <rect width="560" height="370" fill="#1e1e1e"/>
+  <!-- Title bar -->
+  <rect width="560" height="28" fill="#323233"/>
+  <circle cx="14" cy="14" r="4.5" fill="#FF5F57"/>
+  <circle cx="26" cy="14" r="4.5" fill="#FFBD2E"/>
+  <circle cx="38" cy="14" r="4.5" fill="#28CA41"/>
+  <text x="280" y="19" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#ccc" text-anchor="middle">workspace-harnessed — Visual Studio Code</text>
+  <!-- Activity bar -->
+  <rect x="0" y="28" width="46" height="342" fill="#333333"/>
+  <!-- Explorer icon (active) -->
+  <rect x="10" y="40" width="26" height="26" rx="4" fill="#ffffff" opacity="0.1"/>
+  <text x="23" y="57" font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">⎗</text>
+  <!-- Other icons -->
+  <text x="23" y="92" font-family="system-ui,sans-serif" font-size="13" fill="#858585" text-anchor="middle">⌕</text>
+  <text x="23" y="122" font-family="system-ui,sans-serif" font-size="13" fill="#858585" text-anchor="middle">⑂</text>
+  <text x="23" y="152" font-family="system-ui,sans-serif" font-size="13" fill="#858585" text-anchor="middle">⚙</text>
+  <!-- Sidebar / Explorer panel -->
+  <rect x="46" y="28" width="174" height="342" fill="#252526"/>
+  <!-- Explorer header -->
+  <text x="58" y="48" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#bbb" letter-spacing="0.12em">EXPLORER</text>
+  <!-- File tree -->
+  <text x="58" y="68" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#cccccc" font-weight="600">▾ workspace-harnessed</text>
+  <!-- CLAUDE.md (highlighted) -->
+  <rect x="58" y="74" width="158" height="18" rx="2" fill="#094771" opacity="0.7"/>
+  <text x="72" y="87" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#4fc3f7">📄 CLAUDE.md</text>
+  <!-- .agents folder -->
+  <text x="68" y="106" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#cccccc">▾ .agents</text>
+  <text x="78" y="124" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#cccccc">▾ skills</text>
+  <!-- Skills list -->
+  <text x="90" y="140" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#9cdcfe">📁 bootstrap-preflight</text>
+  <text x="90" y="155" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#9cdcfe">📁 data-confidence-scorer</text>
+  <text x="90" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#9cdcfe">📁 data-refinement-interview</text>
+  <text x="90" y="185" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#9cdcfe">📁 html-infographic-builder</text>
+  <text x="90" y="200" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#9cdcfe">📁 live-demo-recipe</text>
+  <text x="90" y="215" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#9cdcfe">📁 spotlight-walkthrough</text>
+  <!-- data folder -->
+  <text x="68" y="232" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#cccccc">▾ data</text>
+  <text x="80" y="248" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#858585">▾ coffee-shops</text>
+  <text x="92" y="263" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#666">shop-sales.csv</text>
+  <text x="92" y="277" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#666">shop-profiles.md</text>
+  <text x="80" y="292" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#858585">▸ job-market</text>
+  <!-- Editor area (showing CLAUDE.md open) -->
+  <rect x="220" y="28" width="340" height="342" fill="#1e1e1e"/>
+  <!-- Editor tab bar -->
+  <rect x="220" y="28" width="340" height="24" fill="#2d2d2d"/>
+  <rect x="220" y="28" width="120" height="24" fill="#1e1e1e"/>
+  <text x="232" y="44" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#4fc3f7">📄 CLAUDE.md</text>
+  <!-- CLAUDE.md content -->
+  <text x="232" y="76" font-family="Consolas,monospace" font-size="11" fill="#d4a853"># Operating Instructions</text>
+  <text x="232" y="94" font-family="Consolas,monospace" font-size="10" fill="#6e7681"><!-- CLAUDE.md — workspace-harnessed --></text>
+  <text x="232" y="112" font-family="Consolas,monospace" font-size="11" fill="#ce9178">## Role</text>
+  <text x="232" y="128" font-family="Consolas,monospace" font-size="10" fill="#cccccc">You are a data analysis agent with 6 custom</text>
+  <text x="232" y="143" font-family="Consolas,monospace" font-size="10" fill="#cccccc">skills loaded from .agents/skills/.</text>
+  <text x="232" y="163" font-family="Consolas,monospace" font-size="11" fill="#ce9178">## Skills Loaded</text>
+  <text x="232" y="179" font-family="Consolas,monospace" font-size="10" fill="#9cdcfe">- data-refinement-interview</text>
+  <text x="232" y="194" font-family="Consolas,monospace" font-size="10" fill="#9cdcfe">- data-confidence-scorer</text>
+  <text x="232" y="209" font-family="Consolas,monospace" font-size="10" fill="#9cdcfe">- html-infographic-builder</text>
+  <text x="232" y="224" font-family="Consolas,monospace" font-size="10" fill="#9cdcfe">- spotlight-walkthrough</text>
+  <text x="232" y="239" font-family="Consolas,monospace" font-size="10" fill="#9cdcfe">- bootstrap-preflight</text>
+  <text x="232" y="254" font-family="Consolas,monospace" font-size="10" fill="#9cdcfe">- live-demo-recipe</text>
+  <text x="232" y="274" font-family="Consolas,monospace" font-size="11" fill="#ce9178">## Dataset Scoping</text>
+  <text x="232" y="290" font-family="Consolas,monospace" font-size="10" fill="#cccccc">Always reference files explicitly when</text>
+  <text x="232" y="305" font-family="Consolas,monospace" font-size="10" fill="#cccccc">multiple datasets are loaded.</text>
+  <!-- Status bar -->
+  <rect x="0" y="356" width="560" height="14" fill="#0078d4"/>
+  <text x="58" y="367" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="white">⎗ workspace-harnessed</text>
+  <text x="420" y="367" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" fill="white">Markdown  ·  UTF-8</text>
+  <rect x="0" y="316" width="560" height="40" fill="url(#bottomFade)"/>
+</svg>
