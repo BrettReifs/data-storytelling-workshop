@@ -21,22 +21,90 @@ layout: cover
 class: hero
 ---
 
-<div class="uw-label mb-4">UW Foster School of Business · Data Analytics</div>
-
-# From Raw Data to<br>Confident Narratives
-
-<div class="uw-rule mt-3 mb-4"></div>
-
-**Agent-Driven Data Storytelling**
-
-<div class="mt-8 text-lg opacity-80">
-Brett Reif · May 2026
+<div class="hero-grid">
+  <div class="hero-left">
+    <div class="uw-label mb-4">UW Foster School of Business · Data Analytics</div>
+    <h1>From Raw Data to<br>Confident Narratives</h1>
+    <div class="uw-rule mt-3 mb-4"></div>
+    <p class="hero-tagline"><strong>Agent-Driven Data Storytelling</strong></p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="/profile-brett.jpg" alt="Headshot of Brett Reifers, Senior Product Manager at Microsoft" class="hero-photo" />
+    </div>
+    <div class="hero-presenter-name">Brett Reifers</div>
+    <div class="hero-presenter-role">Senior Product Manager, Microsoft</div>
+  </div>
 </div>
+
+<style scoped>
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+.hero-left {
+  min-width: 0;
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.hero-photo-wrap {
+  width: 240px;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid var(--uw-gold-bright, #D4A853);
+  box-shadow: 0 10px 32px rgba(75, 46, 131, 0.35);
+  margin-bottom: 0.75rem;
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+.hero-presenter-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+.hero-presenter-role {
+  font-size: 0.95rem;
+  color: #F6F1FA;            /* solid light tint; 4.7:1 on the lightest band of the purple gradient, passes WCAG AA */
+  line-height: 1.4;
+  max-width: 24ch;
+}
+</style>
 
 <!--
 Welcome. This workshop is one hour, four milestones, two workspaces, and one question that matters: how do you know when to trust what the AI is telling you about your data?
 
 We are not here to debate whether AI can analyze data. It can. We are here to learn how to make it do so in a way that produces findings you can stand behind.
+-->
+
+---
+layout: center
+class: hero
+---
+
+<div class="h-full w-full flex flex-col justify-center">
+  <div class="uw-label mb-6">The Context</div>
+  <div style="font-size: clamp(2rem, 5.2vw, 4.5rem); line-height: 1.08; font-weight: 800; max-width: 16ch;">
+    You will prototype a story with data for me in the next 45 minutes.
+  </div>
+</div>
+
+<!--
+Set the room with a single concrete expectation before moving into the challenge slide.
+Pause after reading this line so students feel the time constraint.
 -->
 
 ---
@@ -46,29 +114,36 @@ class: section
 
 <div class="uw-label mb-6">The Problem</div>
 
-# AI can analyze anything.
+# Turning data into a clear narrative is hard
 
 <div class="uw-rule mt-4 mb-6"></div>
 
-<v-clicks>
+<div class="grid grid-cols-[1fr_auto_1fr] gap-4 items-stretch mb-5">
+  <div class="p-5 rounded-xl border-2" style="border-color: #93c5fd; background: #eff6ff; color: #0f172a;">
+    <div class="font-semibold text-lg">What raw analysis gives you</div>
+    <ul class="mt-3 space-y-2" style="padding-left: 1.1rem; margin: 0.75rem 0 0 0;">
+      <li>Revenue and volume trends</li>
+      <li>Segment-level performance cuts</li>
+      <li>Early chart directions</li>
+    </ul>
+  </div>
+  <div class="self-center px-3 py-1 rounded-full" style="background: var(--uw-purple); color: #ffffff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;">VS</div>
+  <div class="p-5 rounded-xl border-2" style="border-color: #fcd34d; background: #fffbeb; color: #1a0a30;">
+    <div class="font-semibold text-lg">What stakeholders still need</div>
+    <ul class="mt-3 space-y-2" style="padding-left: 1.1rem; margin: 0.75rem 0 0 0;">
+      <li>A clear business story</li>
+      <li>Assumptions and caveats</li>
+      <li>Risks and tradeoffs</li>
+    </ul>
+  </div>
+</div>
 
-- Load a CSV. Ask "what's interesting?" You get a report.
-- It sounds confident. The charts look professional.
-- But where did the numbers come from?
-- What did it assume? What did it skip?
-- Would you present this to your VP?
-
-</v-clicks>
-
-<v-click>
+How do you know when a story is "good enough?"
 
 <div class="mt-8 p-4 rounded-lg border-l-4" style="border-color: var(--uw-gold-bright); background: var(--uw-gold-pale); color: #1a0a30;">
 <strong>The gap is not capability. It is confidence.</strong><br>
-Unstructured AI output is a rough draft, not a finished argument.
+Raw output is a rough draft, not a decision-ready narrative.
 </div>
-
-</v-click>
-
 <!--
 The problem isn't that AI hallucinates — though it can. The problem is that even when the output is technically correct, there's no trail. No assumptions log. No confidence markers. No way to know what question it thought you asked.
 
@@ -132,13 +207,9 @@ class: section
 
 <div class="uw-rule mt-4 mb-6"></div>
 
-<v-clicks>
+As data specialists entering AI-first teams, this is your reality: more data than time, uneven quality, and instant AI-generated outputs.
 
-Five campus locations. Six months of transaction data. One vendor evaluation cycle. One social media audit.
-
-</v-clicks>
-
-<v-click>
+**The real challenge is not speed. It is delivering analysis leaders can trust and defend.**
 
 | File | What It Contains |
 |------|-----------------|
@@ -147,17 +218,9 @@ Five campus locations. Six months of transaction data. One vendor evaluation cyc
 | `social-signals.csv` | Weekly social metrics, all shops |
 | `vendor-bids.csv` | 5 vendors, 8 line items, partial quotes |
 | `shop-profiles.md` | Location, equipment, lease costs |
-
-</v-click>
-
-<v-click>
-
 <div class="mt-6 p-4 rounded-lg border-l-4" style="border-color: var(--uw-gold-bright); background: var(--uw-gold-pale); color: #1a0a30;">
 The data has issues. Intentional ones. Finding them is part of the workshop.
 </div>
-
-</v-click>
-
 <!--
 Don't name the issues yet — let students discover them in the demo. This slide just establishes the scenario.
 
@@ -213,7 +276,7 @@ class: demo
 
 **Prompt:** "Analyze this data and tell me what's interesting."
 
-<div class="mt-8 opacity-60 text-sm">Switch to Desktop 2 for live demo</div>
+<div class="mt-8 opacity-80 text-base font-medium">Switch to Desktop 2 for live demo</div>
 
 <!--
 LIVE DEMO SLIDE — no content to present.
@@ -305,7 +368,7 @@ class: demo
 
 **Prompt:** "Create a standalone HTML infographic report from this data."
 
-<div class="mt-8 opacity-60 text-sm">Switch to Desktop 2 for live demo</div>
+<div class="mt-8 opacity-80 text-base font-medium">Switch to Desktop 2 for live demo</div>
 
 <!--
 LIVE DEMO SLIDE — no content to present.
@@ -372,15 +435,9 @@ What changes:
 - **CLAUDE.md**: Agent identity, data context, quality standards
 - **Skills installed**: EDA, confidence scoring, infographic builder, refinement interview
 - **Semantic model**: shared definitions for "revenue," "engagement rate," "active shop"
-
-<v-click>
-
 **The agent will ask you questions before analyzing.** This is the interview.
 
 Four targeted questions selected from a bank of ten, based on what it found in the data. Hard cap: five questions max.
-
-</v-click>
-
 <!--
 Switch to Desktop 3. Show the workspace structure: .agents/skills/, CLAUDE.md.
 Don't run anything yet. Walk through what's installed and why each piece matters.
@@ -389,25 +446,60 @@ Then trigger the data-refinement-interview skill and let it run. Students watchi
 -->
 
 ---
-layout: center
+layout: none
 class: demo
+clicks: 4
 ---
 
-<div class="uw-label mb-4">Live Demo · Desktop 3</div>
-
-# Milestone 3 — The Enrichment
-
-<div class="uw-rule mt-4 mb-8"></div>
-
-**Show:** `workspace-harnessed/CLAUDE.md` and `.agents/skills/`
-
-**Run:** `/data-refinement-interview` then `/programmatic-eda`
-
-<div class="mt-8 opacity-60 text-sm">Switch to Desktop 3 for live demo</div>
+<RecipeDemo
+  mode="cinematic"
+  eyebrow="Milestone 3 of 4 · Live Demo · Desktop 3"
+  title="The Enrichment"
+  meta="★ 5/5 · workspace-harnessed · ~6 min walkthrough"
+  :ingredients="[
+    { label: 'Workspace', value: 'workspace-harnessed/', note: 'CLAUDE.md visible in editor' },
+    { label: 'Skills', value: '.agents/skills/', note: '6 skills auto-loaded' },
+    { label: 'Data', value: 'data/coffee-shops/', note: 'same CSVs as M1' },
+    { label: 'Commands', value: '/data-refinement-interview · /programmatic-eda' },
+  ]"
+  overview="The harness gives the agent a framework for what to ask before drawing conclusions. The data did not change. The disciplines did."
+  :steps="[
+    {
+      kicker: 'Step 1',
+      title: 'Open the workspace',
+      heroCaption: 'CLAUDE.md and .agents/skills/ visible in the editor',
+      detail: 'Show students the CLAUDE.md operating instructions and the skill files that ship with the workspace.',
+      expected: 'Skills are listed in chat; agent acknowledges the operating instructions.',
+    },
+    {
+      kicker: 'Step 2',
+      title: 'Trigger the interview',
+      heroCaption: 'Run /data-refinement-interview',
+      detail: 'The agent will ask 3–5 grounded questions before touching the data.',
+      expected: '≤ 5 questions, each tied to a specific column, file, or audience.',
+    },
+    {
+      kicker: 'Step 3',
+      title: 'Answer the interview',
+      heroCaption: 'Resolve audience, scope, and outlier handling',
+      detail: 'Tell it: audience is the VP; investigate S3 flat-sales; treat HUB Coffee variants as one shop.',
+      expected: 'Scope, audience, and outlier rules logged at the top of the analysis.',
+    },
+    {
+      kicker: 'Step 4',
+      title: 'Run programmatic EDA',
+      heroCaption: 'Run /programmatic-eda — watch it flag the same issues we missed in M1',
+      detail: 'The agent flags the S3 flat-sales anomaly, date format inconsistency, and shop name variants — all on its own.',
+      expected: 'Three data quality issues surfaced, each with file + row range citations.',
+    },
+  ]"
+/>
 
 <!--
-LIVE DEMO SLIDE — no content to present.
-Keep this slide visible on D1 while you work on D3.
+LIVE DEMO SLIDE — recipe-card walkthrough on Desktop 1.
+The presenter executes the same steps live on Desktop 3 while the audience tracks progress here.
+
+Press → / Space to advance through 4 steps. The card on the right morphs from Ingredients/Overview into Step-by-step/What-changes. After step 4, → moves to the next slide.
 -->
 
 ---
@@ -468,23 +560,12 @@ The problem we will demonstrate first:
 ```
 What is the average salary for data analysts in Seattle?
 ```
-
-<v-click>
-
 Without context scoping, the agent draws from both datasets simultaneously.
 
 "Average salary" appears in job-postings.csv. "Average daily revenue" appears in shop-sales.csv.
 
 The agent may blend the context. Watch what happens.
-
-</v-click>
-
-<v-click>
-
 Then we fix it. Then we generate the final report.
-
-</v-click>
-
 <!--
 This is the context bleed demo. Load both datasets into context without scoping, then ask the salary question. Show whatever the agent produces.
 
@@ -508,7 +589,7 @@ class: demo
 
 **3.** Generate final HTML report with confidence scores and spotlight tour
 
-<div class="mt-8 opacity-60 text-sm">Switch to Desktop 3 for live demo</div>
+<div class="mt-8 opacity-80 text-base font-medium">Switch to Desktop 3 for live demo</div>
 
 <!--
 LIVE DEMO SLIDE — no content to present.
@@ -577,16 +658,10 @@ class: section
 | 2. Infographic | Raw prompt + HTML | Polished surface, same foundation. |
 | 3. Enrichment | Skills + interview | Systematic reasoning, flagged issues. |
 | 4. Confident Narrative | Full harness + scoping | Defensible claims, auditable analysis. |
-
-<v-click>
-
 <div class="mt-8 p-4 rounded-lg" style="background: var(--uw-purple-light); color: #1a0a30;">
 <strong>The skill is not writing the prompt. The skill is building the harness.</strong><br><br>
 Skills + semantic layers + quality gates + context scoping = analysis you can stake your name on.
 </div>
-
-</v-click>
-
 <!--
 This is the closing thesis. Let it land.
 
@@ -604,9 +679,6 @@ class: hero
 # Take This With You
 
 <div class="uw-rule mt-3 mb-8"></div>
-
-<v-clicks>
-
 **Fork the repo:** `github.com/BrettReifs/data-storytelling-workshop`
 
 Everything you saw today is in there: the data, the skills, both workspaces, the slide deck.
@@ -616,18 +688,10 @@ Everything you saw today is in there: the data, the skills, both workspaces, the
 **Install skills on your AI platform.** The `.agents/skills/` directory in the harnessed workspace is self-contained.
 
 **Explore the ecosystem.** `github.com/nimrodfisher/data-analytics-skills` has 31 portable analytics skills. `github.com/anthropics/skills` has Anthropic's official library.
-
-</v-clicks>
-
-<v-click>
-
 <div class="mt-8 flex gap-4">
   <a class="gold-cta" href="https://github.com/BrettReifs/data-storytelling-workshop">Fork the Repo</a>
   <a class="purple-cta" href="https://github.com/nimrodfisher/data-analytics-skills">Analytics Skills</a>
 </div>
-
-</v-click>
-
 <!--
 Stay available for the Q&A. Common questions:
 - "Can I use this with ChatGPT?" Yes — skills are markdown files, platform-portable.

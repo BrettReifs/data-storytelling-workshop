@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V2c Recipe Annotated — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --card-cream:      #F2EFE9;
+    --card-cream-warm: #EDE9DF;
+    --text-muted:      #6B6356;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame { max-width: 1280px; margin: 2rem auto; padding: 0 1rem; }
+  .preview-frame > h1 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 600;
+  }
+
+  .slide {
+    width: 100%; aspect-ratio: 16 / 9;
+    background: #FFFFFF; color: var(--ink);
+    border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid; grid-template-rows: auto 1fr auto;
+    padding: 2.5% 3%;
+    box-sizing: border-box; overflow: hidden;
+    font-size: clamp(10px, 1.25vw, 16px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+
+  .slide-head { margin-bottom: 1em; }
+  .slide-head .eyebrow {
+    font-family: var(--mono); font-size: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--uw-gold-bright); font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+  .slide h2 {
+    font-size: 2.2em; margin: 0;
+    color: var(--ink); font-weight: 800;
+    letter-spacing: -0.015em; line-height: 1;
+  }
+  .meta-row {
+    margin-top: 0.5em;
+    display: flex; align-items: center; gap: 0.5em;
+    font-size: 0.78em; color: var(--text-muted);
+  }
+  .meta-row .star { color: var(--uw-purple-deep); font-size: 0.95em; }
+  .meta-row .source { color: var(--uw-purple); text-decoration: none; font-weight: 600; }
+  .meta-row .sep { opacity: 0.5; }
+
+  .slide-body {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    gap: 1.3em;
+    min-height: 0;
+  }
+
+  /* ─── Hero image with pinned annotations ──────────────────── */
+  .hero {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 0;
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(212,168,83,0.20) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 70%, rgba(75,46,131,0.25) 0%, transparent 60%),
+      linear-gradient(135deg, #2D1A52 0%, #4B2E83 100%);
+    color: #F5F2EA;
+  }
+  .hero .placeholder {
+    position: absolute; inset: 0;
+    display: grid; place-items: center; padding: 1.5em; text-align: center;
+  }
+  .hero .placeholder .label {
+    font-family: var(--mono); font-size: 0.6em;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.55); font-weight: 700;
+  }
+  .hero .placeholder .desc {
+    font-size: 0.78em; color: rgba(255,255,255,0.6);
+    margin-top: 0.3em; max-width: 28ch; line-height: 1.4;
+  }
+
+  /* Pins: positioned annotations on the hero */
+  .pin {
+    position: absolute;
+    width: 2.4em; height: 2.4em;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    color: var(--uw-purple-deep);
+    font-family: var(--mono); font-weight: 800; font-size: 0.95em;
+    display: grid; place-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .pin .label {
+    position: absolute;
+    left: 110%; top: 50%; transform: translateY(-50%);
+    background: rgba(20,8,40,0.92);
+    color: #FFFFFF;
+    padding: 0.25em 0.6em;
+    border-radius: 4px;
+    font-family: var(--mono); font-size: 0.55em; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .pin.dim { opacity: 0.32; transform: translate(-50%, -50%) scale(0.8); }
+  .pin.active {
+    background: var(--uw-gold-bright); color: var(--uw-purple-deep);
+    transform: translate(-50%, -50%) scale(1.18);
+    box-shadow: 0 0 0 6px rgba(212,168,83,0.35), 0 4px 16px rgba(0,0,0,0.5);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  .pin.active .label { opacity: 1; }
+  .pin.done {
+    background: var(--uw-purple-light); color: var(--uw-purple-deep);
+    opacity: 0.7;
+  }
+  .pin.done::before { content: "✓"; }
+  .pin.done .num { display: none; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(212,168,83,0.35), 0 4px 16px rgba(0,0,0,0.5); }
+    50%      { box-shadow: 0 0 0 14px rgba(212,168,83,0.08), 0 4px 16px rgba(0,0,0,0.5); }
+  }
+
+  .pin-1 { top: 28%; left: 22%; }
+  .pin-2 { top: 55%; left: 58%; }
+  .pin-3 { top: 72%; left: 38%; }
+  .pin-4 { top: 38%; left: 78%; }
+
+  .hero .caption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 0%, rgba(20,8,40,0.88) 60%, rgba(20,8,40,0.95) 100%);
+    color: #FFFFFF;
+    padding: 1.6em 1em 0.9em;
+    display: grid; gap: 0.2em;
+  }
+  .hero .caption .kicker {
+    font-family: var(--mono); font-size: 0.62em;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 700;
+  }
+  .hero .caption .title {
+    font-size: 0.92em; font-weight: 700; line-height: 1.3;
+  }
+
+  /* Cards stack — same as v2a/v2b */
+  .stack { display: grid; grid-template-rows: 1.45fr 1fr; gap: 0.9em; min-height: 0; }
+  .card {
+    background: var(--card-cream); border-radius: 16px;
+    padding: 1em 1.15em;
+    display: grid; grid-template-rows: auto 1fr;
+    gap: 0.5em; min-height: 0;
+  }
+  .card.accent { background: var(--card-cream-warm); }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5em; }
+  .card-head h3 { margin: 0; font-size: 1.05em; font-weight: 700; color: var(--ink); letter-spacing: -0.005em; }
+  .card-head .badge {
+    font-family: var(--mono); font-size: 0.65em; color: var(--uw-purple);
+    background: #FFFFFF; border: 1px solid var(--rule);
+    padding: 2px 9px; border-radius: 999px; font-weight: 600; letter-spacing: 0.06em;
+  }
+  .ing-list { margin: 0; padding: 0; list-style: none; display: grid; align-content: start; min-height: 0; overflow: hidden; }
+  .ing-list li {
+    border-top: 1px solid rgba(0,0,0,0.07); padding: 0.45em 0;
+    font-size: 0.88em; color: var(--ink); line-height: 1.35;
+    display: grid; grid-template-columns: auto 1fr; gap: 0.55em; align-items: baseline;
+    transition: background 0.25s;
+    border-radius: 4px; padding-left: 0.4em; padding-right: 0.4em;
+    margin-left: -0.4em; margin-right: -0.4em;
+  }
+  .ing-list li:first-child { border-top: none; }
+  .ing-list li .k { font-family: var(--mono); font-size: 0.85em; color: var(--uw-purple); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+  .ing-list li .v { font-family: var(--mono); font-size: 0.92em; color: var(--ink); }
+  .ing-list li .v small { display: block; color: var(--text-muted); font-size: 0.88em; margin-top: 0.05em; font-family: var(--mono); }
+
+  .step-list { margin: 0; padding: 0; list-style: none; counter-reset: stp; display: grid; align-content: start; gap: 0.5em; min-height: 0; }
+  .step-list li {
+    counter-increment: stp; display: grid; grid-template-columns: 1.6em 1fr;
+    gap: 0.6em; align-items: start; font-size: 0.88em; color: var(--ink); line-height: 1.4;
+    opacity: 0.32; transition: opacity 0.3s ease;
+  }
+  .step-list li.active { opacity: 1; } .step-list li.done { opacity: 0.55; }
+  .step-list li::before {
+    content: counter(stp); font-family: var(--mono); font-weight: 700; font-size: 0.85em;
+    color: #FFFFFF; background: var(--uw-purple); width: 1.6em; height: 1.6em;
+    border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; line-height: 1;
+  }
+  .step-list li.done::before { content: "✓"; background: var(--uw-gold-bright); color: var(--uw-purple-deep); }
+  .step-list li.active::before { background: var(--uw-purple-deep); box-shadow: 0 0 0 3px rgba(212,168,83,0.4); }
+  .step-list li code { font-family: var(--mono); background: #FFFFFF; border: 1px solid var(--rule); padding: 1px 5px; border-radius: 3px; font-size: 0.92em; white-space: nowrap; }
+  .step-list li strong { color: var(--uw-purple-deep); }
+
+  .ovw { font-size: 0.92em; color: var(--ink); line-height: 1.5; align-self: start; }
+  .ovw strong { color: var(--uw-purple-deep); }
+  .ovw .expect-line {
+    margin-top: 0.5em; padding: 0.55em 0.75em; background: #FFFFFF;
+    border-left: 3px solid var(--uw-gold-bright); border-radius: 0 4px 4px 0;
+    font-family: var(--mono); font-size: 0.85em; color: var(--ink);
+  }
+  .ovw .expect-line::before {
+    content: "Done looks like · "; font-size: 0.85em; font-weight: 700;
+    color: var(--uw-purple); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  .slide-foot {
+    margin-top: 0.9em;
+    display: grid; grid-template-columns: auto 1fr auto auto;
+    align-items: center; gap: 0.8em;
+  }
+  .slide-foot button {
+    font-family: var(--mono); font-size: 0.74em;
+    background: var(--uw-purple); color: #FFFFFF;
+    border: none; padding: 0.5em 1em; border-radius: 999px;
+    cursor: pointer; font-weight: 600; letter-spacing: 0.04em;
+  }
+  .slide-foot button.primary { background: var(--uw-purple-deep); padding: 0.55em 1.4em; }
+  .slide-foot button:hover { background: var(--uw-purple-deep); }
+  .slide-foot button[disabled] { background: var(--rule); color: #999; cursor: not-allowed; }
+  .progress-rail { display: flex; gap: 0.4em; align-items: center; justify-content: center; }
+  .progress-rail .pip { width: 2.5em; height: 4px; background: var(--rule); border-radius: 999px; transition: background 0.25s, transform 0.25s; }
+  .progress-rail .pip.done { background: var(--uw-gold-bright); }
+  .progress-rail .pip.active { background: var(--uw-purple-deep); transform: scaleY(2); }
+  .crumb { font-family: var(--mono); font-size: 0.7em; color: var(--uw-purple); opacity: 0.7; letter-spacing: 0.05em; }
+
+  .gen-prompt { max-width: 1280px; margin: 1rem auto 0; }
+  .gen-prompt .box { border: 2px dashed var(--uw-gold-bright); background: #2A2520; color: #F5F5F4; padding: 1rem 1.25rem; border-radius: 6px; font-family: var(--mono); font-size: 0.85rem; }
+  .gen-prompt .head { color: var(--uw-gold-bright); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.7rem; margin-bottom: 0.4rem; }
+  .gen-prompt pre { white-space: pre-wrap; margin: 0.5rem 0 0; font-size: 0.78rem; line-height: 1.5; }
+  .gen-prompt details > summary { cursor: pointer; color: var(--uw-gold-bright); margin-top: 0.6rem; }
+
+  .notes { max-width: 1280px; margin: 1.5rem auto 3rem; padding: 1.25rem 1.5rem; background: #232323; border-left: 3px solid var(--uw-gold-bright); border-radius: 4px; font-size: 0.9rem; line-height: 1.55; color: #E7E5E4; }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+  .notes kbd { font-family: var(--mono); font-size: 0.85em; background: #3A3A3A; padding: 1px 6px; border-radius: 3px; border: 1px solid #555; }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V2c — Recipe Annotated (one image, callout pins move per step)</h1>
+
+  <section class="slide" data-step="0" aria-label="Slide preview" tabindex="0">
+    <header class="slide-head">
+      <div class="eyebrow">Milestone 3 of 4 · Live Demo · Desktop 3</div>
+      <h2 id="title">The Enrichment</h2>
+      <div class="meta-row">
+        <span class="star">★</span>
+        <span><strong>4 steps</strong></span>
+        <span class="sep">·</span>
+        <a class="source" href="#">workspace-harnessed</a>
+        <span class="sep">·</span>
+        <span>~5 min</span>
+      </div>
+    </header>
+
+    <div class="slide-body">
+
+      <figure class="hero" aria-label="Hero image with annotations">
+        <div class="placeholder">
+          <div>
+            <div class="label">Hero · the workspace</div>
+            <div class="desc">One photo, four pinned hotspots that light up per step.</div>
+          </div>
+        </div>
+
+        <button class="pin pin-1 dim" data-pin="1" aria-label="Step 1: file tree">
+          <span class="num">1</span>
+          <span class="label">file tree</span>
+        </button>
+        <button class="pin pin-2 dim" data-pin="2" aria-label="Step 2: interview prompt">
+          <span class="num">2</span>
+          <span class="label">interview</span>
+        </button>
+        <button class="pin pin-3 dim" data-pin="3" aria-label="Step 3: live answers">
+          <span class="num">3</span>
+          <span class="label">your answers</span>
+        </button>
+        <button class="pin pin-4 dim" data-pin="4" aria-label="Step 4: EDA flags">
+          <span class="num">4</span>
+          <span class="label">EDA flags</span>
+        </button>
+
+        <figcaption class="caption">
+          <div class="kicker" id="cap-kicker">The harnessed workspace</div>
+          <div class="title" id="cap-title">Skills + data + semantic layer, staged in place</div>
+        </figcaption>
+      </figure>
+
+      <div class="stack">
+
+        <article class="card" id="card-a">
+          <div class="card-head">
+            <h3 id="card-a-title">Ingredients</h3>
+            <span class="badge" id="card-a-badge">staged · 4</span>
+          </div>
+          <ul class="ing-list" id="ing-view">
+            <li data-id="workspace"><span class="k">workspace</span><span class="v">workspace-harnessed/<small>CLAUDE.md · agent identity</small></span></li>
+            <li data-id="skills"><span class="k">skills</span><span class="v">.agents/skills/<small>interview · eda · scorer · infographic</small></span></li>
+            <li data-id="data"><span class="k">data</span><span class="v">data/coffee-shops/<small>5 files · sales, menu, social, bids, profiles</small></span></li>
+            <li data-id="defs"><span class="k">defs</span><span class="v">semantic layer<small>revenue · engagement · active shop</small></span></li>
+          </ul>
+          <ol class="step-list" id="step-view" style="display:none;">
+            <li data-step="1"><div><strong>Open</strong> the workspace. <strong>Show</strong> <code>CLAUDE.md</code> and the <code>.agents/skills/</code> tree.</div></li>
+            <li data-step="2"><div><strong>Trigger</strong> <code>/data-refinement-interview</code>. Agent picks <strong>4 of 10</strong> questions. Hard cap: 5.</div></li>
+            <li data-step="3"><div><strong>Answer live.</strong> Define revenue, decide outliers, set normalization.</div></li>
+            <li data-step="4"><div><strong>Run</strong> <code>/programmatic-eda</code>. Watch the agent <strong>flag</strong> 3 anomalies.</div></li>
+          </ol>
+        </article>
+
+        <article class="card accent" id="card-b">
+          <div class="card-head">
+            <h3 id="card-b-title">Overview</h3>
+            <span class="badge" id="card-b-badge">demo</span>
+          </div>
+          <div class="ovw" id="ovw-view">
+            <strong>The harnessed agent reasons before it answers.</strong> Skills frame the work: interview first, then exploratory analysis with anomalies surfaced before conclusions.
+            <div class="expect-line">a workspace, an agent, and a disciplined sequence</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <footer class="slide-foot">
+      <button id="prev" disabled>← Prev</button>
+      <div class="progress-rail" id="rail">
+        <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+      </div>
+      <button id="next" class="primary">Begin →</button>
+      <span class="crumb">M3 · 11 / 17</span>
+    </footer>
+  </section>
+
+  <div class="gen-prompt">
+    <div class="box">
+      <div class="head">Hero image · ONE asset, reused across all states</div>
+      <div>Intended src: <code>assets/m3-hero-workspace.jpg</code> · the four pins are CSS-positioned overlays; they highlight regions of this single image as steps advance.</div>
+      <details>
+        <summary>Image generation prompt</summary>
+        <pre>A wide editorial composition of a developer's monitor with FOUR distinct visual zones spatially arranged so callouts can land on each:
+  · upper-left ≈ 22%/28%: VS Code file tree showing workspace-harnessed/, CLAUDE.md, .agents/skills/
+  · middle-right ≈ 58%/55%: Claude CLI terminal mid-interview with a visible question
+  · lower-middle ≈ 38%/72%: a chat panel showing a typed answer in progress
+  · upper-right ≈ 78%/38%: a small EDA output snippet with anomaly highlights
+
+Dark theme throughout, UW purple (#4B2E83) and UW gold (#D4A853) accents subtly woven into the UI chrome. Soft window light, presentation-grade. The four zones must be visually distinct so a small numbered pin can land on each without overlapping content. 16:9, no logos.</pre>
+      </details>
+      <div style="margin-top:0.8rem; opacity:0.85;">Pin positions are configured in CSS (<code>.pin-1</code>…<code>.pin-4</code>). After dropping the real photo, nudge top/left to align with the actual screen regions.</div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li><strong>Most production-friendly</strong> of the recipe-card trio: only one hero image required. The four numbered pins reuse it by overlaying callouts.</li>
+      <li>As you advance, the relevant pin lights up (gold + pulse), the previous pin checks off, the future pins stay dimmed.</li>
+      <li>Pins are clickable for non-linear jumps; useful during Q&amp;A backtracking.</li>
+      <li><kbd>←</kbd>/<kbd>→</kbd>/<kbd>Space</kbd> to navigate.</li>
+    </ul>
+  </aside>
+</div>
+
+<script>
+(() => {
+  const states = [
+    { title: "The Enrichment", capK: "The harnessed workspace", capT: "Skills + data + semantic layer, staged in place",
+      cardAT: "Ingredients", cardAB: "staged · 4", cardBT: "Overview", cardBB: "demo",
+      ovw: "<strong>The harnessed agent reasons before it answers.</strong> Skills frame the work: interview first, then exploratory analysis with anomalies surfaced before conclusions.<div class='expect-line'>a workspace, an agent, and a disciplined sequence</div>",
+      view: "ing", activeStep: 0, nextLabel: "Begin →" },
+    { title: "Open the workspace", capK: "Step 1 · ~45 sec", capT: "Show the file tree. Don't run anything.",
+      cardAT: "Step-by-step", cardAB: "step 1 of 4", cardBT: "Done looks like", cardBB: "expected",
+      ovw: "Audience sees <strong>CLAUDE.md</strong> as the agent's identity file and <strong>.agents/skills/</strong> as the discipline layer.<div class='expect-line'>file tree visible · CLAUDE.md open · no commands run</div>",
+      view: "step", activeStep: 1, nextLabel: "Next →" },
+    { title: "Trigger the interview", capK: "Step 2 · /data-refinement-interview", capT: "The skill picks 4 of 10 questions",
+      cardAT: "Step-by-step", cardAB: "step 2 of 4", cardBT: "Done looks like", cardBB: "expected",
+      ovw: "The agent <strong>throttles itself</strong>: targeted questions, never a dump.<div class='expect-line'>≤ 5 questions, each tied to a specific column or file</div>",
+      view: "step", activeStep: 2, nextLabel: "Next →" },
+    { title: "Answer live", capK: "Step 3 · ~2 min", capT: "Define revenue, outliers, audience, normalization",
+      cardAT: "Step-by-step", cardAB: "step 3 of 4", cardBT: "Done looks like", cardBB: "expected",
+      ovw: "Definitions get <strong>captured</strong> in the semantic layer, not just guessed at.<div class='expect-line'>4 answers committed · semantic layer updated</div>",
+      view: "step", activeStep: 3, nextLabel: "Next →" },
+    { title: "Run programmatic EDA", capK: "Step 4 · /programmatic-eda", capT: "Anomalies surface before conclusions",
+      cardAT: "Step-by-step", cardAB: "step 4 of 4", cardBT: "Done looks like", cardBB: "expected",
+      ovw: "The agent <strong>flags</strong> the S3 flat-sales anomaly, the date-format split, and HUB-Coffee variants — <em>before</em> drawing any conclusion.<div class='expect-line'>3 anomalies flagged · zero conclusions drawn</div>",
+      view: "step", activeStep: 4, nextLabel: "✓ Done" }
+  ];
+
+  const slide  = document.querySelector('.slide');
+  const title  = document.getElementById('title');
+  const capK   = document.getElementById('cap-kicker');
+  const capT   = document.getElementById('cap-title');
+  const cardAT = document.getElementById('card-a-title');
+  const cardAB = document.getElementById('card-a-badge');
+  const cardBT = document.getElementById('card-b-title');
+  const cardBB = document.getElementById('card-b-badge');
+  const ingView = document.getElementById('ing-view');
+  const stepVw  = document.getElementById('step-view');
+  const stepLi  = [...stepVw.querySelectorAll('li')];
+  const ovwView = document.getElementById('ovw-view');
+  const pins    = [...document.querySelectorAll('.pin')];
+  const rail    = [...document.querySelectorAll('#rail .pip')];
+  const prev    = document.getElementById('prev');
+  const next    = document.getElementById('next');
+
+  let i = 0;
+  function render() {
+    const s = states[i];
+    slide.dataset.step = i;
+    title.textContent = s.title;
+    capK.textContent = s.capK; capT.textContent = s.capT;
+    cardAT.textContent = s.cardAT; cardAB.textContent = s.cardAB;
+    cardBT.textContent = s.cardBT; cardBB.textContent = s.cardBB;
+    ovwView.innerHTML = s.ovw;
+
+    if (s.view === 'ing') { ingView.style.display = ''; stepVw.style.display = 'none'; }
+    else {
+      ingView.style.display = 'none'; stepVw.style.display = '';
+      stepLi.forEach((li, idx) => {
+        const n = idx + 1; li.classList.remove('active','done');
+        if (n < s.activeStep) li.classList.add('done');
+        else if (n === s.activeStep) li.classList.add('active');
+      });
+    }
+    pins.forEach((p) => {
+      const n = parseInt(p.dataset.pin, 10);
+      p.classList.remove('active','done','dim');
+      if (s.activeStep === 0) p.classList.add('dim');
+      else if (n < s.activeStep) p.classList.add('done');
+      else if (n === s.activeStep) p.classList.add('active');
+      else p.classList.add('dim');
+    });
+    rail.forEach((p, idx) => {
+      p.classList.remove('active','done');
+      const n = idx + 1;
+      if (n < s.activeStep) p.classList.add('done');
+      else if (n === s.activeStep) p.classList.add('active');
+    });
+    next.textContent = s.nextLabel;
+    prev.disabled = i === 0;
+    next.disabled = i === states.length - 1;
+  }
+  function go(n) { i = Math.max(0, Math.min(states.length - 1, n)); render(); }
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+  pins.forEach(p => p.addEventListener('click', () => go(parseInt(p.dataset.pin, 10))));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1); }
+  });
+  render(); slide.focus();
+})();
+</script>
+</body>
+</html>

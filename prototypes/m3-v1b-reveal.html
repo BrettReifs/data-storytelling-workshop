@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V1b Progressive Reveal — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame { max-width: 1280px; margin: 2rem auto; padding: 0 1rem; }
+  .preview-frame h1 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 600;
+  }
+
+  .slide {
+    width: 100%; aspect-ratio: 16 / 9;
+    background: #FFFFFF; color: var(--ink);
+    border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid; grid-template-rows: auto 1fr auto;
+    padding: 2.2% 2.8%;
+    box-sizing: border-box; overflow: hidden;
+    font-size: clamp(10px, 1.25vw, 16px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+  .slide-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.6em;
+  }
+  .uw-label {
+    font-family: var(--mono); font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 700;
+  }
+  .uw-label-em { color: var(--uw-purple); }
+  .slide h2 {
+    font-size: 1.85em; margin: 0; color: var(--uw-purple-deep);
+    font-weight: 700; letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .uw-rule { border: none; border-top: 2px solid var(--uw-gold-bright); margin: 0.35em 0 0.8em; width: 2.6em; }
+
+  .slide-body {
+    display: grid;
+    grid-template-columns: 1fr 1.55fr;
+    gap: 1.4em;
+    min-height: 0;
+  }
+
+  /* ─── Mise en place with reactive highlight ──────────────────── */
+  .mise {
+    background: var(--uw-purple-light);
+    border-left: 4px solid var(--uw-purple);
+    border-radius: 6px;
+    padding: 0.75em 0.9em;
+    display: grid; grid-template-rows: auto repeat(4, auto);
+    gap: 0.45em; align-content: start;
+  }
+  .mise h3 {
+    font-family: var(--mono); font-size: 0.66rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin: 0; color: var(--uw-purple); font-weight: 700;
+  }
+  .mise-block {
+    border-top: 1px dashed #C9BFE0; padding: 0.35em 0.4em 0;
+    margin: 0 -0.4em;
+    border-radius: 4px;
+    transition: background 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  }
+  .mise-block:first-of-type { border-top: none; padding-top: 0; }
+  .mise-block .label {
+    font-family: var(--mono); font-size: 0.62em;
+    text-transform: uppercase; color: var(--uw-purple-deep);
+    letter-spacing: 0.08em; font-weight: 600; opacity: 0.75;
+  }
+  .mise-block .item {
+    font-family: var(--mono); font-size: 0.82em;
+    color: var(--ink); margin-top: 0.1em; line-height: 1.35;
+  }
+  .mise-block .item .meta { color: var(--uw-purple-mid); opacity: 0.85; }
+
+  .slide[data-highlight] .mise-block { opacity: 0.45; }
+  .slide[data-highlight="workspace"] .mise-block[data-id="workspace"],
+  .slide[data-highlight="skills"]    .mise-block[data-id="skills"],
+  .slide[data-highlight="data"]      .mise-block[data-id="data"],
+  .slide[data-highlight="semantic"]  .mise-block[data-id="semantic"] {
+    background: #FFFFFF;
+    box-shadow: 0 0 0 2px var(--uw-gold-bright);
+    opacity: 1;
+  }
+
+  /* ─── Accordion steps ──────────────────────────────────────── */
+  .steps {
+    display: grid; grid-template-rows: auto 1fr;
+    gap: 0.55em; min-height: 0;
+  }
+  .steps h3 {
+    font-family: var(--mono); font-size: 0.66rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin: 0; color: var(--uw-gold-bright); font-weight: 700;
+  }
+
+  .accordion {
+    list-style: none; margin: 0; padding: 0;
+    counter-reset: step;
+    display: grid;
+    gap: 0.4em;
+    align-content: start;
+    min-height: 0;
+  }
+  .accordion li {
+    counter-increment: step;
+    border: 1px solid var(--rule); border-radius: 5px;
+    background: #FCFBFE;
+    transition: background 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .accordion li .row {
+    display: grid;
+    grid-template-columns: 1.8em 1fr auto;
+    gap: 0.7em;
+    align-items: center;
+    padding: 0.45em 0.7em;
+  }
+  .accordion li .row::before {
+    content: counter(step);
+    font-family: var(--mono); font-weight: 700; font-size: 0.95em;
+    color: #FFF; background: var(--uw-purple);
+    width: 1.7em; height: 1.7em; border-radius: 4px;
+    display: inline-flex; align-items: center; justify-content: center;
+    line-height: 1;
+    transition: background 0.25s;
+  }
+  .accordion li .title {
+    font-size: 0.95em; font-weight: 600; color: var(--uw-purple-deep);
+    line-height: 1.2;
+  }
+  .accordion li .signal {
+    font-family: var(--mono); font-size: 0.7em;
+    color: var(--uw-purple); background: var(--uw-purple-light);
+    padding: 2px 7px; border-radius: 999px;
+    white-space: nowrap; font-weight: 600;
+  }
+
+  .accordion li .detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s ease, padding 0.32s ease, opacity 0.2s ease 0.1s;
+    opacity: 0;
+    padding: 0 0.95em;
+    border-top: 0 solid var(--rule);
+  }
+  .accordion li .detail .what {
+    font-size: 0.92em; line-height: 1.4; color: var(--ink);
+    margin: 0.6em 0;
+  }
+  .accordion li .detail .what strong { color: var(--uw-purple-deep); }
+  .accordion li .detail .what code {
+    font-family: var(--mono); background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold); padding: 1px 5px;
+    border-radius: 3px; font-size: 0.92em; white-space: nowrap;
+  }
+  .accordion li .detail .watch {
+    font-size: 0.82em; line-height: 1.4;
+    background: var(--uw-gold-pale);
+    border-left: 3px solid var(--uw-gold-bright);
+    padding: 0.4em 0.6em; border-radius: 0 4px 4px 0;
+    color: var(--ink);
+    margin-bottom: 0.6em;
+  }
+  .accordion li .detail .watch::before {
+    content: "Watch for · ";
+    font-family: var(--mono); font-size: 0.78em;
+    font-weight: 700; color: var(--uw-purple);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  .accordion li.active {
+    background: #FFFFFF;
+    border-color: var(--uw-gold-bright);
+    box-shadow: 0 1px 6px rgba(45,26,82,0.08);
+  }
+  .accordion li.active .row::before { background: var(--uw-purple-deep); }
+  .accordion li.active .detail {
+    max-height: 20em;
+    opacity: 1;
+    padding: 0 0.95em 0.1em;
+    border-top: 1px dashed var(--rule);
+  }
+  .accordion li.done { opacity: 0.55; }
+  .accordion li.done .row::before {
+    background: var(--uw-gold-bright); color: var(--uw-purple-deep);
+    content: "✓";
+  }
+  .accordion li.pending { opacity: 0.7; }
+
+  .nav {
+    margin-top: 0.5em;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 0.6em;
+  }
+  .nav button {
+    font-family: var(--mono); font-size: 0.76em;
+    background: var(--uw-purple); color: #FFF;
+    border: none; padding: 0.45em 0.95em; border-radius: 4px;
+    cursor: pointer; font-weight: 600;
+  }
+  .nav button:hover { background: var(--uw-purple-deep); }
+  .nav button[disabled] { background: var(--rule); color: #999; cursor: not-allowed; }
+  .nav .hint {
+    font-family: var(--mono); font-size: 0.7em; color: var(--uw-purple-mid);
+    opacity: 0.8;
+  }
+
+  .slide-foot {
+    margin-top: 0.6em;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 1em; align-items: center;
+  }
+  .crumb {
+    font-family: var(--mono); font-size: 0.7em;
+    color: var(--uw-purple); opacity: 0.75; letter-spacing: 0.05em;
+  }
+  .ribbon {
+    font-family: var(--mono); font-size: 0.72em;
+    color: var(--uw-purple-deep); background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold); padding: 0.35em 0.7em;
+    border-radius: 3px;
+  }
+
+  .notes {
+    max-width: 1280px; margin: 1.5rem auto 3rem;
+    padding: 1.25rem 1.5rem; background: #232323;
+    border-left: 3px solid var(--uw-gold-bright); border-radius: 4px;
+    font-size: 0.9rem; line-height: 1.55; color: #E7E5E4;
+  }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+  .notes kbd {
+    font-family: var(--mono); font-size: 0.85em;
+    background: #3A3A3A; padding: 1px 6px;
+    border-radius: 3px; border: 1px solid #555;
+  }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V1b — Progressive Reveal (steps stay visible; one expanded)</h1>
+
+  <section class="slide" data-highlight="workspace" aria-label="Slide preview" tabindex="0">
+    <header class="slide-head">
+      <div>
+        <div class="uw-label">Milestone 3 of 4 · Live Demo · Desktop 3</div>
+        <h2>The Enrichment</h2>
+        <hr class="uw-rule">
+      </div>
+      <div class="uw-label uw-label-em" style="text-align:right;">Switch to D3<br>Harnessed workspace</div>
+    </header>
+
+    <div class="slide-body">
+      <aside class="mise" aria-label="Mise en place">
+        <h3>Mise en place</h3>
+        <div class="mise-block" data-id="workspace">
+          <div class="label">Workspace</div>
+          <div class="item">workspace-harnessed/<br><span class="meta">CLAUDE.md · agent identity</span></div>
+        </div>
+        <div class="mise-block" data-id="skills">
+          <div class="label">Skills installed</div>
+          <div class="item">.agents/skills/<br><span class="meta">interview · eda · scorer · infographic</span></div>
+        </div>
+        <div class="mise-block" data-id="data">
+          <div class="label">Data on the counter</div>
+          <div class="item">data/coffee-shops/<br><span class="meta">5 files · sales, menu, social, bids, profiles</span></div>
+        </div>
+        <div class="mise-block" data-id="semantic">
+          <div class="label">Semantic layer</div>
+          <div class="item"><span class="meta">defs for</span> revenue · engagement · active shop</div>
+        </div>
+      </aside>
+
+      <section class="steps" aria-label="Demo steps">
+        <h3>Run · in order · <span style="color:var(--uw-purple-mid)">click or use →</span></h3>
+        <ol class="accordion" id="acc">
+          <li class="active" data-highlight="workspace">
+            <div class="row">
+              <span class="title">Open the workspace</span>
+              <span class="signal">~45s</span>
+            </div>
+            <div class="detail">
+              <div class="what">
+                <strong>Show</strong> <code>CLAUDE.md</code> and the <code>.agents/skills/</code> tree. Don't run anything yet. Let the structure speak for itself.
+              </div>
+              <div class="watch">Audience sees <em>where</em> discipline lives before it acts.</div>
+            </div>
+          </li>
+          <li class="pending" data-highlight="skills">
+            <div class="row">
+              <span class="title">Trigger the interview</span>
+              <span class="signal">interview</span>
+            </div>
+            <div class="detail">
+              <div class="what">
+                Run <code>/data-refinement-interview</code>. Agent picks <strong>4 of 10</strong> targeted questions based on what it found. Hard cap is 5.
+              </div>
+              <div class="watch">The skill self-throttles. No question dump.</div>
+            </div>
+          </li>
+          <li class="pending" data-highlight="semantic">
+            <div class="row">
+              <span class="title">Answer live</span>
+              <span class="signal">~2 min</span>
+            </div>
+            <div class="detail">
+              <div class="what">
+                Define <strong>revenue</strong>, decide outlier vs. exclude, name the audience, set the normalization rule for operating hours.
+              </div>
+              <div class="watch">This is where the lesson lands. Definitions captured, not vibes.</div>
+            </div>
+          </li>
+          <li class="pending" data-highlight="data">
+            <div class="row">
+              <span class="title">Run programmatic EDA</span>
+              <span class="signal">EDA</span>
+            </div>
+            <div class="detail">
+              <div class="what">
+                Run <code>/programmatic-eda</code>. Watch it <strong>flag</strong> the S3 flat-sales anomaly, date-format split, and HUB-Coffee name variants.
+              </div>
+              <div class="watch">Issues surface <em>before</em> conclusions.</div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="nav">
+          <button id="prev" disabled>← Prev</button>
+          <span class="hint">← / → · click a step</span>
+          <button id="next">Next →</button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="slide-foot">
+      <div class="ribbon"><strong>M3 · The Enrichment</strong> · expand one step at a time · mise-en-place highlights the prep in play</div>
+      <div class="crumb">11 / 17</div>
+    </footer>
+  </section>
+
+  <aside class="notes">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li>All four steps are always visible as titles, so the audience can see the arc. Only the active one expands to show "what to do / what to watch for."</li>
+      <li>Completed steps collapse and dim; the next pending step lights up when you advance.</li>
+      <li>Click any step to jump (good for backtracking during Q&amp;A). <kbd>←</kbd>/<kbd>→</kbd> for keyboard.</li>
+    </ul>
+  </aside>
+</div>
+
+<script>
+(() => {
+  const slide = document.querySelector('.slide');
+  const items = [...document.querySelectorAll('#acc li')];
+  const prev  = document.getElementById('prev');
+  const next  = document.getElementById('next');
+  let i = 0;
+
+  function go(n) {
+    i = Math.max(0, Math.min(items.length - 1, n));
+    items.forEach((li, idx) => {
+      li.classList.remove('active', 'done', 'pending');
+      if (idx < i) li.classList.add('done');
+      else if (idx === i) li.classList.add('active');
+      else li.classList.add('pending');
+    });
+    slide.dataset.highlight = items[i].dataset.highlight || '';
+    prev.disabled = i === 0;
+    next.disabled = i === items.length - 1;
+  }
+  items.forEach((li, idx) => li.addEventListener('click', () => go(idx)));
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1); }
+  });
+  slide.focus();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V2a Recipe Classic — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --card-cream:      #F2EFE9;
+    --card-cream-warm: #EDE9DF;
+    --text-muted:      #6B6356;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame { max-width: 1280px; margin: 2rem auto; padding: 0 1rem; }
+  .preview-frame > h1 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 600;
+  }
+
+  .slide {
+    width: 100%; aspect-ratio: 16 / 9;
+    background: #FFFFFF; color: var(--ink);
+    border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid; grid-template-rows: auto 1fr auto;
+    padding: 2.5% 3%;
+    box-sizing: border-box; overflow: hidden;
+    font-size: clamp(10px, 1.25vw, 16px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+
+  /* ─── Title row (recipe-style) ────────────────────────────── */
+  .slide-head { margin-bottom: 1em; }
+  .slide-head .eyebrow {
+    font-family: var(--mono); font-size: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--uw-gold-bright); font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+  .slide h2 {
+    font-size: 2.2em; margin: 0;
+    color: var(--ink); font-weight: 800;
+    letter-spacing: -0.015em; line-height: 1;
+  }
+  .meta-row {
+    margin-top: 0.5em;
+    display: flex; align-items: center; gap: 0.5em;
+    font-size: 0.78em; color: var(--text-muted);
+  }
+  .meta-row .star { color: var(--uw-purple-deep); font-size: 0.95em; }
+  .meta-row .source {
+    color: var(--uw-purple);
+    text-decoration: none; font-weight: 600;
+  }
+  .meta-row .sep { opacity: 0.5; }
+
+  /* ─── Body: image left | stacked cards right ───────────────── */
+  .slide-body {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    gap: 1.3em;
+    min-height: 0;
+  }
+
+  /* Hero image (placeholder) */
+  .hero {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(212,168,83,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 70%, rgba(75,46,131,0.18) 0%, transparent 60%),
+      linear-gradient(135deg, #F8F5EF 0%, #EBE5F0 100%);
+    display: grid;
+    align-items: end;
+    min-height: 0;
+  }
+  .hero .placeholder-tag {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    text-align: center;
+    padding: 1.5em;
+  }
+  .hero .placeholder-tag .icon {
+    font-family: var(--mono); font-size: 2.4em;
+    color: var(--uw-purple-deep); opacity: 0.18;
+    margin-bottom: 0.2em;
+  }
+  .hero .placeholder-tag .label {
+    font-family: var(--mono); font-size: 0.65em;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--uw-purple-deep); opacity: 0.55;
+    font-weight: 700;
+  }
+  .hero .placeholder-tag .desc {
+    font-size: 0.85em; color: var(--text-muted);
+    margin-top: 0.3em; max-width: 28ch; line-height: 1.4;
+    opacity: 0.8;
+  }
+  .hero .caption {
+    position: relative; z-index: 1;
+    background: linear-gradient(180deg, transparent 0%, rgba(26,10,48,0.78) 100%);
+    color: #FFFFFF;
+    padding: 1.2em 1em 0.8em;
+    display: grid; gap: 0.2em;
+  }
+  .hero .caption .kicker {
+    font-family: var(--mono); font-size: 0.62em;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 700;
+  }
+  .hero .caption .title {
+    font-size: 0.92em; font-weight: 700; line-height: 1.3;
+  }
+
+  /* Stacked cards */
+  .stack {
+    display: grid;
+    grid-template-rows: 1.45fr 1fr;
+    gap: 0.9em;
+    min-height: 0;
+  }
+
+  .card {
+    background: var(--card-cream);
+    border-radius: 16px;
+    padding: 1em 1.15em;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.5em;
+    min-height: 0;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  .card.accent { background: var(--card-cream-warm); }
+  .card-head {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 0.5em;
+  }
+  .card-head h3 {
+    margin: 0; font-size: 1.05em; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.005em;
+  }
+  .card-head .badge {
+    font-family: var(--mono); font-size: 0.65em;
+    color: var(--uw-purple); background: #FFFFFF;
+    border: 1px solid var(--rule);
+    padding: 2px 9px; border-radius: 999px;
+    font-weight: 600; letter-spacing: 0.06em;
+  }
+  .card-head .icon {
+    color: var(--text-muted); font-size: 0.95em;
+    opacity: 0.55;
+  }
+
+  /* Ingredients list */
+  .ing-list {
+    margin: 0; padding: 0; list-style: none;
+    display: grid;
+    align-content: start;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .ing-list li {
+    border-top: 1px solid rgba(0,0,0,0.07);
+    padding: 0.45em 0;
+    font-size: 0.88em; color: var(--ink);
+    line-height: 1.35;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.55em; align-items: baseline;
+  }
+  .ing-list li:first-child { border-top: none; }
+  .ing-list li .k {
+    font-family: var(--mono); font-size: 0.85em;
+    color: var(--uw-purple); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .ing-list li .v {
+    font-family: var(--mono); font-size: 0.92em;
+    color: var(--ink);
+  }
+  .ing-list li .v small {
+    display: block; color: var(--text-muted); font-size: 0.88em;
+    margin-top: 0.05em; font-family: var(--mono);
+  }
+
+  /* Steps list (replaces ingredients on advance) */
+  .step-list {
+    margin: 0; padding: 0; list-style: none;
+    counter-reset: stp;
+    display: grid;
+    align-content: start;
+    gap: 0.5em;
+    min-height: 0;
+  }
+  .step-list li {
+    counter-increment: stp;
+    display: grid;
+    grid-template-columns: 1.6em 1fr;
+    gap: 0.6em;
+    align-items: start;
+    font-size: 0.88em; color: var(--ink);
+    line-height: 1.4;
+    opacity: 0.32;
+    transition: opacity 0.3s ease;
+  }
+  .step-list li.active { opacity: 1; }
+  .step-list li.done   { opacity: 0.55; }
+  .step-list li::before {
+    content: counter(stp);
+    font-family: var(--mono); font-weight: 700; font-size: 0.85em;
+    color: #FFFFFF; background: var(--uw-purple);
+    width: 1.6em; height: 1.6em; border-radius: 4px;
+    display: inline-flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .step-list li.done::before {
+    content: "✓"; background: var(--uw-gold-bright); color: var(--uw-purple-deep);
+  }
+  .step-list li.active::before {
+    background: var(--uw-purple-deep);
+    box-shadow: 0 0 0 3px rgba(212,168,83,0.4);
+  }
+  .step-list li code {
+    font-family: var(--mono); background: #FFFFFF;
+    border: 1px solid var(--rule); padding: 1px 5px;
+    border-radius: 3px; font-size: 0.92em; white-space: nowrap;
+  }
+  .step-list li strong { color: var(--uw-purple-deep); }
+
+  /* Overview/expected card body */
+  .ovw {
+    font-size: 0.92em; color: var(--ink); line-height: 1.5;
+    align-self: start;
+  }
+  .ovw strong { color: var(--uw-purple-deep); }
+  .ovw .expect-line {
+    margin-top: 0.5em;
+    padding: 0.55em 0.75em;
+    background: #FFFFFF;
+    border-left: 3px solid var(--uw-gold-bright);
+    border-radius: 0 4px 4px 0;
+    font-family: var(--mono); font-size: 0.85em;
+    color: var(--ink);
+  }
+  .ovw .expect-line::before {
+    content: "Done looks like · ";
+    font-size: 0.85em; font-weight: 700;
+    color: var(--uw-purple); text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Footer with nav + progress */
+  .slide-foot {
+    margin-top: 0.9em;
+    display: grid; grid-template-columns: auto 1fr auto auto;
+    align-items: center; gap: 0.8em;
+  }
+  .slide-foot button {
+    font-family: var(--mono); font-size: 0.74em;
+    background: var(--uw-purple); color: #FFFFFF;
+    border: none; padding: 0.5em 1em; border-radius: 999px;
+    cursor: pointer; font-weight: 600; letter-spacing: 0.04em;
+  }
+  .slide-foot button.primary {
+    background: var(--uw-purple-deep);
+    padding: 0.55em 1.4em;
+  }
+  .slide-foot button:hover { background: var(--uw-purple-deep); }
+  .slide-foot button[disabled] { background: var(--rule); color: #999; cursor: not-allowed; }
+  .progress-rail {
+    display: flex; gap: 0.4em; align-items: center;
+    justify-content: center;
+  }
+  .progress-rail .pip {
+    width: 2.5em; height: 4px;
+    background: var(--rule); border-radius: 999px;
+    transition: background 0.25s, transform 0.25s;
+  }
+  .progress-rail .pip.done { background: var(--uw-gold-bright); }
+  .progress-rail .pip.active { background: var(--uw-purple-deep); transform: scaleY(2); }
+  .crumb {
+    font-family: var(--mono); font-size: 0.7em;
+    color: var(--uw-purple); opacity: 0.7; letter-spacing: 0.05em;
+  }
+
+  /* Image gen prompt block */
+  .gen-prompt {
+    max-width: 1280px; margin: 1rem auto 0;
+  }
+  .gen-prompt .box {
+    border: 2px dashed var(--uw-gold-bright); background: #2A2520;
+    color: #F5F5F4; padding: 1rem 1.25rem; border-radius: 6px;
+    font-family: var(--mono); font-size: 0.85rem;
+  }
+  .gen-prompt .head {
+    color: var(--uw-gold-bright); text-transform: uppercase;
+    letter-spacing: 0.12em; font-size: 0.7rem; margin-bottom: 0.4rem;
+  }
+  .gen-prompt pre {
+    white-space: pre-wrap; margin: 0.5rem 0 0;
+    font-size: 0.78rem; line-height: 1.5;
+  }
+  .gen-prompt details > summary { cursor: pointer; color: var(--uw-gold-bright); margin-top: 0.6rem; }
+
+  .notes {
+    max-width: 1280px; margin: 1.5rem auto 3rem;
+    padding: 1.25rem 1.5rem; background: #232323;
+    border-left: 3px solid var(--uw-gold-bright); border-radius: 4px;
+    font-size: 0.9rem; line-height: 1.55; color: #E7E5E4;
+  }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+  .notes kbd {
+    font-family: var(--mono); font-size: 0.85em;
+    background: #3A3A3A; padding: 1px 6px;
+    border-radius: 3px; border: 1px solid #555;
+  }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V2a — Recipe Classic (fixed hero + morphing stacked cards)</h1>
+
+  <section class="slide" data-step="0" aria-label="Slide preview" tabindex="0">
+    <header class="slide-head">
+      <div class="eyebrow">Milestone 3 of 4 · Live Demo · Desktop 3</div>
+      <h2 id="title">The Enrichment</h2>
+      <div class="meta-row">
+        <span class="star">★</span>
+        <span><strong>4 steps</strong></span>
+        <span class="sep">·</span>
+        <a class="source" href="#">workspace-harnessed</a>
+        <span class="sep">·</span>
+        <span>~5 min</span>
+      </div>
+    </header>
+
+    <div class="slide-body">
+
+      <!-- Hero image (fixed across all steps) -->
+      <figure class="hero" aria-label="Hero image">
+        <div class="placeholder-tag">
+          <div>
+            <div class="icon">▦</div>
+            <div class="label">Hero image · placeholder</div>
+            <div class="desc">A clean, high-contrast shot of the harnessed workspace: VS Code on the left with CLAUDE.md and .agents/skills/ visible, Claude CLI on the right mid-conversation. Soft window light, UW purple accent on focused file.</div>
+          </div>
+        </div>
+        <figcaption class="caption">
+          <div class="kicker" id="cap-kicker">The harnessed workspace</div>
+          <div class="title" id="cap-title">Skills + data + semantic layer, staged in place</div>
+        </figcaption>
+      </figure>
+
+      <!-- Right column: two stacked cards that morph -->
+      <div class="stack">
+
+        <!-- Card A: morphs from Ingredients (step 0) to Step-by-step (steps 1-4) -->
+        <article class="card" id="card-a" aria-live="polite">
+          <div class="card-head">
+            <h3 id="card-a-title">Ingredients</h3>
+            <span class="badge" id="card-a-badge">staged · 4</span>
+          </div>
+
+          <!-- Ingredients view (step 0) -->
+          <ul class="ing-list" id="ing-view">
+            <li><span class="k">workspace</span><span class="v">workspace-harnessed/<small>CLAUDE.md · agent identity, quality bar</small></span></li>
+            <li><span class="k">skills</span><span class="v">.agents/skills/<small>interview · eda · scorer · infographic</small></span></li>
+            <li><span class="k">data</span><span class="v">data/coffee-shops/<small>5 files · sales, menu, social, bids, profiles</small></span></li>
+            <li><span class="k">defs</span><span class="v">semantic layer<small>revenue · engagement · active shop</small></span></li>
+          </ul>
+
+          <!-- Steps view (revealed on step 1+) -->
+          <ol class="step-list" id="step-view" style="display:none;">
+            <li data-step="1"><div><strong>Open</strong> the workspace. <strong>Show</strong> <code>CLAUDE.md</code> and the <code>.agents/skills/</code> tree. Don't run anything yet.</div></li>
+            <li data-step="2"><div><strong>Trigger</strong> <code>/data-refinement-interview</code>. Agent picks <strong>4 of 10</strong> targeted questions. Hard cap: 5.</div></li>
+            <li data-step="3"><div><strong>Answer live.</strong> Define revenue, decide outlier vs. exclude, name the audience, set normalization rule.</div></li>
+            <li data-step="4"><div><strong>Run</strong> <code>/programmatic-eda</code>. Watch the agent <strong>flag</strong> S3 flat-sales anomaly, date split, HUB-Coffee variants.</div></li>
+          </ol>
+        </article>
+
+        <!-- Card B: morphs from Overview (step 0) to per-step Expected Output -->
+        <article class="card accent" id="card-b" aria-live="polite">
+          <div class="card-head">
+            <h3 id="card-b-title">Overview</h3>
+            <span class="badge" id="card-b-badge">demo</span>
+          </div>
+          <div class="ovw" id="ovw-view">
+            <strong>The harnessed agent reasons before it answers.</strong> Skills frame the work: an interview first, then exploratory analysis with anomalies surfaced before conclusions.
+            <div class="expect-line">a workspace, an agent, and a disciplined sequence</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <footer class="slide-foot">
+      <button id="prev" disabled>← Prev</button>
+      <div class="progress-rail" id="rail">
+        <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+      </div>
+      <button id="next" class="primary">Begin →</button>
+      <span class="crumb">M3 · 11 / 17</span>
+    </footer>
+  </section>
+
+  <div class="gen-prompt">
+    <div class="box">
+      <div class="head">Hero image placeholder · intended assets</div>
+      <div>Intended src: <code>assets/m3-hero-workspace.jpg</code> (fixed for this variant) · suggested alt: "VS Code workspace 'workspace-harnessed' with CLAUDE.md and .agents/skills/ folder expanded, terminal showing Claude CLI mid-interview."</div>
+      <details>
+        <summary>Image generation prompt</summary>
+        <pre>A wide-aspect, professional editorial photo of a developer's monitor. Left half: VS Code dark theme, file tree showing "workspace-harnessed" expanded with CLAUDE.md highlighted in University of Washington purple (#4B2E83), and .agents/skills/ subfolder open showing four skill folders (data-refinement-interview, programmatic-eda, data-confidence-scorer, html-infographic-builder). Right half: a terminal window with Claude CLI prompt visible, a thoughtful question being typed mid-conversation about defining "revenue." Soft natural window light from upper-left, slight depth-of-field. Background: warm wood desk, a small plant. Style: clean, instructional, presentation-grade, 16:9 aspect ratio, no logos or branding.</pre>
+      </details>
+    </div>
+  </div>
+
+  <aside class="notes">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li>State 0 is the "recipe overview." It mirrors the lasagne reference: hero image, Ingredients (what you've staged), Overview (what the demo will do).</li>
+      <li>Hit <kbd>→</kbd> or <kbd>Space</kbd> (or "Begin") to advance. Card A morphs from <em>Ingredients</em> to <em>Step-by-step</em>, with the active step lit and finished steps dimmed with a checkmark.</li>
+      <li>Card B morphs from <em>Overview</em> to a per-step <em>Done looks like</em> description so the audience knows what success looks like before they see it.</li>
+      <li>Hero image is fixed for this variant — pairs with verbal narration. See V2b for a per-step image swap.</li>
+    </ul>
+  </aside>
+</div>
+
+<script>
+(() => {
+  const states = [
+    {
+      title: "The Enrichment",
+      capKicker: "The harnessed workspace",
+      capTitle: "Skills + data + semantic layer, staged in place",
+      cardATitle: "Ingredients",
+      cardABadge: "staged · 4",
+      cardBTitle: "Overview",
+      cardBBadge: "demo",
+      ovwHtml: "<strong>The harnessed agent reasons before it answers.</strong> Skills frame the work: an interview first, then exploratory analysis with anomalies surfaced before conclusions.<div class='expect-line'>a workspace, an agent, and a disciplined sequence</div>",
+      view: "ing",
+      activeStep: 0,
+      nextLabel: "Begin →"
+    },
+    {
+      title: "Open the workspace",
+      capKicker: "Step 1 · ~45 sec",
+      capTitle: "Show the structure, don't run anything yet",
+      cardATitle: "Step-by-step",
+      cardABadge: "step 1 of 4",
+      cardBTitle: "Done looks like",
+      cardBBadge: "expected output",
+      ovwHtml: "Audience sees the file tree, recognizes <strong>CLAUDE.md</strong> as the agent's identity file and <strong>.agents/skills/</strong> as the discipline layer.<div class='expect-line'>file tree visible · CLAUDE.md open · no commands run</div>",
+      view: "step", activeStep: 1, nextLabel: "Next →"
+    },
+    {
+      title: "Trigger the interview",
+      capKicker: "Step 2 · /data-refinement-interview",
+      capTitle: "The skill picks 4 of 10 questions and asks them",
+      cardATitle: "Step-by-step",
+      cardABadge: "step 2 of 4",
+      cardBTitle: "Done looks like",
+      cardBBadge: "expected output",
+      ovwHtml: "The agent <strong>throttles itself</strong>: it asks targeted questions based on what it actually found in the data, never a generic dump.<div class='expect-line'>≤ 5 questions, each tied to a specific column or file</div>",
+      view: "step", activeStep: 2, nextLabel: "Next →"
+    },
+    {
+      title: "Answer live",
+      capKicker: "Step 3 · ~2 min",
+      capTitle: "Define revenue, outliers, audience, normalization",
+      cardATitle: "Step-by-step",
+      cardABadge: "step 3 of 4",
+      cardBTitle: "Done looks like",
+      cardBBadge: "expected output",
+      ovwHtml: "Definitions get <strong>captured</strong> in the semantic layer, not just guessed at. This is the lesson moment.<div class='expect-line'>4 answers committed · semantic layer updated</div>",
+      view: "step", activeStep: 3, nextLabel: "Next →"
+    },
+    {
+      title: "Run programmatic EDA",
+      capKicker: "Step 4 · /programmatic-eda",
+      capTitle: "Anomalies surface before conclusions",
+      cardATitle: "Step-by-step",
+      cardABadge: "step 4 of 4",
+      cardBTitle: "Done looks like",
+      cardBBadge: "expected output",
+      ovwHtml: "The agent <strong>flags</strong> the S3 flat-sales anomaly, the date-format split, and HUB-Coffee name variants — <em>before</em> drawing any conclusion.<div class='expect-line'>3 anomalies flagged · zero conclusions drawn</div>",
+      view: "step", activeStep: 4, nextLabel: "✓ Done"
+    }
+  ];
+
+  const slide   = document.querySelector('.slide');
+  const title   = document.getElementById('title');
+  const capKick = document.getElementById('cap-kicker');
+  const capTit  = document.getElementById('cap-title');
+  const cardAT  = document.getElementById('card-a-title');
+  const cardAB  = document.getElementById('card-a-badge');
+  const cardBT  = document.getElementById('card-b-title');
+  const cardBB  = document.getElementById('card-b-badge');
+  const ingView = document.getElementById('ing-view');
+  const stepVw  = document.getElementById('step-view');
+  const stepLi  = [...stepVw.querySelectorAll('li')];
+  const ovwView = document.getElementById('ovw-view');
+  const rail    = [...document.querySelectorAll('#rail .pip')];
+  const prev    = document.getElementById('prev');
+  const next    = document.getElementById('next');
+
+  let i = 0;
+  function render() {
+    const s = states[i];
+    slide.dataset.step = i;
+    title.textContent = s.title;
+    capKick.textContent = s.capKicker;
+    capTit.textContent = s.capTitle;
+    cardAT.textContent = s.cardATitle;
+    cardAB.textContent = s.cardABadge;
+    cardBT.textContent = s.cardBTitle;
+    cardBB.textContent = s.cardBBadge;
+    ovwView.innerHTML = s.ovwHtml;
+
+    if (s.view === 'ing') {
+      ingView.style.display = '';
+      stepVw.style.display = 'none';
+    } else {
+      ingView.style.display = 'none';
+      stepVw.style.display = '';
+      stepLi.forEach((li, idx) => {
+        const stepNum = idx + 1;
+        li.classList.remove('active', 'done');
+        if (stepNum < s.activeStep) li.classList.add('done');
+        else if (stepNum === s.activeStep) li.classList.add('active');
+      });
+    }
+
+    rail.forEach((p, idx) => {
+      p.classList.remove('active', 'done');
+      const stepIdx = idx + 1; // pip 1..4 maps to step 1..4
+      if (stepIdx < s.activeStep) p.classList.add('done');
+      else if (stepIdx === s.activeStep) p.classList.add('active');
+    });
+
+    next.textContent = s.nextLabel;
+    prev.disabled = i === 0;
+    next.disabled = i === states.length - 1;
+  }
+  function go(n) { i = Math.max(0, Math.min(states.length - 1, n)); render(); }
+
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1); }
+  });
+  render(); slide.focus();
+})();
+</script>
+</body>
+</html>

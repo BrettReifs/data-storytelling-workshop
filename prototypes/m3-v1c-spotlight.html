@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V1c Spotlight — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame { max-width: 1280px; margin: 2rem auto; padding: 0 1rem; }
+  .preview-frame h1 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 600;
+  }
+
+  .slide {
+    width: 100%; aspect-ratio: 16 / 9;
+    background: #FFFFFF; color: var(--ink);
+    border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid; grid-template-rows: auto 1fr auto;
+    padding: 2.2% 2.8%;
+    box-sizing: border-box; overflow: hidden;
+    font-size: clamp(10px, 1.25vw, 16px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+  .slide-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.6em;
+  }
+  .uw-label {
+    font-family: var(--mono); font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 700;
+  }
+  .uw-label-em { color: var(--uw-purple); }
+  .slide h2 {
+    font-size: 1.85em; margin: 0; color: var(--uw-purple-deep);
+    font-weight: 700; letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .uw-rule { border: none; border-top: 2px solid var(--uw-gold-bright); margin: 0.35em 0 0.8em; width: 2.6em; }
+
+  .slide-body {
+    display: grid;
+    grid-template-columns: 2.6fr 1fr;
+    gap: 1.2em;
+    min-height: 0;
+  }
+
+  /* ─── Spotlight stage ──────────────────────────────────────── */
+  .spotlight {
+    position: relative;
+    background: linear-gradient(180deg, #FCFBFE 0%, #FFFFFF 100%);
+    border: 1px solid var(--rule); border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 1.1em 1.4em 0.9em;
+    min-height: 0;
+  }
+  .spotlight::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 5px; background: var(--uw-gold-bright);
+  }
+
+  .spotlight-head {
+    display: flex; align-items: center; gap: 0.8em;
+    margin-bottom: 0.5em;
+  }
+  .step-num {
+    font-family: var(--mono); font-weight: 700;
+    color: #FFF; background: var(--uw-purple-deep);
+    width: 2.4em; height: 2.4em; border-radius: 6px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.1em; line-height: 1;
+  }
+  .step-of {
+    font-family: var(--mono); font-size: 0.7em;
+    color: var(--uw-purple-mid); letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .step-of strong { color: var(--uw-purple-deep); font-size: 1.15em; }
+  .step-signal {
+    margin-left: auto;
+    font-family: var(--mono); font-size: 0.78em;
+    color: var(--uw-purple); background: var(--uw-purple-light);
+    padding: 3px 10px; border-radius: 999px; font-weight: 600;
+  }
+
+  .stage-grid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.7em;
+    min-height: 0;
+  }
+  .stage-title {
+    font-size: 1.55em; font-weight: 700;
+    color: var(--uw-purple-deep);
+    line-height: 1.05; letter-spacing: -0.01em;
+  }
+  .stage-what {
+    font-size: 1.05em; line-height: 1.5;
+    color: var(--ink);
+    align-self: start;
+  }
+  .stage-what strong { color: var(--uw-purple-deep); }
+  .stage-what code {
+    font-family: var(--mono); background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold); padding: 2px 7px;
+    border-radius: 3px; font-size: 0.92em; white-space: nowrap;
+  }
+  .stage-watch {
+    background: var(--uw-gold-pale);
+    border-left: 3px solid var(--uw-gold-bright);
+    padding: 0.55em 0.85em; border-radius: 0 4px 4px 0;
+    font-size: 0.92em; line-height: 1.4; color: var(--ink);
+  }
+  .stage-watch::before {
+    content: "Watch for · ";
+    font-family: var(--mono); font-size: 0.75em;
+    font-weight: 700; color: var(--uw-purple);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  .stage-foot {
+    display: grid; grid-template-columns: auto 1fr auto;
+    align-items: center; gap: 0.7em;
+    border-top: 1px dashed var(--rule); padding-top: 0.55em;
+    margin-top: 0.5em;
+  }
+  .stage-foot button {
+    font-family: var(--mono); font-size: 0.78em;
+    background: var(--uw-purple); color: #FFF;
+    border: none; padding: 0.45em 0.95em; border-radius: 4px;
+    cursor: pointer; font-weight: 600;
+  }
+  .stage-foot button:hover { background: var(--uw-purple-deep); }
+  .stage-foot button[disabled] { background: var(--rule); color: #999; cursor: not-allowed; }
+  .timeline {
+    display: flex; gap: 0.4em; align-items: center; justify-content: center;
+  }
+  .tick {
+    flex: 0 0 auto;
+    height: 5px; min-width: 2em;
+    background: var(--rule); border-radius: 999px;
+    transition: background 0.25s, transform 0.25s;
+  }
+  .tick.done { background: var(--uw-gold-bright); }
+  .tick.active { background: var(--uw-purple-deep); transform: scaleY(1.6); }
+
+  /* Slide-up reveal of the stage */
+  .stage-grid > * {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: rise 0.32s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  .stage-grid > *:nth-child(1) { animation-delay: 0.02s; }
+  .stage-grid > *:nth-child(2) { animation-delay: 0.10s; }
+  .stage-grid > *:nth-child(3) { animation-delay: 0.18s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  /* ─── Checklist sidebar ───────────────────────────────────── */
+  .sidecar {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.5em;
+    min-height: 0;
+  }
+  .sidecar h3 {
+    font-family: var(--mono); font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin: 0; color: var(--uw-purple); font-weight: 700;
+  }
+  .checklist {
+    background: var(--uw-purple-light);
+    border-left: 4px solid var(--uw-purple);
+    border-radius: 6px;
+    padding: 0.7em 0.85em;
+    display: grid;
+    gap: 0.4em;
+    align-content: start;
+  }
+  .check {
+    display: grid;
+    grid-template-columns: 1.2em 1fr;
+    gap: 0.5em;
+    align-items: start;
+    font-size: 0.82em;
+    line-height: 1.3;
+    color: var(--ink);
+    transition: opacity 0.25s;
+  }
+  .check .box {
+    width: 1em; height: 1em;
+    border: 1.5px solid var(--uw-purple-mid);
+    border-radius: 3px;
+    background: #FFFFFF;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.85em; font-weight: 700; color: var(--uw-purple-deep);
+    line-height: 1;
+    margin-top: 0.15em;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .check.done .box {
+    background: var(--uw-gold-bright);
+    border-color: var(--uw-gold-bright);
+  }
+  .check.done .box::after { content: "✓"; }
+  .check.done .text { color: var(--uw-purple-mid); text-decoration: line-through; opacity: 0.7; }
+  .check .text { font-family: var(--mono); font-size: 0.95em; }
+  .check .text .meta { color: var(--uw-purple-mid); display: block; opacity: 0.85; margin-top: 0.1em; font-size: 0.92em; }
+
+  .slide-foot {
+    margin-top: 0.6em;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 1em; align-items: center;
+  }
+  .crumb {
+    font-family: var(--mono); font-size: 0.7em;
+    color: var(--uw-purple); opacity: 0.75; letter-spacing: 0.05em;
+  }
+  .ribbon {
+    font-family: var(--mono); font-size: 0.72em;
+    color: var(--uw-purple-deep); background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold); padding: 0.35em 0.7em;
+    border-radius: 3px;
+  }
+
+  .notes {
+    max-width: 1280px; margin: 1.5rem auto 3rem;
+    padding: 1.25rem 1.5rem; background: #232323;
+    border-left: 3px solid var(--uw-gold-bright); border-radius: 4px;
+    font-size: 0.9rem; line-height: 1.55; color: #E7E5E4;
+  }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+  .notes kbd {
+    font-family: var(--mono); font-size: 0.85em;
+    background: #3A3A3A; padding: 1px 6px;
+    border-radius: 3px; border: 1px solid #555;
+  }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V1c — Spotlight (full-bleed step · accumulating checklist)</h1>
+
+  <section class="slide" aria-label="Slide preview" tabindex="0">
+    <header class="slide-head">
+      <div>
+        <div class="uw-label">Milestone 3 of 4 · Live Demo · Desktop 3</div>
+        <h2>The Enrichment</h2>
+        <hr class="uw-rule">
+      </div>
+      <div class="uw-label uw-label-em" style="text-align:right;">Switch to D3<br>Harnessed workspace</div>
+    </header>
+
+    <div class="slide-body">
+      <section class="spotlight" aria-label="Active step spotlight">
+        <div class="spotlight-head">
+          <span class="step-num" id="num">1</span>
+          <span class="step-of">Step <strong id="cur">1</strong> of 4</span>
+          <span class="step-signal" id="signal">~45s</span>
+        </div>
+
+        <div class="stage-grid" id="stage">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="stage-foot">
+          <button id="prev" disabled>← Prev</button>
+          <div class="timeline" id="timeline">
+            <span class="tick active"></span>
+            <span class="tick"></span>
+            <span class="tick"></span>
+            <span class="tick"></span>
+          </div>
+          <button id="next">Next →</button>
+        </div>
+      </section>
+
+      <aside class="sidecar" aria-label="Mise en place checklist">
+        <h3>Mise en place · staged</h3>
+        <div class="checklist" id="checklist">
+          <div class="check done" data-id="workspace">
+            <span class="box"></span>
+            <span class="text">workspace<span class="meta">CLAUDE.md, agent identity</span></span>
+          </div>
+          <div class="check" data-id="skills">
+            <span class="box"></span>
+            <span class="text">skills installed<span class="meta">interview, eda, scorer, infographic</span></span>
+          </div>
+          <div class="check" data-id="semantic">
+            <span class="box"></span>
+            <span class="text">semantic defs<span class="meta">revenue, engagement, active shop</span></span>
+          </div>
+          <div class="check" data-id="data">
+            <span class="box"></span>
+            <span class="text">data on counter<span class="meta">coffee-shops/, 5 files</span></span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="slide-foot">
+      <div class="ribbon"><strong>M3 · The Enrichment</strong> · spotlight one step · checklist fills as you advance</div>
+      <div class="crumb">11 / 17</div>
+    </footer>
+  </section>
+
+  <aside class="notes">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li>Maximum focus mode. Audience sees one big step at a time. The checklist fills in as each step's prep is "consumed."</li>
+      <li>Best for the in-person live demo where you want zero cognitive overhead on the screen.</li>
+      <li><kbd>←</kbd>/<kbd>→</kbd> or <kbd>Space</kbd> to advance.</li>
+    </ul>
+  </aside>
+</div>
+
+<script>
+(() => {
+  const steps = [
+    {
+      num: 1, signal: "~45s", consumes: "workspace",
+      title: "Open the workspace",
+      what: "<strong>Show</strong> <code>CLAUDE.md</code> and the <code>.agents/skills/</code> tree. Don't run anything yet. Let the structure speak for itself.",
+      watch: "Audience sees <em>where</em> discipline lives before it acts."
+    },
+    {
+      num: 2, signal: "interview", consumes: "skills",
+      title: "Trigger the interview",
+      what: "Run <code>/data-refinement-interview</code>. The agent picks <strong>4 of 10</strong> targeted questions based on what it found. Hard cap is 5.",
+      watch: "It throttles itself. No question dump."
+    },
+    {
+      num: 3, signal: "~2 min", consumes: "semantic",
+      title: "Answer live",
+      what: "Define <strong>revenue</strong>, decide outlier vs. exclude, name the audience, set the normalization rule for operating hours.",
+      watch: "This is where the lesson lands. Definitions captured, not vibes."
+    },
+    {
+      num: 4, signal: "EDA", consumes: "data",
+      title: "Run programmatic EDA",
+      what: "Run <code>/programmatic-eda</code>. Watch the agent <strong>flag</strong> the S3 flat-sales anomaly, the date-format split, and HUB-Coffee name variants.",
+      watch: "Issues surface <em>before</em> conclusions. That's the whole point."
+    }
+  ];
+
+  const slide   = document.querySelector('.slide');
+  const stage   = document.getElementById('stage');
+  const numEl   = document.getElementById('num');
+  const curEl   = document.getElementById('cur');
+  const sigEl   = document.getElementById('signal');
+  const ticks   = [...document.querySelectorAll('#timeline .tick')];
+  const prev    = document.getElementById('prev');
+  const next    = document.getElementById('next');
+  const checks  = [...document.querySelectorAll('#checklist .check')];
+
+  let i = 0;
+
+  function render() {
+    const s = steps[i];
+    numEl.textContent = s.num;
+    curEl.textContent = s.num;
+    sigEl.textContent = s.signal;
+    stage.innerHTML = `
+      <div class="stage-title">${s.title}</div>
+      <div class="stage-what">${s.what}</div>
+      <div class="stage-watch">${s.watch}</div>
+    `;
+    // restart animation
+    stage.querySelectorAll('.stage-grid > *, .stage-title, .stage-what, .stage-watch')
+      .forEach(el => { el.style.animation = 'none'; el.offsetHeight; el.style.animation = ''; });
+
+    ticks.forEach((t, idx) => {
+      t.classList.remove('active', 'done');
+      if (idx < i) t.classList.add('done');
+      else if (idx === i) t.classList.add('active');
+    });
+    checks.forEach(c => c.classList.remove('done'));
+    // mark consumed = every step <= current consumes its prep
+    for (let k = 0; k <= i; k++) {
+      const id = steps[k].consumes;
+      const el = checks.find(c => c.dataset.id === id);
+      if (el) el.classList.add('done');
+    }
+    prev.disabled = i === 0;
+    next.disabled = i === steps.length - 1;
+  }
+  function go(n) { i = Math.max(0, Math.min(steps.length - 1, n)); render(); }
+
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1); }
+  });
+  render();
+  slide.focus();
+})();
+</script>
+</body>
+</html>

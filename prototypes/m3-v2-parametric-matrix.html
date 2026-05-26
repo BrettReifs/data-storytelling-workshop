@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V2 Parametric Matrix — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame { max-width: 1280px; margin: 2rem auto; padding: 0 1rem; }
+  .preview-frame h1 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 600;
+  }
+
+  .slide {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #FFFFFF;
+    color: var(--ink);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    padding: 2% 2.4%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: clamp(9px, 1.1vw, 14px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+
+  .slide-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    margin-bottom: 0.5em;
+  }
+  .uw-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--uw-gold-bright);
+    font-weight: 700;
+  }
+  .slide h2 {
+    font-size: 1.6em;
+    margin: 0.15em 0 0;
+    color: var(--uw-purple-deep);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .desktop-pill {
+    font-family: var(--mono);
+    font-size: 0.7em;
+    color: #FFF;
+    background: var(--uw-purple);
+    padding: 0.3em 0.8em;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .matrix-wrap {
+    min-height: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.4em;
+  }
+  .matrix-caption {
+    font-family: var(--mono);
+    font-size: 0.65em;
+    color: var(--uw-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+  }
+  table.matrix {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.9em;
+  }
+  table.matrix th, table.matrix td {
+    border: 1px solid var(--rule);
+    padding: 0.55em 0.7em;
+    vertical-align: top;
+    line-height: 1.35;
+    transition: opacity 0.18s ease, background 0.18s ease;
+  }
+  table.matrix thead th {
+    background: var(--uw-purple-deep);
+    color: #FFF;
+    font-family: var(--mono);
+    font-size: 0.82em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  table.matrix thead th .phase-n {
+    display: block;
+    color: var(--uw-gold-bright);
+    font-size: 0.78em;
+    font-weight: 700;
+    margin-bottom: 0.15em;
+  }
+  table.matrix tbody th {
+    background: var(--uw-purple-light);
+    color: var(--uw-purple-deep);
+    font-family: var(--mono);
+    font-size: 0.85em;
+    font-weight: 700;
+    text-align: left;
+    width: 14%;
+  }
+  table.matrix tbody th .row-meta {
+    display: block;
+    font-weight: 500;
+    color: var(--uw-purple-mid);
+    font-size: 0.85em;
+    margin-top: 0.1em;
+    opacity: 0.85;
+  }
+  table.matrix tbody td { background: #FCFBFE; }
+  table.matrix tbody td code {
+    font-family: var(--mono);
+    background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  table.matrix tbody td strong { color: var(--uw-purple-deep); }
+  table.matrix tbody td .flag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.78em;
+    color: var(--uw-purple);
+    background: var(--uw-purple-light);
+    padding: 1px 6px;
+    border-radius: 999px;
+    margin-top: 0.25em;
+    font-weight: 600;
+  }
+
+  /* Focus-dimming: hover a row to isolate (simulates Slidev focus-track) */
+  table.matrix:hover thead th,
+  table.matrix:hover tbody th,
+  table.matrix:hover tbody td { opacity: 0.32; }
+  table.matrix tbody tr:hover > * { opacity: 1; background: #FFF9EB; }
+  table.matrix tbody tr:hover > th { background: var(--uw-gold-pale); }
+  /* column hover via :has() */
+  table.matrix:has(td.c1:hover) thead th.c1,
+  table.matrix:has(td.c1:hover) tbody td.c1 { opacity: 1; background: #FFF9EB; }
+  table.matrix:has(td.c2:hover) thead th.c2,
+  table.matrix:has(td.c2:hover) tbody td.c2 { opacity: 1; background: #FFF9EB; }
+  table.matrix:has(td.c3:hover) thead th.c3,
+  table.matrix:has(td.c3:hover) tbody td.c3 { opacity: 1; background: #FFF9EB; }
+  table.matrix:has(td.c4:hover) thead th.c4,
+  table.matrix:has(td.c4:hover) tbody td.c4 { opacity: 1; background: #FFF9EB; }
+
+  .slide-foot {
+    margin-top: 0.55em;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 0.8em;
+    align-items: center;
+  }
+  .watch-for {
+    background: var(--uw-gold-pale);
+    border-left: 3px solid var(--uw-gold-bright);
+    border-radius: 4px;
+    padding: 0.4em 0.75em;
+    font-size: 0.85em;
+  }
+  .watch-for strong { color: var(--uw-purple-deep); }
+  .legend {
+    font-family: var(--mono);
+    font-size: 0.7em;
+    color: var(--uw-purple);
+    opacity: 0.7;
+  }
+  .crumb {
+    font-family: var(--mono);
+    font-size: 0.7em;
+    color: var(--uw-purple);
+    opacity: 0.75;
+  }
+
+  .notes {
+    max-width: 1280px;
+    margin: 1.5rem auto 3rem;
+    padding: 1.25rem 1.5rem;
+    background: #232323;
+    border-left: 3px solid var(--uw-gold-bright);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #E7E5E4;
+  }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V2 — Parametric / TRN Matrix</h1>
+
+  <section class="slide" aria-label="Slide preview">
+    <header class="slide-head">
+      <div>
+        <div class="uw-label">Milestone 3 of 4 · Live Demo</div>
+        <h2>The Enrichment — Harness × Phase</h2>
+      </div>
+      <div class="desktop-pill">D3 · workspace-harnessed</div>
+    </header>
+
+    <div class="matrix-wrap">
+      <div class="matrix-caption">Hover a row or column to isolate · maps inputs to phases</div>
+      <table class="matrix" aria-label="Harness components by demo phase">
+        <thead>
+          <tr>
+            <th scope="col">Harness component</th>
+            <th scope="col" class="c1"><span class="phase-n">1 · ~45s</span>Setup · show structure</th>
+            <th scope="col" class="c2"><span class="phase-n">2 · interview</span>/data-refinement-interview</th>
+            <th scope="col" class="c3"><span class="phase-n">3 · ~3 min</span>/programmatic-eda</th>
+            <th scope="col" class="c4"><span class="phase-n">4 · output</span>Findings + flags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">CLAUDE.md<span class="row-meta">agent identity + data context</span></th>
+            <td class="c1">Open and walk through. Point at the <strong>quality bar</strong> section.</td>
+            <td class="c2">Scopes which datasets the interview is allowed to ask about.</td>
+            <td class="c3">Constrains EDA to declared columns; blocks scope creep.</td>
+            <td class="c4">Output cites <code>CLAUDE.md</code> as the source of definitions.</td>
+          </tr>
+          <tr>
+            <th scope="row">.agents/skills/<span class="row-meta">systematic thinking</span></th>
+            <td class="c1">Show tree: 4 skills installed. <strong>Don't run anything yet.</strong></td>
+            <td class="c2"><code>data-refinement-interview</code> picks 4 of 10 questions, caps at 5.</td>
+            <td class="c3"><code>programmatic-eda</code> runs pandas + assumption log.</td>
+            <td class="c4"><code>data-confidence-scorer</code> annotates each finding.</td>
+          </tr>
+          <tr>
+            <th scope="row">Data files<span class="row-meta">data/coffee-shops/</span></th>
+            <td class="c1">Reference only — not loaded yet.</td>
+            <td class="c2">Agent samples headers + first rows to choose questions.</td>
+            <td class="c3"><span class="flag">flag</span> S3 flat-sales · date split · HUB-Coffee variants</td>
+            <td class="c4">Each claim traced to file + row range.</td>
+          </tr>
+          <tr>
+            <th scope="row">Semantic layer<span class="row-meta">shared definitions</span></th>
+            <td class="c1">Defines <em>revenue</em>, <em>engagement rate</em>, <em>active shop</em>.</td>
+            <td class="c2">Interview answers <strong>extend</strong> the layer, not overwrite it.</td>
+            <td class="c3">EDA uses agreed-upon definitions consistently.</td>
+            <td class="c4">No ambiguous metric labels in output.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="slide-foot">
+      <div class="watch-for">
+        <strong>Watch for:</strong> the agent <em>asking before answering</em>, and the EDA cell flagging issues the naive pass missed.
+      </div>
+      <div class="legend">▮ row = harness piece · ▮ column = demo phase</div>
+      <div class="crumb">M3 · 11 / 17</div>
+    </footer>
+  </section>
+
+  <div style="max-width:1280px; margin: 1rem auto 0;">
+    <div style="border:2px dashed var(--uw-gold-bright); background:#2A2520; color:#F5F5F4; padding:1rem 1.25rem; border-radius:6px; font-family: var(--mono); font-size:0.85rem;">
+      <div style="color:var(--uw-gold-bright); text-transform:uppercase; letter-spacing:0.12em; font-size:0.7rem; margin-bottom:0.4rem;">Image placeholder · supplementary</div>
+      <div>Intended src: <code>assets/m3-interview-output.png</code></div>
+      <div style="margin-top:0.4rem; opacity:0.85;">Suggested alt: "Terminal transcript showing the data-refinement-interview skill asking four targeted questions about the coffee shop dataset, with the user's answers highlighted in UW gold."</div>
+      <details style="margin-top:0.6rem;">
+        <summary style="cursor:pointer; color:var(--uw-gold-bright);">Image generation prompt</summary>
+        <pre style="white-space:pre-wrap; margin:0.5rem 0 0; font-size:0.78rem; line-height:1.5;">A clean terminal screenshot in a dark theme showing an AI agent conducting a structured interview about a CSV dataset. Visible: 4 numbered questions (e.g., "How should we define revenue?", "Should we exclude outliers?", "Who is the audience?", "Normalize by operating hours?"). User's answers highlighted in University of Washington gold (#D4A853). Header text reads "/data-refinement-interview". Monospace font, ~14pt. Subtle UW purple (#4B2E83) accent on prompt indicators. 16:9 aspect ratio. Style: developer-tool screenshot, presentation-grade, no window chrome.</pre>
+      </details>
+    </div>
+  </div>
+
+  <aside class="notes" aria-label="Presenter notes (not on slide)">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li>This slide is the <em>map</em>. Hover columns to walk the audience through one phase at a time.</li>
+      <li>Pause on the "Data files × phase 3" cell — that's where the harness earns its keep.</li>
+      <li>For students following along: tell them this matrix is the cheat sheet — every cell is something they could replicate in their own workspace.</li>
+      <li>If hover doesn't work in projection mode, use a laser/cursor and read the column header aloud before each phase.</li>
+    </ul>
+  </aside>
+</div>
+</body>
+</html>

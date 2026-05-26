@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V1 Mise en Place — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame {
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .preview-frame h1 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--uw-gold-bright);
+    font-weight: 600;
+  }
+
+  /* ─── Slide canvas (16:9, matches Slidev 980×551) ───────────────── */
+  .slide {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #FFFFFF;
+    color: var(--ink);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 2.2% 2.8%;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: clamp(10px, 1.25vw, 16px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+
+  .slide-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6em;
+  }
+  .uw-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--uw-gold-bright);
+    font-weight: 700;
+  }
+  .uw-label-em { color: var(--uw-purple); }
+  .slide h2 {
+    font-size: 1.85em;
+    margin: 0;
+    color: var(--uw-purple-deep);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  .uw-rule {
+    border: none;
+    border-top: 2px solid var(--uw-gold-bright);
+    margin: 0.35em 0 0.8em;
+    width: 2.6em;
+  }
+
+  .slide-body {
+    display: grid;
+    grid-template-columns: 1.05fr 1.5fr;
+    gap: 1.4em;
+    min-height: 0;
+  }
+
+  .mise {
+    background: var(--uw-purple-light);
+    border-left: 4px solid var(--uw-purple);
+    border-radius: 6px;
+    padding: 0.85em 1em;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.55em;
+    align-content: start;
+  }
+  .mise h3 {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 0;
+    color: var(--uw-purple);
+    font-weight: 700;
+  }
+  .mise-block {
+    border-top: 1px dashed #C9BFE0;
+    padding-top: 0.45em;
+  }
+  .mise-block:first-of-type { border-top: none; padding-top: 0; }
+  .mise-block .label {
+    font-family: var(--mono);
+    font-size: 0.66em;
+    text-transform: uppercase;
+    color: var(--uw-purple-deep);
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    opacity: 0.75;
+  }
+  .mise-block .item {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    color: var(--ink);
+    margin-top: 0.15em;
+    line-height: 1.4;
+  }
+  .mise-block .item .meta {
+    color: var(--uw-purple-mid);
+    opacity: 0.85;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.55em;
+    min-height: 0;
+  }
+  .steps h3 {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 0;
+    color: var(--uw-gold-bright);
+    font-weight: 700;
+  }
+  ol.numbered {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.45em;
+    min-height: 0;
+  }
+  ol.numbered li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 1.8em 1fr auto;
+    gap: 0.7em;
+    align-items: start;
+    padding: 0.5em 0.7em;
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    background: #FCFBFE;
+  }
+  ol.numbered li::before {
+    content: counter(step);
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #FFF;
+    background: var(--uw-purple);
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  ol.numbered li .body {
+    font-size: 0.92em;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  ol.numbered li .body strong { color: var(--uw-purple-deep); }
+  ol.numbered li .body code {
+    font-family: var(--mono);
+    background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.92em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  ol.numbered li .signal {
+    font-family: var(--mono);
+    font-size: 0.7em;
+    color: var(--uw-purple);
+    background: var(--uw-purple-light);
+    padding: 2px 7px;
+    border-radius: 999px;
+    white-space: nowrap;
+    align-self: center;
+    font-weight: 600;
+  }
+
+  .slide-foot {
+    margin-top: 0.8em;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1em;
+    align-items: center;
+  }
+  .watch-for {
+    background: var(--uw-gold-pale);
+    border-left: 4px solid var(--uw-gold-bright);
+    border-radius: 4px;
+    padding: 0.45em 0.8em;
+    font-size: 0.82em;
+    color: var(--ink);
+  }
+  .watch-for strong { color: var(--uw-purple-deep); }
+  .crumb {
+    font-family: var(--mono);
+    font-size: 0.7em;
+    color: var(--uw-purple);
+    opacity: 0.75;
+    letter-spacing: 0.05em;
+  }
+
+  .notes {
+    max-width: 1280px;
+    margin: 1.5rem auto 3rem;
+    padding: 1.25rem 1.5rem;
+    background: #232323;
+    border-left: 3px solid var(--uw-gold-bright);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #E7E5E4;
+  }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V1 — Mise en Place Card</h1>
+
+  <section class="slide" aria-label="Slide preview">
+    <header class="slide-head">
+      <div>
+        <div class="uw-label">Milestone 3 of 4 · Live Demo · Desktop 3</div>
+        <h2>The Enrichment</h2>
+        <hr class="uw-rule">
+      </div>
+      <div class="uw-label uw-label-em" style="text-align:right;">Switch to D3<br>Harnessed workspace</div>
+    </header>
+
+    <div class="slide-body">
+      <aside class="mise" aria-label="Mise en place">
+        <h3>Mise en place</h3>
+
+        <div class="mise-block">
+          <div class="label">Workspace</div>
+          <div class="item">workspace-harnessed/<br><span class="meta">CLAUDE.md · agent identity, data context, quality bar</span></div>
+        </div>
+
+        <div class="mise-block">
+          <div class="label">Skills installed</div>
+          <div class="item">.agents/skills/<br>
+            <span class="meta">data-refinement-interview · programmatic-eda · data-confidence-scorer · html-infographic-builder</span>
+          </div>
+        </div>
+
+        <div class="mise-block">
+          <div class="label">Data on the counter</div>
+          <div class="item">data/coffee-shops/<br><span class="meta">shop-sales.csv · menu-catalog.json · social-signals.csv · vendor-bids.csv · shop-profiles.md</span></div>
+        </div>
+
+        <div class="mise-block">
+          <div class="label">Semantic layer</div>
+          <div class="item"><span class="meta">shared defs for</span> revenue · engagement rate · active shop</div>
+        </div>
+      </aside>
+
+      <section class="steps" aria-label="Demo steps">
+        <h3>Run · in order</h3>
+        <ol class="numbered">
+          <li>
+            <div class="body"><strong>Open</strong> the workspace. <strong>Show</strong> <code>CLAUDE.md</code> and the <code>.agents/skills/</code> tree. Don't run anything yet — let the structure speak.</div>
+            <div class="signal">~45s</div>
+          </li>
+          <li>
+            <div class="body"><strong>Trigger</strong> <code>/data-refinement-interview</code>. Agent picks <strong>4 of 10</strong> targeted questions based on what it found. Hard cap: 5.</div>
+            <div class="signal">interview</div>
+          </li>
+          <li>
+            <div class="body"><strong>Answer live.</strong> Define <em>revenue</em>, decide outlier vs. exclude, name the audience, set normalization rule for operating hours.</div>
+            <div class="signal">~2 min</div>
+          </li>
+          <li>
+            <div class="body"><strong>Run</strong> <code>/programmatic-eda</code>. Watch the agent <strong>flag</strong> the S3 flat-sales anomaly, date-format split, and HUB-Coffee name variants.</div>
+            <div class="signal">EDA</div>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <footer class="slide-foot">
+      <div class="watch-for">
+        <strong>Watch for:</strong> the agent flagging issues <em>before</em> drawing conclusions. The skills didn't make it smarter — they made it disciplined.
+      </div>
+      <div class="crumb">M3 · 11 / 17</div>
+    </footer>
+  </section>
+
+  <div style="max-width:1280px; margin: 1rem auto 0;">
+    <div style="border:2px dashed var(--uw-gold-bright); background:#2A2520; color:#F5F5F4; padding:1rem 1.25rem; border-radius:6px; font-family: var(--mono); font-size:0.85rem;">
+      <div style="color:var(--uw-gold-bright); text-transform:uppercase; letter-spacing:0.12em; font-size:0.7rem; margin-bottom:0.4rem;">Image placeholder · optional hero</div>
+      <div>Intended src: <code>assets/m3-workspace-tree.png</code></div>
+      <div style="margin-top:0.4rem; opacity:0.85;">Suggested alt: "VS Code file tree for workspace-harnessed showing CLAUDE.md and the .agents/skills directory expanded."</div>
+      <details style="margin-top:0.6rem;">
+        <summary style="cursor:pointer; color:var(--uw-gold-bright);">Image generation prompt</summary>
+        <pre style="white-space:pre-wrap; margin:0.5rem 0 0; font-size:0.78rem; line-height:1.5;">A clean, high-resolution screenshot of a VS Code file explorer panel, dark theme, showing the folder "workspace-harnessed" expanded. Inside: CLAUDE.md (highlighted), .agents/ folder with skills/ subfolder expanded to reveal data-refinement-interview, programmatic-eda, data-confidence-scorer, html-infographic-builder folders. Also visible: data/coffee-shops/ folder. UI accent color is University of Washington purple (#4B2E83). 16:9 aspect ratio, no window chrome, minimalist composition, soft shadow. Style: editorial, instructional, presentation-grade.</pre>
+      </details>
+    </div>
+  </div>
+
+  <aside class="notes" aria-label="Presenter notes (not on slide)">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li>Open D3 first, leave this slide on D1. Show the file tree before triggering anything.</li>
+      <li>The mise en place panel = what you've staged. Walk it left-to-right while D3 boots.</li>
+      <li>Steps 1–4 are timed to ~5 min total. Step 3 (live answering the interview) is where the lesson lands.</li>
+      <li>If the agent picks fewer than 4 questions, that's fine — note it aloud as "the skill self-throttles."</li>
+    </ul>
+  </aside>
+</div>
+</body>
+</html>

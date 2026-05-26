@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 Slide Prototypes — Side-by-Side Review</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+  }
+  html, body {
+    margin: 0;
+    background: #0F0F0F;
+    color: #F5F5F4;
+    font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    min-height: 100vh;
+  }
+  header.page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 1rem;
+  }
+  header.page .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--uw-gold-bright);
+    font-weight: 600;
+  }
+  header.page h1 {
+    font-size: 1.6rem;
+    margin: 0.4rem 0 0.5rem;
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  header.page p {
+    color: #C4C0BD;
+    line-height: 1.55;
+    max-width: 64ch;
+    margin: 0.25rem 0;
+  }
+  .controls {
+    margin-top: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .controls button {
+    background: transparent;
+    color: var(--uw-gold-bright);
+    border: 1px solid var(--uw-gold-bright);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .controls button:hover { background: var(--uw-gold-bright); color: #1a0a30; }
+  .controls button.active { background: var(--uw-gold-bright); color: #1a0a30; }
+
+  main.grid {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  main.grid.stack { grid-template-columns: 1fr; }
+  main.grid + main.grid { margin-top: 0; }
+
+  .variant {
+    background: #1A1A1A;
+    border-radius: 8px;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.75rem;
+    border: 1px solid #292524;
+  }
+  .variant h2 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+  .variant .meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    color: var(--uw-gold-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.15rem;
+  }
+  .variant .pattern {
+    color: #A8A29E;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+  }
+  .frame-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .frame-wrap iframe {
+    /* Render the iframe at full slide size, then scale down to fit.
+       Source pages assume up to ~1280px wide. */
+    position: absolute;
+    top: 0; left: 0;
+    width: 1280px;
+    height: 720px;
+    border: 0;
+    transform-origin: top left;
+    /* JS sets transform: scale() to fit container width */
+  }
+  .variant .actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .variant .actions a {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--uw-purple);
+    background: #EDE8F5;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .variant .actions a:hover { background: var(--uw-gold-pale); color: #1a0a30; }
+
+  /* Rubric */
+  section.rubric {
+    max-width: 1600px;
+    margin: 1rem auto 3rem;
+    padding: 1.5rem 2rem;
+    background: #181818;
+    border-left: 4px solid var(--uw-gold-bright);
+    border-radius: 6px;
+  }
+  section.rubric h2 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--uw-gold-bright);
+    font-weight: 700;
+  }
+  section.rubric table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+  }
+  section.rubric th, section.rubric td {
+    border-bottom: 1px solid #2A2A2A;
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+    color: #E7E5E4;
+  }
+  section.rubric th { color: var(--uw-gold-bright); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <div class="eyebrow">UW Foster · Data Storytelling Workshop · Prototype Review</div>
+  <h1>Milestone 3 Demo Slide — design variants</h1>
+  <p>Each frame below is a live 16:9 mock of a possible redesign for the M3 "Enrichment" live-demo slide in <code>../slides.md</code>. <strong style="color:var(--uw-gold-bright)">Round 3 (top row) adapts the recipe-card aesthetic from the lasagne reference</strong> — large hero image left, two stacked cream cards right that morph from Ingredients/Overview into Step-by-step/Done-looks-like as you advance.</p>
+  <div class="controls">
+    <button id="btn-grid"  class="active">3-up grid</button>
+    <button id="btn-stack">Stacked full-width</button>
+  </div>
+</header>
+
+<div style="max-width:1600px; margin: 0.5rem auto 0; padding: 0 1.5rem;">
+  <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); padding: 0.7rem 0; border-top: 1px solid #292524;">
+    Round 3 · Recipe-card variants (hero image + morphing stacked cards) · use ← / → / Space
+  </div>
+</div>
+
+<main class="grid" id="grid-recipe">
+
+  <article class="variant">
+    <header>
+      <h2>V2a — Recipe Classic</h2>
+      <div class="meta">Pattern · fixed hero · two stacked cards morph</div>
+      <div class="pattern">Faithful adaptation of the lasagne layout. One hero image (cheapest production). Card A morphs Ingredients → Step-by-step; Card B morphs Overview → Done looks like.</div>
+      <div class="actions">
+        <a href="m3-v2a-recipe-classic.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v2a-recipe-classic.html" loading="lazy" title="V2a Recipe Classic"></iframe></div>
+  </article>
+
+  <article class="variant">
+    <header>
+      <h2>V2b — Recipe Cinematic</h2>
+      <div class="meta">Pattern · hero swaps per step · cards morph</div>
+      <div class="pattern">Each step has its own crossfading hero image (5 assets total). Most visually arresting; highest production cost. Pairs well with recorded delivery.</div>
+      <div class="actions">
+        <a href="m3-v2b-recipe-cinematic.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v2b-recipe-cinematic.html" loading="lazy" title="V2b Recipe Cinematic"></iframe></div>
+  </article>
+
+  <article class="variant">
+    <header>
+      <h2>V2c — Recipe Annotated</h2>
+      <div class="meta">Pattern · ONE hero · pins light up per step</div>
+      <div class="pattern">One hero image with four numbered pins positioned over distinct regions. Pin lights gold + pulses on the active step; previous pins check off. Production-friendly hybrid.</div>
+      <div class="actions">
+        <a href="m3-v2c-recipe-annotated.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v2c-recipe-annotated.html" loading="lazy" title="V2c Recipe Annotated"></iframe></div>
+  </article>
+
+</main>
+
+<div style="max-width:1600px; margin: 0.5rem auto 0; padding: 0 1.5rem;">
+  <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); padding: 0.7rem 0; border-top: 1px solid #292524;">
+    Round 2 · Interactive funnel variants · use ← / → or Space inside each frame
+  </div>
+</div>
+
+<main class="grid" id="grid-interactive">
+
+  <article class="variant">
+    <header>
+      <h2>V1a — Stepper (focus + ambient)</h2>
+      <div class="meta">Pattern · one big card · mise stays visible, dims</div>
+      <div class="pattern">Active step occupies the right panel as a hero card. Mise-en-place panel highlights the prep relevant to the current step (workspace → skills → semantic → data).</div>
+      <div class="actions">
+        <a href="m3-v1a-stepper.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v1a-stepper.html" loading="lazy" title="V1a Stepper"></iframe></div>
+  </article>
+
+  <article class="variant">
+    <header>
+      <h2>V1b — Progressive Reveal (accordion)</h2>
+      <div class="meta">Pattern · all 4 titles visible · only active expands</div>
+      <div class="pattern">Students always see the arc of 4 steps as titles. The active step expands inline; finished ones collapse with a check; pending ones stay dimmed. Click any step to jump.</div>
+      <div class="actions">
+        <a href="m3-v1b-reveal.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v1b-reveal.html" loading="lazy" title="V1b Progressive Reveal"></iframe></div>
+  </article>
+
+  <article class="variant">
+    <header>
+      <h2>V1c — Spotlight (full-bleed)</h2>
+      <div class="meta">Pattern · big step · checklist sidebar fills</div>
+      <div class="pattern">Maximum focus mode. One step takes ~70% of the slide. Mise-en-place is a thin checklist that fills with checkmarks as you consume prep. Cleanest for in-room presentation.</div>
+      <div class="actions">
+        <a href="m3-v1c-spotlight.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v1c-spotlight.html" loading="lazy" title="V1c Spotlight"></iframe></div>
+  </article>
+
+</main>
+
+<div style="max-width:1600px; margin: 0.5rem auto 0; padding: 0 1.5rem;">
+  <div style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: #8a8580; padding: 0.7rem 0; border-top: 1px solid #292524;">
+    Round 1 · Original static variants (for reference)
+  </div>
+</div>
+
+<main class="grid" id="grid">
+
+  <article class="variant">
+    <header>
+      <h2>V1 — Mise en Place Card</h2>
+      <div class="meta">Pattern · upfront tools + numbered steps</div>
+      <div class="pattern">Medium-high text density · ordered · mirrors presenter flow exactly. Highest follow-along value for students typing in their own platform.</div>
+      <div class="actions">
+        <a href="m3-v1-mise-en-place.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v1-mise-en-place.html" loading="lazy" title="V1 Mise en Place"></iframe></div>
+  </article>
+
+  <article class="variant">
+    <header>
+      <h2>V2 — Parametric / TRN Matrix</h2>
+      <div class="meta">Pattern · inputs × phases with focus-dim</div>
+      <div class="pattern">High info-density · scannable · hover a row or column to isolate a track. Best for remote students who need the whole map at once.</div>
+      <div class="actions">
+        <a href="m3-v2-parametric-matrix.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v2-parametric-matrix.html" loading="lazy" title="V2 Parametric Matrix"></iframe></div>
+  </article>
+
+  <article class="variant">
+    <header>
+      <h2>V3 — Picture-Cook Flow</h2>
+      <div class="meta">Pattern · iconographic flow, near-zero text</div>
+      <div class="pattern">Low text density · highest visual recall · weakest for students who want to copy commands. Pairs with a confident verbal walkthrough.</div>
+      <div class="actions">
+        <a href="m3-v3-picture-cook.html" target="_blank">Open full size ↗</a>
+      </div>
+    </header>
+    <div class="frame-wrap"><iframe src="m3-v3-picture-cook.html" loading="lazy" title="V3 Picture-Cook Flow"></iframe></div>
+  </article>
+
+</main>
+
+<section class="rubric">
+  <h2>Evaluation rubric — score each on 1 (weak) to 5 (strong)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>What to ask</th>
+        <th>V1 Mise</th>
+        <th>V2 Matrix</th>
+        <th>V3 Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Scannability</strong></td><td>Can a student catch up after 3 seconds of looking?</td><td>·</td><td>·</td><td>·</td></tr>
+      <tr><td><strong>Instruction density</strong></td><td>How much of the walkthrough is on the slide vs. in the presenter's head?</td><td>·</td><td>·</td><td>·</td></tr>
+      <tr><td><strong>Follow-along ability</strong></td><td>Can a student typing in their own AI platform keep pace?</td><td>·</td><td>·</td><td>·</td></tr>
+      <tr><td><strong>Presenter clarity</strong></td><td>Does the slide give clear "now point here" anchors?</td><td>·</td><td>·</td><td>·</td></tr>
+      <tr><td><strong>Accessibility</strong></td><td>Readable at the back of a classroom? Screen-reader friendly?</td><td>·</td><td>·</td><td>·</td></tr>
+      <tr><td><strong>Reusability</strong></td><td>Does the pattern generalize cleanly to M1, M2, M4 demo slides?</td><td>·</td><td>·</td><td>·</td></tr>
+    </tbody>
+  </table>
+  <p style="color:#A8A29E; font-size:0.85rem; margin-top:1rem;">When you pick a winner (or describe a hybrid), I'll promote that pattern into <code>slides.md</code> and apply it to the other milestone demo slides.</p>
+</section>
+
+<script>
+  // Scale each iframe down to fit its container width.
+  function scaleFrames() {
+    document.querySelectorAll('.frame-wrap').forEach(wrap => {
+      const iframe = wrap.querySelector('iframe');
+      if (!iframe) return;
+      const containerWidth = wrap.clientWidth;
+      const sourceWidth = 1280;
+      const scale = containerWidth / sourceWidth;
+      iframe.style.transform = `scale(${scale})`;
+      iframe.style.width = sourceWidth + 'px';
+      iframe.style.height = (sourceWidth * 9 / 16) + 'px';
+    });
+  }
+  window.addEventListener('load', scaleFrames);
+  window.addEventListener('resize', scaleFrames);
+
+  function setLayout(stacked) {
+    ['grid', 'grid-interactive', 'grid-recipe'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('stack', stacked);
+    });
+    document.getElementById('btn-grid').classList.toggle('active', !stacked);
+    document.getElementById('btn-stack').classList.toggle('active', stacked);
+    requestAnimationFrame(scaleFrames);
+  }
+  document.getElementById('btn-grid').addEventListener('click', () => setLayout(false));
+  document.getElementById('btn-stack').addEventListener('click', () => setLayout(true));
+</script>
+
+</body>
+</html>

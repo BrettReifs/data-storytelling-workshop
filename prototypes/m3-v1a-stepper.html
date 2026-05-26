@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M3 · V1a Stepper — Slide prototype</title>
+<style>
+  :root {
+    --uw-purple-deep:  #2D1A52;
+    --uw-purple:       #4B2E83;
+    --uw-purple-mid:   #7B5DB0;
+    --uw-purple-light: #EDE8F5;
+    --uw-gold:         #B7A57A;
+    --uw-gold-bright:  #D4A853;
+    --uw-gold-pale:    #FAF5E8;
+    --ink:             #1a0a30;
+    --rule:            #E5E0F0;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body { margin: 0; background: #1A1A1A; font-family: var(--sans); color: #F5F5F4; min-height: 100vh; }
+  .preview-frame { max-width: 1280px; margin: 2rem auto; padding: 0 1rem; }
+  .preview-frame h1 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 600;
+  }
+
+  .slide {
+    width: 100%; aspect-ratio: 16 / 9;
+    background: #FFFFFF; color: var(--ink);
+    border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid; grid-template-rows: auto 1fr auto;
+    padding: 2.2% 2.8%;
+    box-sizing: border-box; overflow: hidden;
+    font-size: clamp(10px, 1.25vw, 16px);
+    border-top: 4px solid var(--uw-gold-bright);
+  }
+
+  .slide-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.6em;
+  }
+  .uw-label {
+    font-family: var(--mono); font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--uw-gold-bright); font-weight: 700;
+  }
+  .uw-label-em { color: var(--uw-purple); }
+  .slide h2 {
+    font-size: 1.85em; margin: 0; color: var(--uw-purple-deep);
+    font-weight: 700; letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .uw-rule { border: none; border-top: 2px solid var(--uw-gold-bright); margin: 0.35em 0 0.8em; width: 2.6em; }
+
+  .slide-body {
+    display: grid;
+    grid-template-columns: 0.95fr 1.6fr;
+    gap: 1.4em;
+    min-height: 0;
+  }
+
+  /* ─── Mise en place (ambient, dims when stage is active) ──────── */
+  .mise {
+    background: var(--uw-purple-light);
+    border-left: 4px solid var(--uw-purple);
+    border-radius: 6px;
+    padding: 0.75em 0.9em;
+    display: grid; grid-template-rows: auto repeat(4, auto);
+    gap: 0.45em; align-content: start;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+  .slide[data-step="0"] .mise { opacity: 1; }
+  .slide:not([data-step="0"]) .mise { opacity: 0.55; }
+  .mise h3 {
+    font-family: var(--mono); font-size: 0.66rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin: 0; color: var(--uw-purple); font-weight: 700;
+  }
+  .mise-block { border-top: 1px dashed #C9BFE0; padding-top: 0.35em; }
+  .mise-block:first-of-type { border-top: none; padding-top: 0; }
+  .mise-block .label {
+    font-family: var(--mono); font-size: 0.62em;
+    text-transform: uppercase; color: var(--uw-purple-deep);
+    letter-spacing: 0.08em; font-weight: 600; opacity: 0.75;
+  }
+  .mise-block .item {
+    font-family: var(--mono); font-size: 0.82em;
+    color: var(--ink); margin-top: 0.1em; line-height: 1.35;
+  }
+  .mise-block .item .meta { color: var(--uw-purple-mid); opacity: 0.85; }
+
+  /* Targeted highlight when a step references a mise item */
+  .mise-block { transition: background 0.3s ease, box-shadow 0.3s ease; border-radius: 4px; padding-left: 0.3em; padding-right: 0.3em; margin-left: -0.3em; margin-right: -0.3em; }
+  .slide[data-highlight="workspace"]   .mise-block[data-id="workspace"],
+  .slide[data-highlight="skills"]      .mise-block[data-id="skills"],
+  .slide[data-highlight="data"]        .mise-block[data-id="data"],
+  .slide[data-highlight="semantic"]    .mise-block[data-id="semantic"] {
+    background: #FFFFFF;
+    box-shadow: 0 0 0 2px var(--uw-gold-bright);
+    opacity: 1 !important;
+  }
+  .slide[data-highlight] .mise { opacity: 0.45; }
+
+  /* ─── Stage: hero step ──────────────────────────────────────── */
+  .stage {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.6em; min-height: 0;
+  }
+  .stage-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.6em;
+  }
+  .stage-head h3 {
+    font-family: var(--mono); font-size: 0.66rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin: 0; color: var(--uw-gold-bright); font-weight: 700;
+  }
+  .progress {
+    display: flex; align-items: center; gap: 0.4em;
+    font-family: var(--mono); font-size: 0.7em; color: var(--uw-purple);
+  }
+  .progress .dots { display: flex; gap: 0.3em; }
+  .progress .dot {
+    width: 0.55em; height: 0.55em; border-radius: 50%;
+    background: var(--rule); transition: background 0.2s, transform 0.2s;
+  }
+  .progress .dot.done { background: var(--uw-purple-mid); }
+  .progress .dot.active { background: var(--uw-purple-deep); transform: scale(1.4); }
+
+  .card-stack { position: relative; min-height: 0; }
+  .card {
+    position: absolute; inset: 0;
+    border: 1px solid var(--rule); border-radius: 8px;
+    background: #FCFBFE; padding: 1.1em 1.2em;
+    display: grid; grid-template-rows: auto auto 1fr auto;
+    gap: 0.55em;
+    opacity: 0; transform: translateY(8px); pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+  .card.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .card .num {
+    font-family: var(--mono); font-weight: 700;
+    color: #FFF; background: var(--uw-purple);
+    width: 2em; height: 2em; border-radius: 5px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1em; line-height: 1;
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 0.7em;
+  }
+  .card-head .title {
+    font-size: 1.15em; font-weight: 700; color: var(--uw-purple-deep);
+    line-height: 1.1;
+  }
+  .card-head .signal {
+    margin-left: auto;
+    font-family: var(--mono); font-size: 0.72em;
+    color: var(--uw-purple); background: var(--uw-purple-light);
+    padding: 3px 9px; border-radius: 999px; font-weight: 600;
+  }
+  .card .what {
+    font-size: 1em; line-height: 1.4; color: var(--ink);
+  }
+  .card .what strong { color: var(--uw-purple-deep); }
+  .card .what code {
+    font-family: var(--mono); background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold); padding: 1px 6px;
+    border-radius: 3px; font-size: 0.92em; white-space: nowrap;
+  }
+  .card .watch {
+    font-size: 0.85em; line-height: 1.4;
+    background: var(--uw-gold-pale);
+    border-left: 3px solid var(--uw-gold-bright);
+    padding: 0.45em 0.7em; border-radius: 0 4px 4px 0;
+    color: var(--ink);
+  }
+  .card .watch::before {
+    content: "Watch for · ";
+    font-family: var(--mono); font-size: 0.78em;
+    font-weight: 700; color: var(--uw-purple);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 0.6em;
+  }
+  .nav button {
+    font-family: var(--mono); font-size: 0.78em;
+    background: var(--uw-purple); color: #FFF;
+    border: none; padding: 0.5em 1em; border-radius: 4px;
+    cursor: pointer; font-weight: 600; letter-spacing: 0.04em;
+  }
+  .nav button:hover { background: var(--uw-purple-deep); }
+  .nav button[disabled] { background: var(--rule); color: #999; cursor: not-allowed; }
+  .nav .hint {
+    font-family: var(--mono); font-size: 0.7em; color: var(--uw-purple-mid);
+    opacity: 0.8;
+  }
+
+  .slide-foot {
+    margin-top: 0.6em;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 1em; align-items: center;
+  }
+  .crumb {
+    font-family: var(--mono); font-size: 0.7em;
+    color: var(--uw-purple); opacity: 0.75; letter-spacing: 0.05em;
+  }
+  .ribbon {
+    font-family: var(--mono); font-size: 0.72em;
+    color: var(--uw-purple-deep); background: var(--uw-gold-pale);
+    border: 1px solid var(--uw-gold); padding: 0.35em 0.7em;
+    border-radius: 3px;
+  }
+
+  .notes {
+    max-width: 1280px; margin: 1.5rem auto 3rem;
+    padding: 1.25rem 1.5rem; background: #232323;
+    border-left: 3px solid var(--uw-gold-bright); border-radius: 4px;
+    font-size: 0.9rem; line-height: 1.55; color: #E7E5E4;
+  }
+  .notes h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--uw-gold-bright); }
+  .notes ul { padding-left: 1.25rem; }
+  .notes kbd {
+    font-family: var(--mono); font-size: 0.85em;
+    background: #3A3A3A; padding: 1px 6px;
+    border-radius: 3px; border: 1px solid #555;
+  }
+</style>
+</head>
+<body>
+<div class="preview-frame">
+  <h1>Prototype · M3 · V1a — Stepper (focus + ambient)</h1>
+
+  <section class="slide" data-step="1" data-highlight="workspace" aria-label="Slide preview" tabindex="0">
+    <header class="slide-head">
+      <div>
+        <div class="uw-label">Milestone 3 of 4 · Live Demo · Desktop 3</div>
+        <h2>The Enrichment</h2>
+        <hr class="uw-rule">
+      </div>
+      <div class="uw-label uw-label-em" style="text-align:right;">Switch to D3<br>Harnessed workspace</div>
+    </header>
+
+    <div class="slide-body">
+      <aside class="mise" aria-label="Mise en place">
+        <h3>Mise en place</h3>
+        <div class="mise-block" data-id="workspace">
+          <div class="label">Workspace</div>
+          <div class="item">workspace-harnessed/<br><span class="meta">CLAUDE.md · agent identity</span></div>
+        </div>
+        <div class="mise-block" data-id="skills">
+          <div class="label">Skills installed</div>
+          <div class="item">.agents/skills/<br><span class="meta">interview · eda · scorer · infographic</span></div>
+        </div>
+        <div class="mise-block" data-id="data">
+          <div class="label">Data on the counter</div>
+          <div class="item">data/coffee-shops/<br><span class="meta">5 files · sales, menu, social, bids, profiles</span></div>
+        </div>
+        <div class="mise-block" data-id="semantic">
+          <div class="label">Semantic layer</div>
+          <div class="item"><span class="meta">defs for</span> revenue · engagement · active shop</div>
+        </div>
+      </aside>
+
+      <section class="stage" aria-label="Active step">
+        <div class="stage-head">
+          <h3>Step · in order</h3>
+          <div class="progress" aria-live="polite">
+            <span class="counter"><span id="cur">1</span>/4</span>
+            <span class="dots" role="presentation">
+              <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="card-stack">
+          <article class="card active" data-step="1" data-highlight="workspace">
+            <div class="card-head">
+              <span class="num">1</span>
+              <span class="title">Open the workspace</span>
+              <span class="signal">~45s</span>
+            </div>
+            <div class="what">
+              <strong>Show</strong> <code>CLAUDE.md</code> and the <code>.agents/skills/</code> tree. Don't run anything yet. Let the structure speak for itself.
+            </div>
+            <div></div>
+            <div class="watch">The audience should see <em>where</em> the discipline lives before it acts.</div>
+          </article>
+
+          <article class="card" data-step="2" data-highlight="skills">
+            <div class="card-head">
+              <span class="num">2</span>
+              <span class="title">Trigger the interview</span>
+              <span class="signal">interview</span>
+            </div>
+            <div class="what">
+              Run <code>/data-refinement-interview</code>. The agent picks <strong>4 of 10</strong> targeted questions based on the data it found. Hard cap is 5.
+            </div>
+            <div></div>
+            <div class="watch">It throttles itself. No question dump.</div>
+          </article>
+
+          <article class="card" data-step="3" data-highlight="semantic">
+            <div class="card-head">
+              <span class="num">3</span>
+              <span class="title">Answer live</span>
+              <span class="signal">~2 min</span>
+            </div>
+            <div class="what">
+              Define <strong>revenue</strong>, decide outlier vs. exclude, name the audience, set the normalization rule for operating hours.
+            </div>
+            <div></div>
+            <div class="watch">This is where the lesson lands. The skill captures definitions, not vibes.</div>
+          </article>
+
+          <article class="card" data-step="4" data-highlight="data">
+            <div class="card-head">
+              <span class="num">4</span>
+              <span class="title">Run programmatic EDA</span>
+              <span class="signal">EDA</span>
+            </div>
+            <div class="what">
+              Run <code>/programmatic-eda</code>. Watch the agent <strong>flag</strong> the S3 flat-sales anomaly, the date-format split, and the HUB-Coffee name variants.
+            </div>
+            <div></div>
+            <div class="watch">Issues surface <em>before</em> conclusions. That's the whole point.</div>
+          </article>
+        </div>
+
+        <div class="nav">
+          <button id="prev" aria-label="Previous step" disabled>← Prev</button>
+          <span class="hint">← / → · Space to advance</span>
+          <button id="next" aria-label="Next step">Next →</button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="slide-foot">
+      <div class="ribbon"><strong>M3 · The Enrichment</strong> · 4-step funnel · skills did not make it smarter, they made it disciplined</div>
+      <div class="crumb">11 / 17</div>
+    </footer>
+  </section>
+
+  <aside class="notes">
+    <h3>Presenter notes — not on slide</h3>
+    <ul>
+      <li>Slide funnels one step at a time. Use <kbd>→</kbd> or <kbd>Space</kbd> to advance, <kbd>←</kbd> to back up. The mise-en-place panel highlights the relevant prep for each step.</li>
+      <li>Step 1 highlights the workspace. Step 2 the skills folder. Step 3 the semantic layer. Step 4 the data files. The visual contract reinforces what the prep was <em>for</em>.</li>
+      <li>The hint text on the nav row tells the audience how to follow along; remove it for clean recordings.</li>
+    </ul>
+  </aside>
+</div>
+
+<script>
+(() => {
+  const slide = document.querySelector('.slide');
+  const cards = [...document.querySelectorAll('.card')];
+  const dots  = [...document.querySelectorAll('.progress .dot')];
+  const cur   = document.getElementById('cur');
+  const prev  = document.getElementById('prev');
+  const next  = document.getElementById('next');
+  let i = 0;
+
+  function go(n) {
+    i = Math.max(0, Math.min(cards.length - 1, n));
+    cards.forEach((c, idx) => c.classList.toggle('active', idx === i));
+    dots.forEach((d, idx) => {
+      d.classList.toggle('active', idx === i);
+      d.classList.toggle('done', idx < i);
+    });
+    cur.textContent = i + 1;
+    slide.dataset.step = i + 1;
+    slide.dataset.highlight = cards[i].dataset.highlight || '';
+    prev.disabled = i === 0;
+    next.disabled = i === cards.length - 1;
+  }
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1); }
+  });
+  slide.focus();
+})();
+</script>
+</body>
+</html>
