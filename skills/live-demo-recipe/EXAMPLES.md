@@ -157,3 +157,4 @@ nudge each top/left % so each pin sits over the correct region of the screenshot
 - Every step has a non-empty `expected`.
 - For annotated mode, every step has a `pin: { top, left }` or you accept the default 4-pin grid (pins 1–4 only).
 - Run `npm run build`. Zero errors expected.
+- In `npm run dev`, click through every step. No card or hero image should extend below the visible slide boundary after any click. This is a hard verification gate — do not commit until all steps pass on-canvas.

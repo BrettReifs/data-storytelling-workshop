@@ -55,7 +55,7 @@ The `expected` field renders inside a "Done looks like · …" ribbon — phrase
 2. Replace its body with the `<RecipeDemo ... />` invocation. Update frontmatter to `layout: none`, `class: demo`, `clicks: N`.
 3. Keep the Slidev presenter notes (`<!-- ... -->`) — they remain the spoken script.
 4. Run `npm run build`. Build failure = component prop error or missing `clicks`.
-5. (Optional) `npm run dev` to walk the slide with `→` / `Space` and verify the funnel feels right.
+5. (Optional) `npm run dev` to walk the slide with `→` / `Space`. Click through **every** step and confirm no card or hero image extends below the visible slide boundary at any click state. If overflow occurs: check that `detail` text is not excessively long, reduce step count, or verify that `overflow: hidden` is present on `.rd-card` and `.rd-step-list` in `RecipeDemo.vue`.
 
 ## Differentiation from the `slidev` skill
 

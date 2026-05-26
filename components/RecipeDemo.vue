@@ -212,7 +212,6 @@ function pipClass(i) {
               :class="stepClass(i)"
             >
               <strong>{{ s.title }}</strong>
-              <div v-if="s.detail" class="rd-step-detail">{{ s.detail }}</div>
             </li>
           </ol>
         </div>
@@ -439,7 +438,7 @@ function pipClass(i) {
   background: #F2EFE9; border-radius: 16px;
   padding: 0.9em 1.05em;
   display: grid; grid-template-rows: auto 1fr;
-  gap: 0.45em; min-height: 0;
+  gap: 0.45em; min-height: 0; overflow: hidden;
 }
 .rd-card.accent { background: #EDE9DF; }
 .rd-card-head {
@@ -484,7 +483,7 @@ function pipClass(i) {
 /* Steps */
 .rd-step-list {
   margin: 0; padding: 0; list-style: none; counter-reset: rdstp;
-  display: grid; align-content: start; gap: 0.45em; min-height: 0;
+  display: grid; align-content: start; gap: 0.45em; min-height: 0; overflow: hidden;
 }
 .rd-step-list li {
   counter-increment: rdstp;
@@ -513,7 +512,7 @@ function pipClass(i) {
 .rd-step-detail { font-size: 0.92em; color: #6B6356; margin-top: 0.15em; }
 
 /* Overview / Expected */
-.rd-ovw { font-size: 0.88em; color: #1a0a30; line-height: 1.5; align-self: start; }
+.rd-ovw { font-size: 0.88em; color: #1a0a30; line-height: 1.5; align-self: start; overflow: hidden; }
 .rd-ovw p { margin: 0; }
 .rd-expect {
   margin-top: 0.5em; padding: 0.5em 0.7em;
